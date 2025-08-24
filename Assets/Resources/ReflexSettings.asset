@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: ReflexSettings
   m_EditorClassIdentifier: Reflex::Reflex.Configuration.ReflexSettings
   <LogLevel>k__BackingField: 0
-  <ProjectScopes>k__BackingField: []
+  <ProjectScopes>k__BackingField:
+  - {fileID: 6189300747350023908, guid: 97093728d3bad29248238fad7c0de21f, type: 3}
