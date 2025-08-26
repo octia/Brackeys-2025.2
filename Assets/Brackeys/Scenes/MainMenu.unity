@@ -194,22 +194,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuUi
   mainCanvas: {fileID: 0}
   subMenuPopupDuration: 0.5
-  mainMenuParent: {fileID: 0}
   mainMenuButtonsContainer: {fileID: 0}
-  playButton: {fileID: 0}
-  htpButton: {fileID: 0}
-  optionsButton: {fileID: 0}
-  creditsButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  htpParent: {fileID: 0}
   htpContainer: {fileID: 0}
-  htpBackButton: {fileID: 0}
-  optionsParent: {fileID: 0}
   optionsContainer: {fileID: 0}
-  optionsBackButton: {fileID: 0}
-  creditsParent: {fileID: 0}
   creditsContainer: {fileID: 0}
-  creditsBackButton: {fileID: 0}
 --- !u!114 &96289225
 MonoBehaviour:
   m_ObjectHideFlags: 0
