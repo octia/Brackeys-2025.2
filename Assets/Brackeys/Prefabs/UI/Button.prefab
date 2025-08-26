@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5385419060483490207}
   - component: {fileID: 9082141440119560110}
   - component: {fileID: 7957361344897416656}
+  - component: {fileID: 3553854005118493520}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -153,6 +154,51 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 5, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!114 &3553854005118493520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653112146556124081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8733143294902516929}
+          m_TargetAssemblyTypeName: TMPEffects.Components.TMPAnimator, TMPEffects
+          m_MethodName: StartAnimating
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8733143294902516929}
+          m_TargetAssemblyTypeName: TMPEffects.Components.TMPAnimator, TMPEffects
+          m_MethodName: StopAnimating
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1716165318204894512
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +210,7 @@ GameObject:
   - component: {fileID: 4092920782787016048}
   - component: {fileID: 6359616875074738383}
   - component: {fileID: 3870015532353164204}
+  - component: {fileID: 8733143294902516929}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -289,3 +336,50 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8733143294902516929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716165318204894512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64cc8a40f9848a54c94bf232155b0b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TMPEffects::TMPEffects.Components.TMPAnimator
+  database: {fileID: 11400000, guid: f0a33761ff6919d4a9979ee36980a29d, type: 2}
+  context:
+    scaleAnimations: 1
+    scaleUniformly: 1
+    useScaledTime: 1
+    tmpAnimator: {fileID: 8733143294902516929}
+  updateFrom: 0
+  animateOnStart: 0
+  animationsOverride: 0
+  defaultAnimationsStrings:
+  - wave
+  - palette2
+  - sketchy
+  defaultShowAnimationsStrings: []
+  defaultHideAnimationsStrings: []
+  excludedCharacters: 
+  excludedCharactersShow: 
+  excludedCharactersHide: 
+  excludePunctuation: 0
+  excludePunctuationShow: 0
+  excludePunctuationHide: 0
+  sceneKeywordDatabase: {fileID: 0}
+  keywordDatabase: {fileID: 11400000, guid: ddbbf9c59e9c55949a3be80686d9ea59, type: 2}
+  sceneAnimations:
+    _serializedList: []
+  sceneShowAnimations:
+    _serializedList: []
+  sceneHideAnimations:
+    _serializedList: []
+  preview: 1
+  useDefaultDatabase: 1
+  useDefaultKeywordDatabase: 0
+  initDatabase: 1
+  previewUpdatesPerSecond: 60
+  previewTimeScale: 1
