@@ -91,5 +91,5 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     crestWait: 0
-    troughWait: 0
+    troughWait: 0.5
     velocity: 1

@@ -1327,6 +1327,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8733143294902516929, guid: 62052002930442244bc8efdc7677ccf1, type: 3}
+      propertyPath: 'defaultAnimationsStrings.Array.data[0]'
+      value: wave2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1533,6 +1537,18 @@ PrefabInstance:
     - target: {fileID: 3870015532353164204, guid: 62052002930442244bc8efdc7677ccf1, type: 3}
       propertyPath: m_text
       value: quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733143294902516929, guid: 62052002930442244bc8efdc7677ccf1, type: 3}
+      propertyPath: 'defaultAnimationsStrings.Array.data[0]'
+      value: dangle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733143294902516929, guid: 62052002930442244bc8efdc7677ccf1, type: 3}
+      propertyPath: defaultShowAnimationsStrings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733143294902516929, guid: 62052002930442244bc8efdc7677ccf1, type: 3}
+      propertyPath: 'defaultShowAnimationsStrings.Array.data[0]'
+      value: shake
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
