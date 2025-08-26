@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 565034937286122171}
   - component: {fileID: 40983038812437830}
   m_Layer: 5
-  m_Name: DNote
+  m_Name: LeftNote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NoteController
   rhythmController: {fileID: 0}
-  performInputName: DNote
+  performInputName: ANote
 --- !u!222 &565034937286122171
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: D
+  m_text: A
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
