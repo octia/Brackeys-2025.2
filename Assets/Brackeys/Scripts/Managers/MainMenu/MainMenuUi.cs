@@ -2,53 +2,39 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using PrimeTween;
-
+using FMODUnity;
 
 public class MainMenuUi : MonoBehaviour
 {
     [SerializeField] private Canvas mainCanvas;
-    private string mainGameLevelName = "Gameplay";
     [SerializeField] private float subMenuPopupDuration = 0.5f;
+    [SerializeField] private EventReference buttonClickSfx;
+
+    private string mainGameLevelName = "Gameplay";
 
     [Header("Main Menu Buttons")]
-    private GameObject mainMenuParent;
     [SerializeField] private GameObject mainMenuButtonsContainer;
     private Button playButton;
     private Button htpButton;
     private Button optionsButton;
     private Button creditsButton;
     private Button quitButton;
-    [Header("How To Play Menu")]
-    private GameObject htpParent;
+
+    [Header("Submenus")]
     [SerializeField] private GameObject htpContainer;
-    private Button htpBackButton;
-
-    [Header("Options Menu")]
-    private GameObject optionsParent;
     [SerializeField] private GameObject optionsContainer;
-    private Button optionsBackButton;
-
-    [Header("Credits Menu")]
-
-    private GameObject creditsParent;
     [SerializeField] private GameObject creditsContainer;
+
+    private Button htpBackButton;
+    private Button optionsBackButton;
     private Button creditsBackButton;
 
-    void Awake()
+    private void Awake()
     {
-        mainCanvas = GameObject.Find("MainCanvas").GetComponent<Canvas>();
-        mainMenuParent = mainCanvas.transform.Find("MainMenuUI")?.gameObject;
-        mainMenuButtonsContainer = mainMenuParent.transform.Find("ButtonsContainer")?.gameObject;
+        mainCanvas = GameObject.Find("MainCanvas")?.GetComponent<Canvas>();
 
-        htpParent = mainCanvas.transform.Find("HTPUI")?.gameObject;
-        htpContainer = htpParent.transform.Find("HTPContainer")?.gameObject;
-
-        optionsParent = mainCanvas.transform.Find("OptionsUI")?.gameObject;
-        optionsContainer = optionsParent.transform.Find("OptionsContainer")?.gameObject;
-
-        creditsParent = mainCanvas.transform.Find("CreditsUI")?.gameObject;
-        creditsContainer = creditsParent.transform.Find("CreditsContainer")?.gameObject;
-
+        // Find Main Menu Buttons
+        mainMenuButtonsContainer = mainMenuButtonsContainer ?? mainCanvas.transform.Find("MainMenuUI/ButtonsContainer")?.gameObject;
         if (mainMenuButtonsContainer != null)
         {
             playButton = mainMenuButtonsContainer.transform.Find("PlayButton")?.GetComponent<Button>();
@@ -58,22 +44,15 @@ public class MainMenuUi : MonoBehaviour
             quitButton = mainMenuButtonsContainer.transform.Find("QuitButton")?.GetComponent<Button>();
         }
 
-        if (htpContainer != null)
-        {
-            htpBackButton = htpContainer.transform.Find("BackButton")?.GetComponent<Button>();
-        }
-        if (optionsContainer != null)
-        {
-            optionsBackButton = optionsContainer.transform.Find("BackButton")?.GetComponent<Button>();
-        }
-        if (creditsContainer != null)
-        {
-            creditsBackButton = creditsContainer.transform.Find("BackButton")?.GetComponent<Button>();
-        }
-
+        // Find submenu back buttons
+        htpBackButton = htpContainer?.transform.Find("BackButton")?.GetComponent<Button>();
+        optionsBackButton = optionsContainer?.transform.Find("BackButton")?.GetComponent<Button>();
+        creditsBackButton = creditsContainer?.transform.Find("BackButton")?.GetComponent<Button>();
     }
-    void Start()
+
+    private void Start()
     {
+        // Add button listeners
         playButton?.onClick.AddListener(OnPlayClicked);
         htpButton?.onClick.AddListener(() => OnOpenSubMenu(htpContainer));
         optionsButton?.onClick.AddListener(() => OnOpenSubMenu(optionsContainer));
@@ -84,27 +63,55 @@ public class MainMenuUi : MonoBehaviour
         optionsBackButton?.onClick.AddListener(() => OnExitSubMenu(optionsContainer));
         creditsBackButton?.onClick.AddListener(() => OnExitSubMenu(creditsContainer));
 
+        // Hide submenus initially
         htpContainer?.SetActive(false);
         optionsContainer?.SetActive(false);
         creditsContainer?.SetActive(false);
     }
+
+    private void PlayButtonSfx()
+    {
+        if (!buttonClickSfx.IsNull)
+            RuntimeManager.PlayOneShot(buttonClickSfx);
+    }
+
     private void OnPlayClicked()
     {
         Debug.Log("Play button clicked");
-        SceneManager.LoadScene(mainGameLevelName);
+        PlayButtonSfx();
+
+        if (AudioManager.Instance != null)
+        {
+            // Optional: fade ambient and menu music while loading the scene immediately
+            AudioManager.Instance.FadeAmbient(0f, 1f);
+            AudioManager.Instance.FadeMusic(0f, 1f); // You’ll need a FadeMusic method in AudioManager
+
+            // Load scene immediately
+            SceneManager.LoadScene(mainGameLevelName);
+        }
+        else
+        {
+            SceneManager.LoadScene(mainGameLevelName);
+        }
     }
+
     private void OnQuitClicked()
     {
         Debug.Log("Quit button clicked");
+        PlayButtonSfx();
         Application.Quit();
     }
+
     private void OnOpenSubMenu(GameObject targetContainer)
     {
+        PlayButtonSfx();
         targetContainer.SetActive(true);
         Tween.Scale(targetContainer.transform, endValue: 1f, duration: subMenuPopupDuration);
     }
+
     private void OnExitSubMenu(GameObject targetContainer)
     {
+        PlayButtonSfx();
         Tween.Scale(targetContainer.transform, endValue: 0, duration: subMenuPopupDuration, endDelay: 0.5f)
             .OnComplete(() => targetContainer.SetActive(false));
     }

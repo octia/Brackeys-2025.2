@@ -1014,6 +1014,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534502418}
   m_CullTransparentMesh: 1
+--- !u!1 &1813789918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1813789920}
+  - component: {fileID: 1813789919}
+  m_Layer: 0
+  m_Name: SceneAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1813789919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813789918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3925fc72a7a5f41b64ecbdc430e049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneMusic
+  musicEvent:
+    Guid:
+      Data1: 237637805
+      Data2: 1178045538
+      Data3: 1866490779
+      Data4: -1902635855
+    Path: event:/mus_LevelMusic_loop
+  fadeTime: 0.2
+  delayBeforeStart: 1
+  musicVolume: 0.75
+  ambientFadeTime: 0.5
+  mainMenuAmbientVolume: 1
+  otherScenesAmbientVolume: 0
+--- !u!4 &1813789920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813789918}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4625516625302975159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1121,3 +1178,4 @@ SceneRoots:
   - {fileID: 895555270}
   - {fileID: 983194221}
   - {fileID: 782922390}
+  - {fileID: 1813789920}
