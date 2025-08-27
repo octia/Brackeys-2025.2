@@ -106,10 +106,30 @@ public class RhythmController : MonoBehaviour
             produceText.text = "Stop";
 
             ResetTracks();
+
+            // Start ambience/music when active
+            if (AudioManager.Instance != null)
+            {
+                // Fade ambience in
+                AudioManager.Instance.FadeAmbient(1f, 1.5f);
+
+                // Or play specific music
+                // AudioManager.Instance.PlayMusic(produceMusicEvent, 1.5f);
+            }
         }
         else
         {
             produceText.text = "Produce";
+
+            // Stop ambience/music when deactivated
+            if (AudioManager.Instance != null)
+            {
+                // Fade ambience out
+                AudioManager.Instance.FadeAmbient(0f, 1.5f);
+
+                // Or stop current music
+                // AudioManager.Instance.FadeMusic(0f, 1.5f, stopAfterFade: true);
+            }
         }
     }
 
