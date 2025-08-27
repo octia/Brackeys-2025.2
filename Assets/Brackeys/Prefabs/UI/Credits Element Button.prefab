@@ -163,5 +163,26 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 653112146556124081, guid: 62052002930442244bc8efdc7677ccf1, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 4455786192361261959}
   m_SourcePrefab: {fileID: 100100000, guid: 62052002930442244bc8efdc7677ccf1, type: 3}
+--- !u!1 &4261599206585383440 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 653112146556124081, guid: 62052002930442244bc8efdc7677ccf1, type: 3}
+  m_PrefabInstance: {fileID: 3617639473885725089}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4455786192361261959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4261599206585383440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 061c234c02ce3814e83cf877c400c439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpenLink
+  link: https://xentios.itch.io/

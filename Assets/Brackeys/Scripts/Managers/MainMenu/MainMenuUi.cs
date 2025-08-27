@@ -92,6 +92,20 @@ public class MainMenuUi : MonoBehaviour
         creditsContainer?.SetActive(false);
         creditsContainer.transform.localScale = Vector3.zero;
     }
+
+    private void OnDestroy()
+    {
+        playButton?.onClick.RemoveAllListeners();
+        htpButton?.onClick.RemoveAllListeners();
+        optionsButton?.onClick.RemoveAllListeners();
+        creditsButton?.onClick.RemoveAllListeners();
+        quitButton?.onClick.RemoveAllListeners();
+
+        htpBackButton?.onClick.RemoveAllListeners();
+        optionsBackButton?.onClick.RemoveAllListeners();
+        creditsBackButton?.onClick.RemoveAllListeners();
+    }
+
     private void OnPlayClicked()
     {
         Debug.Log("Play button clicked");
