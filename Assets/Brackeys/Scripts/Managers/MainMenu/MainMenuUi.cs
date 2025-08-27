@@ -1,5 +1,5 @@
-using PrimeTween;
 using FMODUnity;
+using PrimeTween;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -123,8 +123,9 @@ public class MainMenuUi : MonoBehaviour
 
     private void OnOpenSubMenu(GameObject targetContainer)
     {
-        PlayButtonSfx();
+
         if (IsAPanelOpen == true) return;
+        PlayButtonSfx();
         IsAPanelOpen = true;
         targetContainer.SetActive(true);
         Tween.Scale(targetContainer.transform, endValue: 1f, duration: subMenuPopupDuration, ease: Ease.OutSine);
@@ -133,8 +134,6 @@ public class MainMenuUi : MonoBehaviour
     private void OnExitSubMenu(GameObject targetContainer)
     {
         PlayButtonSfx();
-        Tween.Scale(targetContainer.transform, endValue: 0, duration: subMenuPopupDuration, endDelay: 0.5f)
-            .OnComplete(() => targetContainer.SetActive(false));
         Tween.Scale(targetContainer.transform, endValue: 0, duration: subMenuPopupDuration, endDelay: 0.001f, ease: Ease.OutQuad)
             .OnComplete(() =>
             {
