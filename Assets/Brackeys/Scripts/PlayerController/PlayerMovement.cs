@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
     // ...
     private InputAction movementAction;
-    Rigidbody rb;
+    private Rigidbody rb;
 
     private void Start()
     {
