@@ -11,6 +11,7 @@ public class TowerScriptableObject : ScriptableObject
     public bool isDamageOverTime;
     public float damageAmount;
     public float damageDuration;
+    public float enemySpeed;
     public GameObject towerPrefab;
     public GameObject projectilePrefab;
 }

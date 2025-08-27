@@ -5,49 +5,61 @@ using System.Collections.Generic;
 public class TowerManager : MonoBehaviour
 {
     public TowerScriptableObject towerData;
-    public int maxProjectiles = 5;
     private GameObject towerInstance;
     private Transform firePoint;
     private GameObject projectileContainer;
-    private List<GameObject> activeProjectiles = new List<GameObject>();
 
     private GameObject rangeIndicator;
 
     private SphereCollider rangeCollider;
 
-    private List<Transform> dogsInRange = new List<Transform>();
-    private Transform currentTarget;
+    public List<Transform> dogsInRange = new List<Transform>();
+    public Transform currentTarget;
     private float rotationSpeed = 5f;
 
-    private Coroutine attackRoutine;
+    public float attackCooldown;
+    private float lastRadius = 0;
+    public bool abilityActive = false;
 
     void Start()
     {
         Vector3 spawnPos = new Vector3(transform.position.x, towerData.towerPrefab.transform.position.y, transform.position.z);
         towerInstance = Instantiate(towerData.towerPrefab, spawnPos, Quaternion.identity, transform);
         towerInstance.AddComponent<TowerHover>().parent = this;
-        firePoint = towerInstance.transform.Find("ProjectileDirection");
-        if (firePoint == null) firePoint = towerInstance.transform;
 
-        projectileContainer = new GameObject("Projectiles");
-        projectileContainer.transform.SetParent(transform);
-        projectileContainer.transform.localPosition = Vector3.zero;
+        if (towerData.isAttackAOE)
+        {
+
+        }
+        else
+        {
+            firePoint = towerInstance.transform.Find("ProjectileDirection");
+            if (firePoint == null) firePoint = towerInstance.transform;
+            projectileContainer = new GameObject("Projectiles");
+            projectileContainer.transform.SetParent(transform);
+            projectileContainer.transform.localPosition = Vector3.zero;
+        }
+
 
         rangeIndicator = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
         rangeIndicator.transform.SetParent(transform);
         rangeIndicator.transform.localPosition = Vector3.zero;
-        rangeIndicator.transform.localScale = new Vector3(towerData.attackRadius, 0.01f, towerData.attackRadius);
         rangeIndicator.GetComponent<Renderer>().material.color = new Color(0f, 1f, 0f, 0.25f);
         Destroy(rangeIndicator.GetComponent<Collider>());
         rangeIndicator.SetActive(true);
 
         rangeCollider = this.gameObject.AddComponent<SphereCollider>();
         rangeCollider.isTrigger = true;
-        rangeCollider.radius = towerData.attackRadius / 2;
     }
 
     void Update()
     {
+        if (towerData.attackRadius != lastRadius)
+        {
+            lastRadius = towerData.attackRadius;
+            rangeCollider.radius = lastRadius / 2f;
+            rangeIndicator.transform.localScale = new Vector3(lastRadius, 0.01f, lastRadius);
+        }
         if (currentTarget != null)
         {
             Vector3 lookPos = currentTarget.position - towerInstance.transform.position;
@@ -59,6 +71,17 @@ public class TowerManager : MonoBehaviour
                     Quaternion.LookRotation(-lookPos),
                     Time.deltaTime * rotationSpeed
                 );
+        }
+
+        attackCooldown += Time.deltaTime;
+
+        if (attackCooldown >= towerData.attackRate)
+        {
+            attackCooldown = 0;
+            if (currentTarget != null && !towerData.isAttackAOE)
+                FireProjectile(currentTarget);
+            else
+                StartCoroutine(AOEAbilityCoroutine());
         }
     }
 
@@ -72,20 +95,7 @@ public class TowerManager : MonoBehaviour
             if (currentTarget == null)
             {
                 currentTarget = GetClosestDog();
-                if (attackRoutine == null)
-                    attackRoutine = StartCoroutine(AttackTarget());
             }
-
-        }
-    }
-
-    IEnumerator AttackTarget()
-    {
-        while (currentTarget != null)
-        {
-            // TODO: ADD MULTI TARGET STUFF / AOE THINGS
-            FireProjectile(currentTarget);
-            yield return new WaitForSeconds(towerData.attackRate);
         }
     }
 
@@ -95,14 +105,9 @@ public class TowerManager : MonoBehaviour
         {
 
             GameObject proj = Instantiate(towerData.projectilePrefab, firePoint.position, Quaternion.identity, projectileContainer.transform);
-            Debug.Log($"Firing projectile at {target.name}");
-            activeProjectiles.Add(proj);
+            Debug.Log($"Firing projectile at {target.name} from {this.name}");
             proj.GetComponent<ProjectileManager>().damageAmount = towerData.damageAmount;
-            if (activeProjectiles.Count > maxProjectiles)
-            {
-                Destroy(activeProjectiles[0]);
-                activeProjectiles.RemoveAt(0);
-            }
+
 
             Rigidbody projRb = proj.GetComponent<Rigidbody>();
             Vector3 targetPos = currentTarget.position;
@@ -131,14 +136,41 @@ public class TowerManager : MonoBehaviour
         }
     }
 
+    private IEnumerator AOEAbilityCoroutine()
+    {
+        float elapsed = 0f;
+        float tickRate = 1f;
 
+        while (elapsed < towerData.damageDuration)
+        {
+            abilityActive = true;
+            foreach (Transform dog in dogsInRange)
+            {
+                if (dog != null)
+                {
+                    dog.GetComponentInParent<DogManager>().ModifySpeed(towerData.enemySpeed);   // apply slow
+                    dog.GetComponentInParent<DogManager>().TakeDamage(towerData.damageAmount); // apply tick damage
+                }
+            }
+
+            yield return new WaitForSeconds(tickRate);
+            elapsed += tickRate;
+        }
+
+        attackCooldown = 0;
+        abilityActive = false;
+
+        // Reset speeds at the end
+        foreach (Transform dog in dogsInRange)
+        {
+            if (dog != null) dog.GetComponentInParent<DogManager>().ResetSpeed();
+        }
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Dog") && currentTarget == null)
         {
             currentTarget = GetClosestDog();
-            if (currentTarget != null && attackRoutine == null)
-                attackRoutine = StartCoroutine(AttackTarget());
         }
     }
 
@@ -152,11 +184,6 @@ public class TowerManager : MonoBehaviour
             if (other.transform == currentTarget)
             {
                 currentTarget = GetClosestDog();
-                if (currentTarget == null && attackRoutine != null)
-                {
-                    StopCoroutine(attackRoutine);
-                    attackRoutine = null;
-                }
             }
         }
     }
@@ -186,10 +213,10 @@ public class TowerManager : MonoBehaviour
 
     public void RemoveDog(Transform dog)
     {
+        Debug.Log("CALLING TO REMOVE DOG FROM LIST");
         dogsInRange.Remove(dog);
         if (dog == currentTarget)
             currentTarget = GetClosestDog();
     }
-
 
 }

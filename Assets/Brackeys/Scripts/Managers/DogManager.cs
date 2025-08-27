@@ -6,9 +6,10 @@ public class DogManager : MonoBehaviour
     public DogScriptableBehaviour dogData;
     private GameObject dogInstance;
 
-    private float currentHealth;
+    public float currentHealth;
     private Transform targetWaypoint;
     private int waypointIndex = 0;
+    public float currentDogSpeed = 0;
 
     void Start()
     {
@@ -17,12 +18,13 @@ public class DogManager : MonoBehaviour
 
         Vector3 spawnPos = new Vector3(transform.position.x, dogData.dogPrefab.transform.position.y, transform.position.z);
         dogInstance = Instantiate(dogData.dogPrefab, spawnPos, Quaternion.identity, transform);
+        currentDogSpeed = dogData.dogSpeed;
     }
 
     void Update()
     {
         Vector3 dir = targetWaypoint.position - transform.position;
-        transform.Translate(dir.normalized * dogData.dogSpeed * Time.deltaTime, Space.World);
+        transform.Translate(dir.normalized * currentDogSpeed * Time.deltaTime, Space.World);
 
         if (Vector3.Distance(transform.position, targetWaypoint.position) < 0.2f)
         {
@@ -43,6 +45,14 @@ public class DogManager : MonoBehaviour
         {
             RunAway();
         }
+    }
+    public void ModifySpeed(float amount)
+    {
+        currentDogSpeed = amount;
+    }
+    public void ResetSpeed()
+    {
+        currentDogSpeed = dogData.dogSpeed;
     }
 
     void RunAway()

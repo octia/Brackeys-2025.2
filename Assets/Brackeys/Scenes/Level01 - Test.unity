@@ -342,52 +342,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &80730024
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 80730026}
-  - component: {fileID: 80730025}
-  m_Layer: 0
-  m_Name: Tower 01 (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &80730025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80730024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c90291b404d11b649b1c173e07ea5b7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerManager
-  towerData: {fileID: 11400000, guid: a632839630a180346ad7931f62c61c8e, type: 2}
-  maxProjectiles: 5
---- !u!4 &80730026
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80730024}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.99765587, z: -0, w: -0.068431556}
-  m_LocalPosition: {x: -3.88, y: 0, z: -2.49}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1395296142}
-  m_LocalEulerAnglesHint: {x: 0, y: 187.848, z: 0}
 --- !u!1001 &95797788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -850,52 +804,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208597551}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &217104878
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 217104880}
-  - component: {fileID: 217104879}
-  m_Layer: 0
-  m_Name: Tower 01 (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &217104879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 217104878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c90291b404d11b649b1c173e07ea5b7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerManager
-  towerData: {fileID: 11400000, guid: a632839630a180346ad7931f62c61c8e, type: 2}
-  maxProjectiles: 5
---- !u!4 &217104880
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 217104878}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.99765587, z: -0, w: -0.068431556}
-  m_LocalPosition: {x: -1.8477674, y: 0, z: -2.41954}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1395296142}
-  m_LocalEulerAnglesHint: {x: 0, y: 187.848, z: 0}
 --- !u!4 &225539052 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2415543103301255505, guid: 62844b90b6a84b34a80d273d30d72600, type: 3}
@@ -1901,52 +1809,6 @@ Transform:
   - {fileID: 326587967}
   m_Father: {fileID: 1138774829}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &539599156
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 539599158}
-  - component: {fileID: 539599157}
-  m_Layer: 0
-  m_Name: Tower 01 (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &539599157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 539599156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c90291b404d11b649b1c173e07ea5b7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerManager
-  towerData: {fileID: 11400000, guid: a632839630a180346ad7931f62c61c8e, type: 2}
-  maxProjectiles: 5
---- !u!4 &539599158
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 539599156}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.99765587, z: -0, w: -0.068431556}
-  m_LocalPosition: {x: -5.21, y: 0, z: -0.88}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1395296142}
-  m_LocalEulerAnglesHint: {x: 0, y: 187.848, z: 0}
 --- !u!1 &574614022
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,6 +2088,55 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618085249}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &667228618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 667228619}
+  - component: {fileID: 667228620}
+  m_Layer: 0
+  m_Name: Tower 01 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &667228619
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667228618}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.99765587, z: -0, w: -0.068431556}
+  m_LocalPosition: {x: -2.65, y: 0, z: 0.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1395296142}
+  m_LocalEulerAnglesHint: {x: 0, y: 187.848, z: 0}
+--- !u!114 &667228620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667228618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c90291b404d11b649b1c173e07ea5b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerManager
+  towerData: {fileID: 11400000, guid: d10a8a607cb34cf41bccb471861531ed, type: 2}
+  dogsInRange: []
+  currentTarget: {fileID: 0}
+  attackCooldown: 0
+  abilityActive: 0
 --- !u!1 &692199025
 GameObject:
   m_ObjectHideFlags: 0
@@ -3528,7 +3439,7 @@ GameObject:
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1339577950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3542,7 +3453,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerManager
   towerData: {fileID: 11400000, guid: a632839630a180346ad7931f62c61c8e, type: 2}
-  maxProjectiles: 5
+  dogsInRange: []
+  currentTarget: {fileID: 0}
+  attackCooldown: 0
+  abilityActive: 0
 --- !u!4 &1339577951
 Transform:
   m_ObjectHideFlags: 0
@@ -3552,7 +3466,7 @@ Transform:
   m_GameObject: {fileID: 1339577949}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.99765587, z: -0, w: -0.068431556}
-  m_LocalPosition: {x: 1.3, y: 0, z: -1.52}
+  m_LocalPosition: {x: 1.55, y: 0, z: -0.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3699,12 +3613,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1339577951}
-  - {fileID: 217104880}
-  - {fileID: 80730026}
-  - {fileID: 539599158}
-  - {fileID: 1579099259}
-  - {fileID: 1783371353}
-  - {fileID: 2140793084}
+  - {fileID: 667228619}
   m_Father: {fileID: 1138774829}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1456475380
@@ -3823,98 +3732,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2415543103301255505, guid: 62844b90b6a84b34a80d273d30d72600, type: 3}
   m_PrefabInstance: {fileID: 95797788}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1579099257
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1579099259}
-  - component: {fileID: 1579099258}
-  m_Layer: 0
-  m_Name: Tower 01 (5)
-  m_TagString: Untagged
-  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1579099258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579099257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c90291b404d11b649b1c173e07ea5b7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerManager
-  towerData: {fileID: 11400000, guid: a632839630a180346ad7931f62c61c8e, type: 2}
-  maxProjectiles: 5
---- !u!4 &1579099259
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579099257}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.99765587, z: -0, w: -0.068431556}
-  m_LocalPosition: {x: 1.94, y: 0, z: 1.57}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1395296142}
-  m_LocalEulerAnglesHint: {x: 0, y: 187.848, z: 0}
---- !u!1 &1783371352
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1783371353}
-  - component: {fileID: 1783371354}
-  m_Layer: 0
-  m_Name: Tower 01 (6)
-  m_TagString: Untagged
-  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1783371353
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783371352}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.99765587, z: -0, w: -0.068431556}
-  m_LocalPosition: {x: -2.49, y: 0, z: 1.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1395296142}
-  m_LocalEulerAnglesHint: {x: 0, y: 187.848, z: 0}
---- !u!114 &1783371354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783371352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c90291b404d11b649b1c173e07ea5b7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerManager
-  towerData: {fileID: 11400000, guid: a632839630a180346ad7931f62c61c8e, type: 2}
-  maxProjectiles: 5
 --- !u!1 &1803827552
 GameObject:
   m_ObjectHideFlags: 0
@@ -4518,52 +4335,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134864779}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2140793083
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2140793084}
-  - component: {fileID: 2140793085}
-  m_Layer: 0
-  m_Name: Tower 01 (7)
-  m_TagString: Untagged
-  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2140793084
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2140793083}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.99765587, z: -0, w: -0.068431556}
-  m_LocalPosition: {x: -2.31, y: 0, z: -0.23}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1395296142}
-  m_LocalEulerAnglesHint: {x: 0, y: 187.848, z: 0}
---- !u!114 &2140793085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2140793083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c90291b404d11b649b1c173e07ea5b7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerManager
-  towerData: {fileID: 11400000, guid: a632839630a180346ad7931f62c61c8e, type: 2}
-  maxProjectiles: 5
 --- !u!1001 &5047751767363967797
 PrefabInstance:
   m_ObjectHideFlags: 0
