@@ -16,6 +16,8 @@ MonoBehaviour:
     _serializedList:
     - Key: sketchy
       Value: {fileID: 11400000, guid: 5e21d8a0006f1fd44bae0336d8dba7c2, type: 2}
+    - Key: paletteW
+      Value: {fileID: 11400000, guid: 8f60d4492b8b3c24e8855fe07e8737f1, type: 2}
     - Key: wave2
       Value: {fileID: 11400000, guid: 6bea62d9109aaf14980a1fa2b2734857, type: 2}
     - Key: palette2
