@@ -38,6 +38,9 @@ public class RhythmController : MonoBehaviour
     [Inject, HideInInspector]
     public BiscuitManager biscuitManager;
 
+    [Inject]
+    private PlayerController playerController;
+
     float currentNewNoteTime;
 
     bool onLeft;
@@ -106,9 +109,12 @@ public class RhythmController : MonoBehaviour
     {
         main.SetActive(!main.activeSelf);
 
+        playerController.movement.canMove = !main.activeSelf;
+        playerController.visual.gameObject.SetActive(!main.activeSelf);
+
         if (main.activeSelf)
         {
-            produceText.text = "Stop";
+            produceText.text = "Leave";
 
             ResetTracks();
 
@@ -124,7 +130,7 @@ public class RhythmController : MonoBehaviour
         }
         else
         {
-            produceText.text = "Produce";
+            produceText.text = "Bake";
 
             // Stop ambience/music when deactivated
             if (AudioManager.Instance != null)

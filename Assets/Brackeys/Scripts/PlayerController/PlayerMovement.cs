@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     private InputAction movementAction;
     private Rigidbody rb;
 
+    // ...
+    [HideInInspector] public bool canMove = true;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -17,6 +20,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (!canMove)
+        {
+            return;
+        }
+
         Vector2 movementInput = movementAction.ReadValue<Vector2>().normalized;
 
         rb.linearVelocity = new Vector3(movementInput.x, 0, movementInput.y) * speed;
