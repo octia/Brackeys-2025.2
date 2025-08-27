@@ -1,7 +1,7 @@
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using PrimeTween;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class MainMenuUi : MonoBehaviour
@@ -34,6 +34,7 @@ public class MainMenuUi : MonoBehaviour
     [SerializeField] private GameObject creditsContainer;
     private Button creditsBackButton;
 
+    private bool IsAPanelOpen = false;
     void Awake()
     {
         mainCanvas = GameObject.Find("MainCanvas").GetComponent<Canvas>();
@@ -100,12 +101,21 @@ public class MainMenuUi : MonoBehaviour
     }
     private void OnOpenSubMenu(GameObject targetContainer)
     {
+        if (IsAPanelOpen == true) return;
+        IsAPanelOpen = true;
         targetContainer.SetActive(true);
-        Tween.Scale(targetContainer.transform, endValue: 1f, duration: subMenuPopupDuration);
+        Tween.Scale(targetContainer.transform, endValue: 1f, duration: subMenuPopupDuration, ease: Ease.OutSine);
     }
     private void OnExitSubMenu(GameObject targetContainer)
     {
-        Tween.Scale(targetContainer.transform, endValue: 0, duration: subMenuPopupDuration, endDelay: 0.5f)
-            .OnComplete(() => targetContainer.SetActive(false));
+        Tween.Scale(targetContainer.transform, endValue: 0, duration: subMenuPopupDuration, endDelay: 0.001f, ease: Ease.OutQuad)
+            .OnComplete(() =>
+            {
+                if (targetContainer.transform.localScale == Vector3.zero)
+                {
+                    targetContainer.SetActive(false);
+                    IsAPanelOpen = false;
+                }
+            });
     }
 }
