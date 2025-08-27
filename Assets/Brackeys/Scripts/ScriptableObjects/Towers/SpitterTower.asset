@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1440879f9bd4f418510193d76dd8c3, type: 3}
+  m_Name: SpitterTower
+  m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
+  towerName: Spitter Tower
+  towerCost: 5
+  attackRadius: 5
+  attackRate: 1
+  isAttackAOE: 0
+  isDamageOverTime: 0
+  damageAmount: 2
+  damageDuration: 0
+  towerPrefab: {fileID: 2636933689032541811, guid: 2d5faa99d29ad8849ade82a3f318b2a4, type: 3}
+  projectilePrefab: {fileID: 7401666130811874402, guid: 04db2d51688515e4c82580e82f095f52, type: 3}
