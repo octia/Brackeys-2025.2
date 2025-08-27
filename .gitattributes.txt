@@ -2,3 +2,8 @@ Assets/Plugins/FMOD/**/*.bundle text eol=lf
 Assets/Plugins/FMOD/**/Info.plist text eol=lf
 *.unity merge=unityyamlmerge
 *.prefab merge=unityyamlmerge
+*.asset merge=unityyamlmerge
+
+# Default to text merge tool (VS Code here) for everything else
+*.cs merge
+
