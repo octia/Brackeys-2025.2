@@ -35,12 +35,6 @@ public class RhythmController : MonoBehaviour
     private InputAction leftPerformInput;
     private InputAction rightPerformInput;
 
-    private void Start()
-    {
-        leftPerformInput = InputSystem.actions.FindAction("ANote");
-        rightPerformInput = InputSystem.actions.FindAction("DNote");
-    }
-
     [Inject, HideInInspector]
     public BiscuitManager biscuitManager;
 
@@ -52,8 +46,19 @@ public class RhythmController : MonoBehaviour
     int batchesProgress;
     int multiplier = 1;
 
+    private void Start()
+    {
+        leftPerformInput = InputSystem.actions.FindAction("ANote");
+        rightPerformInput = InputSystem.actions.FindAction("DNote");
+    }
+
     private void Update()
     {
+        if (!main.activeSelf)
+        {
+            return;
+        }
+
         Transform nearestNote = null;
         bool performed = false;
 
