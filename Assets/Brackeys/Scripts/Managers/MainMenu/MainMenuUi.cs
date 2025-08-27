@@ -86,8 +86,11 @@ public class MainMenuUi : MonoBehaviour
         creditsBackButton?.onClick.AddListener(() => OnExitSubMenu(creditsContainer));
 
         htpContainer?.SetActive(false);
+        htpContainer.transform.localScale = Vector3.zero;
         optionsContainer?.SetActive(false);
+        optionsContainer.transform.localScale = Vector3.zero;
         creditsContainer?.SetActive(false);
+        creditsContainer.transform.localScale = Vector3.zero;
     }
     private void OnPlayClicked()
     {
