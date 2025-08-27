@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "InputSystem_Actions",
     "maps": [
         {
@@ -986,6 +987,54 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "RhythmMinigame",
+            "id": "106e1bf6-b67f-47c2-8b2e-c3f5e6bb7e3e",
+            "actions": [
+                {
+                    "name": "ANote",
+                    "type": "Button",
+                    "id": "f1529887-8026-4d15-85fa-cd23ca93ff00",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DNote",
+                    "type": "Button",
+                    "id": "342b28af-9519-432d-9d95-7ea17de9dd29",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e6e993f8-45d8-4c32-a4c0-a647e223139c",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ANote",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a71370e6-f320-4b1c-98d4-27d152bb45b7",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DNote",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
