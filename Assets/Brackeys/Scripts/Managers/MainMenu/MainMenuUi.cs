@@ -1,8 +1,9 @@
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using PrimeTween;
 using FMODUnity;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class MainMenuUi : MonoBehaviour
 {
@@ -29,7 +30,8 @@ public class MainMenuUi : MonoBehaviour
     private Button optionsBackButton;
     private Button creditsBackButton;
 
-    private void Awake()
+    private bool IsAPanelOpen = false;
+    void Awake()
     {
         mainCanvas = GameObject.Find("MainCanvas")?.GetComponent<Canvas>();
 
@@ -65,14 +67,31 @@ public class MainMenuUi : MonoBehaviour
 
         // Hide submenus initially
         htpContainer?.SetActive(false);
+        htpContainer.transform.localScale = Vector3.zero;
         optionsContainer?.SetActive(false);
+        optionsContainer.transform.localScale = Vector3.zero;
         creditsContainer?.SetActive(false);
+        creditsContainer.transform.localScale = Vector3.zero;
     }
 
     private void PlayButtonSfx()
     {
         if (!buttonClickSfx.IsNull)
             RuntimeManager.PlayOneShot(buttonClickSfx);
+    }
+
+
+    private void OnDestroy()
+    {
+        playButton?.onClick.RemoveAllListeners();
+        htpButton?.onClick.RemoveAllListeners();
+        optionsButton?.onClick.RemoveAllListeners();
+        creditsButton?.onClick.RemoveAllListeners();
+        quitButton?.onClick.RemoveAllListeners();
+
+        htpBackButton?.onClick.RemoveAllListeners();
+        optionsBackButton?.onClick.RemoveAllListeners();
+        creditsBackButton?.onClick.RemoveAllListeners();
     }
 
     private void OnPlayClicked()
@@ -84,7 +103,7 @@ public class MainMenuUi : MonoBehaviour
         {
             // Optional: fade ambient and menu music while loading the scene immediately
             AudioManager.Instance.FadeAmbient(0f, 1f);
-            AudioManager.Instance.FadeMusic(0f, 1f); // You’ll need a FadeMusic method in AudioManager
+            AudioManager.Instance.FadeMusic(0f, 1f); // Youï¿½ll need a FadeMusic method in AudioManager
 
             // Load scene immediately
             SceneManager.LoadScene(mainGameLevelName);
@@ -105,8 +124,10 @@ public class MainMenuUi : MonoBehaviour
     private void OnOpenSubMenu(GameObject targetContainer)
     {
         PlayButtonSfx();
+        if (IsAPanelOpen == true) return;
+        IsAPanelOpen = true;
         targetContainer.SetActive(true);
-        Tween.Scale(targetContainer.transform, endValue: 1f, duration: subMenuPopupDuration);
+        Tween.Scale(targetContainer.transform, endValue: 1f, duration: subMenuPopupDuration, ease: Ease.OutSine);
     }
 
     private void OnExitSubMenu(GameObject targetContainer)
@@ -114,5 +135,14 @@ public class MainMenuUi : MonoBehaviour
         PlayButtonSfx();
         Tween.Scale(targetContainer.transform, endValue: 0, duration: subMenuPopupDuration, endDelay: 0.5f)
             .OnComplete(() => targetContainer.SetActive(false));
+        Tween.Scale(targetContainer.transform, endValue: 0, duration: subMenuPopupDuration, endDelay: 0.001f, ease: Ease.OutQuad)
+            .OnComplete(() =>
+            {
+                if (targetContainer.transform.localScale == Vector3.zero)
+                {
+                    targetContainer.SetActive(false);
+                    IsAPanelOpen = false;
+                }
+            });
     }
 }
