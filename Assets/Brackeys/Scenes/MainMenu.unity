@@ -513,6 +513,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Credits Element Button (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4455786192361261959, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: link
+      value: https://mckay-makes-games.itch.io/
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
