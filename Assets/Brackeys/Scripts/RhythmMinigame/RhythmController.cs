@@ -7,17 +7,22 @@ public class RhythmController : MonoBehaviour
 {
     [SerializeField] private int notesForBatch;
     [SerializeField] private int biscuitPerBatch;
-    [SerializeField] private int batchesForMultiplier;
+    [SerializeField] private int perfectNotesForMultiplier;
     [SerializeField] private int multiplierLimit;
     [SerializeField] private float newNoteTime;
     public float speed;
 
     [Space]
-    public Transform trackPerformPoint;
+    [SerializeField] Transform trackPerformPoint;
     public Transform failPoint;
 
     [Space]
+    [SerializeField] private Transform performPerfectPoint;
+    [SerializeField] private Transform failPerfectPoint;
+
+    [Space]
     [SerializeField] private GameObject main;
+    [SerializeField] private TMP_Text perfectText;
     [SerializeField] private TMP_Text produceText;
 
     [Space]
@@ -46,8 +51,8 @@ public class RhythmController : MonoBehaviour
     bool onLeft;
 
     int notesProgress;
-    int batchesProgress;
     int multiplier = 1;
+    int perfectNotes;
 
     private void Start()
     {
@@ -81,8 +86,19 @@ public class RhythmController : MonoBehaviour
         {
             if (nearestNote != null && nearestNote.transform.position.y < trackPerformPoint.position.y)
             {
-                Destroy(nearestNote.gameObject);
                 PerformNote();
+
+                if (nearestNote.transform.position.y > failPerfectPoint.position.y && nearestNote.transform.position.y < performPerfectPoint.position.y)
+                {
+                    PerformPerfectNote();
+                }
+                else
+                {
+                    perfectText.gameObject.SetActive(false);
+                    perfectNotes = 0;
+                }
+
+                Destroy(nearestNote.gameObject);
             }
             else
             {
@@ -146,32 +162,40 @@ public class RhythmController : MonoBehaviour
 
     public void PerformNote()
     {
-        notesProgress += multiplier;
+        notesProgress += 1;
 
         if (notesProgress >= notesForBatch)
         {
-            biscuitManager.Biscuit += biscuitPerBatch;
+            biscuitManager.Biscuit += biscuitPerBatch * multiplier;
             notesProgress = 0;
-
-            batchesProgress++;
-
-            if (batchesProgress >= batchesForMultiplier && multiplier < multiplierLimit)
-            {
-                multiplier++;
-                multiplierText.text = multiplier + "x";
-
-                batchesProgress = -1;
-            }
         }
 
         RectSetRight(progressBarProgress, 600 - progressBar.rect.width / notesForBatch * notesProgress);
     }
 
+    public void PerformPerfectNote()
+    {
+        perfectNotes++;
+
+        perfectText.text = "Perfect hit! (" + perfectNotes + "x)";
+        perfectText.gameObject.SetActive(true);
+
+        if (perfectNotes >= perfectNotesForMultiplier && multiplier < multiplierLimit)
+        {
+            multiplier++;
+            multiplierText.text = multiplier + "x";
+
+            perfectNotes = 0;
+        }
+    }
+
     public void ResetTracks()
     {
         notesProgress = 0;
-        batchesProgress = 0;
         multiplier = 1;
+        perfectNotes = 0;
+
+        perfectText.gameObject.SetActive(false);
 
         RectSetRight(progressBarProgress, 600 - progressBar.rect.width / notesForBatch * notesProgress);
         multiplierText.text = multiplier + "x";
