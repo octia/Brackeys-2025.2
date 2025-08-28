@@ -4,9 +4,9 @@ public class ProjectileManager : MonoBehaviour
 {
     public float lifetime = 5f;
     private float timer;
-
-    public float damageAmount = 1f;
-
+    public bool isAOEProjectile = false;
+    public GameObject aoeObject;
+    public TowerScriptableObject towerData;
     void Start()
     {
         timer = lifetime;
@@ -21,12 +21,34 @@ public class ProjectileManager : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        DogManager dog = other.GetComponentInParent<DogManager>();
-        if (dog != null)
+        if (isAOEProjectile)
         {
-            Debug.Log($"Projectile hit {dog.dogData.dogName}, dealing {damageAmount} damage.");
-            dog.TakeDamage(damageAmount);
-            Destroy(gameObject);
+            if (other.CompareTag("Dog") || other.CompareTag("Ground") || other.CompareTag("Path"))
+            {
+                if (aoeObject != null)
+                {
+                    Vector3 spawnPos = other.transform.position;
+                    spawnPos.y = 0f;
+                    GameObject aoe = Instantiate(aoeObject, spawnPos, Quaternion.identity);
+                    AOEManager aoeManager = aoe.GetComponent<AOEManager>();
+                    if (aoeManager != null)
+                    {
+                        aoeManager.towerData = towerData;
+                    }
+
+                }
+
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            DogManager dog = other.GetComponentInParent<DogManager>();
+            if (dog != null)
+            {
+                dog.TakeDamage(towerData.damageAmount);
+                Destroy(gameObject);
+            }
         }
     }
 }

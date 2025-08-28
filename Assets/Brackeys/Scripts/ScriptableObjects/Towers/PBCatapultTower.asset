@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d1440879f9bd4f418510193d76dd8c3, type: 3}
-  m_Name: CrazyDaisyTower
+  m_Name: PBCatapultTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
   towerName: Spitter Tower
-  towerCost: 20
-  attackRadius: 3
+  towerCost: 5
+  attackRadius: 10
   attackRate: 5
-  isAttackAOE: 1
-  isDamageOverTime: 1
-  damageAmount: 0.25
-  damageDuration: 2
-  enemySpeed: 0
-  towerPrefab: {fileID: 559453494342003169, guid: d6cb49b39d9717445be53b6265781d9d, type: 3}
-  projectilePrefab: {fileID: 7401666130811874402, guid: 04db2d51688515e4c82580e82f095f52, type: 3}
+  isAttackAOE: 0
+  isDamageOverTime: 0
+  damageAmount: 0.1
+  damageDuration: 15
+  enemySpeed: 0.5
+  towerPrefab: {fileID: 2381386505014974811, guid: 918def6221e519649b3774540bfcc97b, type: 3}
+  projectilePrefab: {fileID: 7401666130811874402, guid: b84d9e64eb0760e4aabf4fec745ca183, type: 3}

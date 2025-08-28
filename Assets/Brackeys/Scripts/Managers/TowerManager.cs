@@ -20,13 +20,16 @@ public class TowerManager : MonoBehaviour
     public float attackCooldown;
     private float lastRadius = 0;
     public bool abilityActive = false;
+    public bool shouldLookAtTarget = true;
+
+    private TowerUI towerUI;
 
     void Start()
     {
         Vector3 spawnPos = new Vector3(transform.position.x, towerData.towerPrefab.transform.position.y, transform.position.z);
         towerInstance = Instantiate(towerData.towerPrefab, spawnPos, Quaternion.identity, transform);
         towerInstance.AddComponent<TowerHover>().parent = this;
-
+        towerUI = towerInstance.transform.Find("UI_Canvas").GetComponent<TowerUI>();
         if (towerData.isAttackAOE)
         {
 
@@ -44,7 +47,7 @@ public class TowerManager : MonoBehaviour
         rangeIndicator = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
         rangeIndicator.transform.SetParent(transform);
         rangeIndicator.transform.localPosition = Vector3.zero;
-        rangeIndicator.GetComponent<Renderer>().material.color = new Color(0f, 1f, 0f, 0.25f);
+        rangeIndicator.GetComponent<Renderer>().material.color = new Color(0f, 0f, 1f, 0.15f);
         Destroy(rangeIndicator.GetComponent<Collider>());
         rangeIndicator.SetActive(true);
 
@@ -60,7 +63,7 @@ public class TowerManager : MonoBehaviour
             rangeCollider.radius = lastRadius / 2f;
             rangeIndicator.transform.localScale = new Vector3(lastRadius, 0.01f, lastRadius);
         }
-        if (currentTarget != null)
+        if (currentTarget != null && shouldLookAtTarget)
         {
             Vector3 lookPos = currentTarget.position - towerInstance.transform.position;
             lookPos.y = 0;
@@ -74,14 +77,22 @@ public class TowerManager : MonoBehaviour
         }
 
         attackCooldown += Time.deltaTime;
-
+        towerUI.UpdateCooldown(attackCooldown / towerData.attackRate);
         if (attackCooldown >= towerData.attackRate)
         {
-            attackCooldown = 0;
-            if (currentTarget != null && !towerData.isAttackAOE)
-                FireProjectile(currentTarget);
-            else
-                StartCoroutine(AOEAbilityCoroutine());
+            attackCooldown = towerData.attackRate;
+            if (currentTarget != null)
+            {
+                attackCooldown = 0;
+                if (towerData.isAttackAOE)
+                {
+                    StartCoroutine(AOEAbilityCoroutine());
+                }
+                else
+                {
+                    FireProjectile(currentTarget);
+                }
+            }
         }
     }
 
@@ -89,7 +100,6 @@ public class TowerManager : MonoBehaviour
     {
         if (other.CompareTag("Dog"))
         {
-            Debug.Log($"Dog entered range: {other.name}");
             dogsInRange.Add(other.transform);
 
             if (currentTarget == null)
@@ -105,8 +115,7 @@ public class TowerManager : MonoBehaviour
         {
 
             GameObject proj = Instantiate(towerData.projectilePrefab, firePoint.position, Quaternion.identity, projectileContainer.transform);
-            Debug.Log($"Firing projectile at {target.name} from {this.name}");
-            proj.GetComponent<ProjectileManager>().damageAmount = towerData.damageAmount;
+            proj.GetComponent<ProjectileManager>().towerData = towerData;
 
 
             Rigidbody projRb = proj.GetComponent<Rigidbody>();
@@ -178,7 +187,6 @@ public class TowerManager : MonoBehaviour
     {
         if (other.CompareTag("Dog"))
         {
-            Debug.Log($"Dog left range: {other.name}");
             dogsInRange.Remove(other.transform);
 
             if (other.transform == currentTarget)
@@ -213,8 +221,7 @@ public class TowerManager : MonoBehaviour
 
     public void RemoveDog(Transform dog)
     {
-        Debug.Log("CALLING TO REMOVE DOG FROM LIST");
-        dogsInRange.Remove(dog);
+        dogsInRange.RemoveAll(d => d == null || d == dog);
         if (dog == currentTarget)
             currentTarget = GetClosestDog();
     }

@@ -21,5 +21,5 @@ MonoBehaviour:
   damageAmount: 1
   damageDuration: 0
   enemySpeed: 0.5
-  towerPrefab: {fileID: 2636933689032541811, guid: 2d5faa99d29ad8849ade82a3f318b2a4, type: 3}
+  towerPrefab: {fileID: 6860334283455107405, guid: ec3d60a288421464e8bd9e4071486b84, type: 3}
   projectilePrefab: {fileID: 7401666130811874402, guid: 04db2d51688515e4c82580e82f095f52, type: 3}
