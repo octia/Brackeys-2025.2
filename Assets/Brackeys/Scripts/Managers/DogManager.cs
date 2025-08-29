@@ -22,8 +22,12 @@ public class DogManager : MonoBehaviour
     Vector3[] splinePoints;
     bool isPaused;
 
+    private CapsuleCollider myAgentsCollider;
+
+
     void Start()
     {
+
         currentHealth = dogData.dogMaxHealth;
         targetWaypoint = Waypoints.points[0];
 
@@ -36,6 +40,8 @@ public class DogManager : MonoBehaviour
         agent.speed = currentDogSpeed;
 
         splinePoints = GetSplinePoints(Waypoints.points, resolution);
+
+        myAgentsCollider = agent.GetComponent<CapsuleCollider>();
     }
 
     void Update()
@@ -94,11 +100,15 @@ public class DogManager : MonoBehaviour
     {
         isPaused = true;
         agent.ResetPath();
+        agent.isStopped = true;
         yield return new WaitForSeconds(pauseTime);
+        myAgentsCollider.radius = 0.1f;
+        myAgentsCollider.height = 0.1f;
         direction *= -1;
         waypointIndex += direction;
         waypointIndex += direction;
         waypointIndex = Mathf.Max(0, waypointIndex);
+        agent.isStopped = false;
         agent.SetDestination(splinePoints[waypointIndex]);
         isPaused = false;
     }
