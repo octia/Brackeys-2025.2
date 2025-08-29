@@ -14,4 +14,5 @@ public class TowerScriptableObject : ScriptableObject
     public float enemySpeed;
     public GameObject towerPrefab;
     public GameObject projectilePrefab;
+    public Texture icon;
 }

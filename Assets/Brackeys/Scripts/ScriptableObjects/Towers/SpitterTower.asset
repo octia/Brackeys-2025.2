@@ -23,3 +23,4 @@ MonoBehaviour:
   enemySpeed: 0.5
   towerPrefab: {fileID: 6860334283455107405, guid: ec3d60a288421464e8bd9e4071486b84, type: 3}
   projectilePrefab: {fileID: 7401666130811874402, guid: 04db2d51688515e4c82580e82f095f52, type: 3}
+  icon: {fileID: 2800000, guid: 2df115a1226996b4a95cb1b546abf775, type: 3}

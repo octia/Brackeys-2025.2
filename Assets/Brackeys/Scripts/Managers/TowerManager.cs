@@ -5,8 +5,10 @@ using System.Collections.Generic;
 public class TowerManager : MonoBehaviour
 {
     [SerializeField] bool spawnOnStart;
+
+    public GameObject builderVisual;
     
-    private TowerScriptableObject towerData;
+    [HideInInspector] public TowerScriptableObject towerData;
     private GameObject towerInstance;
     private Transform firePoint;
     private GameObject projectileContainer;
