@@ -7,11 +7,11 @@ public class UIGameSlower : MonoBehaviour
     private TimerManager timerManager;
 
     [Inject]
-    private TimerConfig timerConfig;
+    private TimerManagerConfig config;
 
     private void OnEnable()
     {
-        timerManager.RegisterGameSlower(this, timerConfig.SelectionTimeScale);
+        timerManager.RegisterGameSlower(this, config.SelectionTimeScale);
     }
 
     private void OnDisable()

@@ -11,6 +11,6 @@ public class BiscuitController : MonoBehaviour
     private void Awake()
     {
         biscuitManager.biscuitController = this;
-        biscuitManager.Biscuit = 0;
+        biscuitManager.Biscuit = biscuitManager.config.initialBiscuits;
     }
 }

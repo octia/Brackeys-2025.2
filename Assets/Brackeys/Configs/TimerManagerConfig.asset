@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d406de3564f3bdeeb1d6c54ea97270a, type: 3}
-  m_Name: TimerConfig
-  m_EditorClassIdentifier: Assembly-CSharp::TimerConfig
+  m_Name: TimerManagerConfig
+  m_EditorClassIdentifier: Assembly-CSharp::TimerManagerConfig
   <StaticTimeScaleMultiplier>k__BackingField: 1
   <NormalTimeScale>k__BackingField: 1
   <SelectionTimeScale>k__BackingField: 0.01

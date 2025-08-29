@@ -8,6 +8,7 @@ public class TowersPanel : MonoBehaviour
     [SerializeField] TowerScriptableObject[] buyableTowersData;
 
     [Space]
+    [SerializeField] GameObject towerInfoUI;
     [SerializeField] GameObject buyableTowersUI;
     [SerializeField] GameObject buyableTowerButtonInstance;
 
@@ -41,11 +42,12 @@ public class TowersPanel : MonoBehaviour
 
         if (towerManager.spawned)
         {
+            towerInfoUI.SetActive(true);
             buyableTowersUI.SetActive(false);
-            // TODO: Upgrade for the towers
         }
         else
         {
+            towerInfoUI.SetActive(false);
             buyableTowersUI.SetActive(true);
         }
     }

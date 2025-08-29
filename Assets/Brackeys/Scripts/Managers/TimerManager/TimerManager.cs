@@ -8,7 +8,7 @@ public class TimerManager
     public float TimeScale => GetTimeScale();
 
     [Inject]
-    private TimerConfig config;
+    private TimerManagerConfig config;
 
     private float timeScale = 1f;
 

@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Brackeys2025/Config/TimerConfig", fileName = "TimerConfig")]
-public class TimerConfig : ScriptableObject
+[CreateAssetMenu(menuName = "Brackeys2025/Config/TimerManagerConfig", fileName = "TimerManagerConfig")]
+public class TimerManagerConfig : ScriptableObject
 {
     [field: SerializeField]
     [field: Range(0.01f, 10f)]
