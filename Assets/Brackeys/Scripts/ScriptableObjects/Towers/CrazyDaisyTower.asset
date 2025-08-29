@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CrazyDaisyTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
   towerName: Crazy Daisy Tower
-  towerCost: 20
+  towerCost: 15
   attackRadius: 10
   attackRate: 8
   isAttackAOE: 1

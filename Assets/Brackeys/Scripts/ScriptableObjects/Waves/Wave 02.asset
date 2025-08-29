@@ -15,7 +15,7 @@ MonoBehaviour:
   waveName: Wave 02
   spawnRateRange: {x: 4, y: 7}
   dogs:
-  - dogType: {fileID: 11400000, guid: e29583496046a634eac5759e85a49bf9, type: 2}
-    count: 1
-  - dogType: {fileID: 11400000, guid: ef20de51f8c8ec34580ed09ca04868b8, type: 2}
-    count: 1
+  - dogType: {fileID: 11400000, guid: 65d7954ef25e1c740823069ba00c12c5, type: 2}
+    count: 12
+  - dogType: {fileID: 11400000, guid: 472b855eccec1ca4da4bb242f98317bd, type: 2}
+    count: 6

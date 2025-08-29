@@ -2093,8 +2093,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68783161cbe39874bb7b9b741694453f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  walkSpeed: 3
-  runSpeed: 6
+  walkSpeed: 5
+  runSpeed: 8
   canMove: 1
 --- !u!114 &568007600
 MonoBehaviour:
@@ -5446,11 +5446,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   waves:
   - {fileID: 11400000, guid: 8a7f16d8772548744b6ed5eaee6db3fc, type: 2}
-  - {fileID: 11400000, guid: 1854e78f61580504cb226ddfb4314cb0, type: 2}
-  - {fileID: 11400000, guid: 8a7f16d8772548744b6ed5eaee6db3fc, type: 2}
-  - {fileID: 11400000, guid: 1854e78f61580504cb226ddfb4314cb0, type: 2}
+  - {fileID: 11400000, guid: 3d622a5f59cf91c4fabcab7c828037c6, type: 2}
+  - {fileID: 11400000, guid: e86715af681e525429b233182b163a40, type: 2}
+  - {fileID: 11400000, guid: f86bfe6d87b1d864eb69ac19e060f151, type: 2}
+  - {fileID: 11400000, guid: 854aa9c8ea2893345b99525b982468ec, type: 2}
   spawnPoint: {fileID: 2029437327}
-  timeBetweenWaves: 5
+  timeBetweenWaves: 10
   countdown: 2
   waveIndex: 0
 --- !u!1 &2033390870
@@ -5805,6 +5806,10 @@ PrefabInstance:
     - target: {fileID: 672947553639062548, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
       propertyPath: m_Name
       value: BiscuitMakingMinigame
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: speed
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2835580950498543194, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
       propertyPath: m_IsActive
@@ -6198,11 +6203,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -329.36462
+      value: -347.8488
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.018779
+      value: -4.8188233
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalRotation.w

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1440879f9bd4f418510193d76dd8c3, type: 3}
   m_Name: PBCatapultTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
-  towerName: Spitter Tower
-  towerCost: 5
+  towerName: Peanut Butter Launcher
+  towerCost: 10
   attackRadius: 12
   attackRate: 6
   isAttackAOE: 0
