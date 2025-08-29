@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Test Dog 01
   m_EditorClassIdentifier: Assembly-CSharp::DogScriptableBehaviour
   dogName: Tester
-  dogMaxHealth: 4
-  dogSpeed: 0.8
+  dogMaxHealth: 6
+  dogSpeed: 1
   dogDamage: 10
   dogPrefab: {fileID: 5364423138266690170, guid: f246fe759987aac4eb299d68c619ddf7, type: 3}

@@ -14,13 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
   towerName: Spitter Tower
   towerCost: 5
-  attackRadius: 30
-  attackRate: 5
+  attackRadius: 12
+  attackRate: 6
   isAttackAOE: 0
   isDamageOverTime: 0
   damageAmount: 0.1
-  damageDuration: 15
+  damageDuration: 2
   enemySpeed: 0.5
   towerPrefab: {fileID: 2381386505014974811, guid: 918def6221e519649b3774540bfcc97b, type: 3}
   projectilePrefab: {fileID: 7401666130811874402, guid: b84d9e64eb0760e4aabf4fec745ca183, type: 3}
-  icon: {fileID: 2800000, guid: 2df115a1226996b4a95cb1b546abf775, type: 3}

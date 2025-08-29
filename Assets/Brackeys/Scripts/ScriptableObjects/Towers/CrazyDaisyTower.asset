@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1440879f9bd4f418510193d76dd8c3, type: 3}
   m_Name: CrazyDaisyTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
-  towerName: Spitter Tower
+  towerName: Crazy Daisy Tower
   towerCost: 20
-  attackRadius: 9
-  attackRate: 5
+  attackRadius: 10
+  attackRate: 8
   isAttackAOE: 1
   isDamageOverTime: 1
   damageAmount: 0.25
-  damageDuration: 2
+  damageDuration: 2.5
   enemySpeed: 0
   towerPrefab: {fileID: 559453494342003169, guid: d6cb49b39d9717445be53b6265781d9d, type: 3}
   projectilePrefab: {fileID: 7401666130811874402, guid: 04db2d51688515e4c82580e82f095f52, type: 3}
-  icon: {fileID: 2800000, guid: 2df115a1226996b4a95cb1b546abf775, type: 3}
