@@ -4,7 +4,9 @@ using System.Collections.Generic;
 
 public class TowerManager : MonoBehaviour
 {
-    public TowerScriptableObject towerData;
+    [SerializeField] bool spawnOnStart;
+    
+    private TowerScriptableObject towerData;
     private GameObject towerInstance;
     private Transform firePoint;
     private GameObject projectileContainer;
@@ -24,45 +26,29 @@ public class TowerManager : MonoBehaviour
 
     private TowerUI towerUI;
 
+    // ...
+    [HideInInspector] public bool spawned;
+
     void Start()
     {
-        Vector3 spawnPos = new Vector3(transform.position.x, towerData.towerPrefab.transform.position.y, transform.position.z);
-        towerInstance = Instantiate(towerData.towerPrefab, spawnPos, Quaternion.identity, transform);
-        towerInstance.AddComponent<TowerHover>().parent = this;
-        towerUI = towerInstance.transform.Find("UI_Canvas").GetComponent<TowerUI>();
-        if (towerData.isAttackAOE)
+        if (spawnOnStart)
         {
-
+            SpawnTower();
         }
-        else
-        {
-            firePoint = towerInstance.transform.Find("ProjectileDirection");
-            if (firePoint == null) firePoint = towerInstance.transform;
-            projectileContainer = new GameObject("Projectiles");
-            projectileContainer.transform.SetParent(transform);
-            projectileContainer.transform.localPosition = Vector3.zero;
-        }
-
-
-        rangeIndicator = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-        rangeIndicator.transform.SetParent(transform);
-        rangeIndicator.transform.localPosition = Vector3.zero;
-        rangeIndicator.GetComponent<Renderer>().material.color = new Color(0f, 0f, 1f, 0.15f);
-        Destroy(rangeIndicator.GetComponent<Collider>());
-        rangeIndicator.SetActive(true);
-
-        rangeCollider = this.gameObject.AddComponent<SphereCollider>();
-        rangeCollider.isTrigger = true;
     }
 
     void Update()
     {
+        if (!spawned)
+            return;
+
         if (towerData.attackRadius != lastRadius)
         {
             lastRadius = towerData.attackRadius;
             rangeCollider.radius = lastRadius / 2f;
             rangeIndicator.transform.localScale = new Vector3(lastRadius, 0.01f, lastRadius);
         }
+
         if (currentTarget != null && shouldLookAtTarget)
         {
             Vector3 lookPos = currentTarget.position - towerInstance.transform.position;
@@ -96,8 +82,45 @@ public class TowerManager : MonoBehaviour
         }
     }
 
+    public void SpawnTower()
+    {
+        spawned = true;
+
+        Vector3 spawnPos = new Vector3(transform.position.x, towerData.towerPrefab.transform.position.y, transform.position.z);
+        towerInstance = Instantiate(towerData.towerPrefab, spawnPos, Quaternion.identity, transform);
+        towerInstance.AddComponent<TowerHover>().parent = this;
+        towerUI = towerInstance.transform.Find("UI_Canvas").GetComponent<TowerUI>();
+
+        if (towerData.isAttackAOE)
+        {
+
+        }
+        else
+        {
+            firePoint = towerInstance.transform.Find("ProjectileDirection");
+            if (firePoint == null) firePoint = towerInstance.transform;
+            projectileContainer = new GameObject("Projectiles");
+            projectileContainer.transform.SetParent(transform);
+            projectileContainer.transform.localPosition = Vector3.zero;
+        }
+
+
+        rangeIndicator = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+        rangeIndicator.transform.SetParent(transform);
+        rangeIndicator.transform.localPosition = Vector3.zero;
+        rangeIndicator.GetComponent<Renderer>().material.color = new Color(0f, 0f, 1f, 0.15f);
+        Destroy(rangeIndicator.GetComponent<Collider>());
+        rangeIndicator.SetActive(true);
+
+        rangeCollider = gameObject.AddComponent<SphereCollider>();
+        rangeCollider.isTrigger = true;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+        if (!spawned)
+            return;
+
         if (other.CompareTag("Dog"))
         {
             dogsInRange.Add(other.transform);
@@ -109,11 +132,37 @@ public class TowerManager : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (!spawned)
+            return;
+
+        if (other.CompareTag("Dog") && currentTarget == null)
+        {
+            currentTarget = GetClosestDog();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!spawned)
+            return;
+
+        if (other.CompareTag("Dog"))
+        {
+            dogsInRange.Remove(other.transform);
+
+            if (other.transform == currentTarget)
+            {
+                currentTarget = GetClosestDog();
+            }
+        }
+    }
+
     void FireProjectile(Transform target)
     {
         if (towerData.projectilePrefab != null)
         {
-
             GameObject proj = Instantiate(towerData.projectilePrefab, firePoint.position, Quaternion.identity, projectileContainer.transform);
             proj.GetComponent<ProjectileManager>().towerData = towerData;
 
@@ -175,26 +224,6 @@ public class TowerManager : MonoBehaviour
             if (dog != null) dog.GetComponentInParent<DogManager>().ResetSpeed();
         }
     }
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Dog") && currentTarget == null)
-        {
-            currentTarget = GetClosestDog();
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Dog"))
-        {
-            dogsInRange.Remove(other.transform);
-
-            if (other.transform == currentTarget)
-            {
-                currentTarget = GetClosestDog();
-            }
-        }
-    }
 
     public void ShowRange(bool show)
     {
@@ -225,5 +254,4 @@ public class TowerManager : MonoBehaviour
         if (dog == currentTarget)
             currentTarget = GetClosestDog();
     }
-
 }

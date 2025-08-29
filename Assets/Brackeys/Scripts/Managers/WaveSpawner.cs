@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Reflex.Attributes;
 public class WaveSpawner : MonoBehaviour
 {
     public List<WaveScriptableObject> waves;
@@ -11,6 +12,9 @@ public class WaveSpawner : MonoBehaviour
     public float countdown = 2f;
 
     public int waveIndex = 0;
+
+    [Inject]
+    public TimerManager timerManager;
 
     void Start()
     {

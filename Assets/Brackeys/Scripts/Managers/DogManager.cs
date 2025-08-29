@@ -11,6 +11,8 @@ public class DogManager : MonoBehaviour
     private int waypointIndex = 0;
     public float currentDogSpeed = 0;
 
+    private TimerManager timerManager;
+
     void Start()
     {
         currentHealth = dogData.dogMaxHealth;
@@ -19,10 +21,17 @@ public class DogManager : MonoBehaviour
         Vector3 spawnPos = new Vector3(transform.position.x, dogData.dogPrefab.transform.position.y, transform.position.z);
         dogInstance = Instantiate(dogData.dogPrefab, spawnPos, Quaternion.identity, transform);
         currentDogSpeed = dogData.dogSpeed;
+
+        timerManager = transform.parent.GetComponent<WaveSpawner>().timerManager;
     }
 
     void Update()
     {
+        if (timerManager.IsPaused)
+        {
+            return;
+        }
+
         Vector3 dir = targetWaypoint.position - transform.position;
         transform.Translate(dir.normalized * currentDogSpeed * Time.deltaTime, Space.World);
 

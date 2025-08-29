@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UIFollower : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    public Transform target;
     [SerializeField] private RectTransform canvasRect;
 
     void LateUpdate()

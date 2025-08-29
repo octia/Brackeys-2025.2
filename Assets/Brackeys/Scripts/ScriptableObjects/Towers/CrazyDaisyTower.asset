@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
   towerName: Spitter Tower
   towerCost: 20
-  attackRadius: 3
+  attackRadius: 9
   attackRate: 5
   isAttackAOE: 1
   isDamageOverTime: 1
