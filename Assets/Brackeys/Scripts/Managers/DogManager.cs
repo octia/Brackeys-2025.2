@@ -13,7 +13,6 @@ public class DogManager : MonoBehaviour
     private Transform targetWaypoint;
     private int waypointIndex = 0;
     public float currentDogSpeed = 0;
-
     public float resolution = 10f;
     public float threshold = 0.5f;
     public float pauseTime = 2f;
@@ -21,11 +20,13 @@ public class DogManager : MonoBehaviour
 
     int direction = 1;
     Vector3[] splinePoints;
+    bool isPaused;
 
     private CapsuleCollider myAgentsCollider;
 
     [Inject]
     private TimerManager timerManager;
+
 
     void Start()
     {
@@ -50,7 +51,7 @@ public class DogManager : MonoBehaviour
 
     void Update()
     {
-        if (timerManager.IsPaused || splinePoints.Length == 0) return;
+        if (timerManager.IsPaused || isPaused || splinePoints.Length == 0) return;
         if (!agent.pathPending && agent.remainingDistance < threshold)
         {
             waypointIndex += direction;

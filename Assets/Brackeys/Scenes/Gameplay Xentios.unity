@@ -2017,7 +2017,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68783161cbe39874bb7b9b741694453f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 5
+  walkSpeed: 0
+  runSpeed: 0
   canMove: 1
 --- !u!114 &568007600
 MonoBehaviour:
@@ -2300,12 +2301,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90291b404d11b649b1c173e07ea5b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerManager
+  spawnOnStart: 0
+  builderVisual: {fileID: 0}
   towerData: {fileID: 11400000, guid: a632839630a180346ad7931f62c61c8e, type: 2}
   dogsInRange: []
   currentTarget: {fileID: 0}
   attackCooldown: 0
   abilityActive: 0
   shouldLookAtTarget: 1
+  spawned: 0
 --- !u!1 &688515776
 GameObject:
   m_ObjectHideFlags: 0
@@ -2608,12 +2612,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90291b404d11b649b1c173e07ea5b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerManager
+  spawnOnStart: 0
+  builderVisual: {fileID: 0}
   towerData: {fileID: 11400000, guid: a632839630a180346ad7931f62c61c8e, type: 2}
   dogsInRange: []
   currentTarget: {fileID: 0}
   attackCooldown: 0
   abilityActive: 0
   shouldLookAtTarget: 1
+  spawned: 0
 --- !u!1 &762632725
 GameObject:
   m_ObjectHideFlags: 0
@@ -3194,6 +3201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameplayInstaller
   playerController: {fileID: 568007600}
+  timerConfig: {fileID: 11400000, guid: c43da0baf9367db45927aeac93e9a707, type: 2}
 --- !u!1001 &913712985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3764,12 +3772,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90291b404d11b649b1c173e07ea5b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerManager
+  spawnOnStart: 0
+  builderVisual: {fileID: 0}
   towerData: {fileID: 11400000, guid: a632839630a180346ad7931f62c61c8e, type: 2}
   dogsInRange: []
   currentTarget: {fileID: 0}
   attackCooldown: 0
   abilityActive: 0
   shouldLookAtTarget: 1
+  spawned: 0
 --- !u!1 &1182610267
 GameObject:
   m_ObjectHideFlags: 0
@@ -4036,12 +4047,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90291b404d11b649b1c173e07ea5b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerManager
+  spawnOnStart: 0
+  builderVisual: {fileID: 0}
   towerData: {fileID: 11400000, guid: a632839630a180346ad7931f62c61c8e, type: 2}
   dogsInRange: []
   currentTarget: {fileID: 0}
   attackCooldown: 0
   abilityActive: 0
   shouldLookAtTarget: 1
+  spawned: 0
 --- !u!1 &1370065204
 GameObject:
   m_ObjectHideFlags: 0
@@ -4086,12 +4100,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90291b404d11b649b1c173e07ea5b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerManager
+  spawnOnStart: 0
+  builderVisual: {fileID: 0}
   towerData: {fileID: 11400000, guid: a632839630a180346ad7931f62c61c8e, type: 2}
   dogsInRange: []
   currentTarget: {fileID: 0}
   attackCooldown: 0
   abilityActive: 0
   shouldLookAtTarget: 1
+  spawned: 0
 --- !u!1 &1375857488
 GameObject:
   m_ObjectHideFlags: 0
@@ -4248,12 +4265,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90291b404d11b649b1c173e07ea5b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerManager
+  spawnOnStart: 0
+  builderVisual: {fileID: 0}
   towerData: {fileID: 11400000, guid: a632839630a180346ad7931f62c61c8e, type: 2}
   dogsInRange: []
   currentTarget: {fileID: 0}
   attackCooldown: 0
   abilityActive: 0
   shouldLookAtTarget: 1
+  spawned: 0
 --- !u!1 &1407835602
 GameObject:
   m_ObjectHideFlags: 0
@@ -5554,12 +5574,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90291b404d11b649b1c173e07ea5b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerManager
+  spawnOnStart: 0
+  builderVisual: {fileID: 0}
   towerData: {fileID: 11400000, guid: a632839630a180346ad7931f62c61c8e, type: 2}
   dogsInRange: []
   currentTarget: {fileID: 0}
   attackCooldown: 0
   abilityActive: 0
   shouldLookAtTarget: 1
+  spawned: 0
 --- !u!1 &2121440227
 GameObject:
   m_ObjectHideFlags: 0
@@ -5894,15 +5917,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -640
+      value: -640.00006
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -346.4889
+      value: -324.34842
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.3333335
+      value: -14.008209
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalRotation.w
