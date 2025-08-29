@@ -16,5 +16,5 @@ public class TowerUI : MonoBehaviour
     }
 
     public void UpdateCooldown(float t) => cooldownBar.fillAmount = t;
-    // public void UpdateHealth(float t) => healthBar.fillAmount = t;
+    public void UpdateHealth(float t) => healthBar.fillAmount = t;
 }

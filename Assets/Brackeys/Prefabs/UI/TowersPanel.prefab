@@ -453,7 +453,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -5, y: -4.9999695}
+  m_AnchoredPosition: {x: -5, y: -5}
   m_SizeDelta: {x: 45, y: 80}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &4738281288534016171
@@ -1373,7 +1373,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 240850849220343678}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8504217727470458019}
+        m_TargetAssemblyTypeName: TowersPanel, Assembly-CSharp
+        m_MethodName: UpgradeTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3231539322959568180
 GameObject:
   m_ObjectHideFlags: 0
@@ -2498,7 +2510,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8179526661197070223}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8504217727470458019}
+        m_TargetAssemblyTypeName: TowersPanel, Assembly-CSharp
+        m_MethodName: RepairTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &68134153173704407
 PrefabInstance:
   m_ObjectHideFlags: 0

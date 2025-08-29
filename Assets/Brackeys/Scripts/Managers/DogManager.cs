@@ -28,6 +28,9 @@ public class DogManager : MonoBehaviour
     [Inject]
     private TimerManager timerManager;
 
+    private Vector3 lastPos;
+    public Vector3 currentVelocity;
+
 
     void Start()
     {
@@ -76,6 +79,14 @@ public class DogManager : MonoBehaviour
             }
             agent.SetDestination(splinePoints[waypointIndex]);
         }
+
+        if (transform.childCount > 0)
+        {
+            Transform child = transform.GetChild(0);
+            currentVelocity = (child.position - lastPos) / Time.deltaTime;
+            lastPos = child.position;
+        }
+
     }
 
     public void TakeDamage(float amount)

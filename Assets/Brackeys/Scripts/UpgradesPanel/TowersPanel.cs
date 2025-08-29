@@ -29,7 +29,7 @@ public class TowersPanel : MonoBehaviour
 
             newBuyableTowerButton.GetComponent<Button>().onClick.AddListener(() => BuyTower(towerData));
             newBuyableTowerButton.GetComponentsInChildren<TMP_Text>()[0].text = towerData.towerName;
-            newBuyableTowerButton.GetComponentsInChildren<TMP_Text>()[1].text = towerData.towerCost + " Biscuits";
+            newBuyableTowerButton.GetComponentsInChildren<TMP_Text>()[1].text = towerData.levels[0].towerCost + " Biscuits";
             newBuyableTowerButton.GetComponentInChildren<RawImage>().texture = towerData.icon;
         }
     }
@@ -54,12 +54,12 @@ public class TowersPanel : MonoBehaviour
 
     public void BuyTower(TowerScriptableObject towerData)
     {
-        if (biscuitManager.Biscuit - towerData.towerCost < 1)
+        if (biscuitManager.Biscuit - towerData.levels[0].towerCost < 1)
         {
             return;
         }
 
-        biscuitManager.Biscuit -= towerData.towerCost;
+        biscuitManager.Biscuit -= Mathf.RoundToInt(towerData.levels[0].towerCost);
         currentTowerManager.towerData = towerData;
         currentTowerManager.SpawnTower();
 
@@ -71,5 +71,34 @@ public class TowersPanel : MonoBehaviour
     public void HideButton()
     {
         anim.SetTrigger("Hide");
+    }
+
+    //HEY DOUGLAS! Sorry this is so messy. I just wanted a quick and dirty, hardcoded way to call upgrade and repair!
+    //Feel free to rewrite this however you want!
+    //This was done at 3AM my time. I swear I am not this bad at coding lol
+    //I HARDEDCODED THESE FUNCTIONS INTO THE PREFAB DIRECTLY!!! Please remove em when u wanna do it through code!
+
+    public void UpgradeTower()
+    {
+        if (biscuitManager.Biscuit - currentTowerManager.towerData.levels[currentTowerManager.currentLevel].towerCost < 1)
+        {
+            return;
+        }
+
+        if (currentTowerManager.currentLevel + 1 < currentTowerManager.towerData.levels.Count)
+        {
+            biscuitManager.Biscuit -= Mathf.RoundToInt(currentTowerManager.towerData.levels[currentTowerManager.currentLevel + 1].towerCost);
+            currentTowerManager.UpgradeLevel();
+        }
+
+    }
+    public void RepairTower()
+    {
+        if (biscuitManager.Biscuit - currentTowerManager.towerData.levels[currentTowerManager.currentLevel].repairCost < 1)
+        {
+            return;
+        }
+        biscuitManager.Biscuit -= Mathf.RoundToInt(currentTowerManager.towerData.levels[currentTowerManager.currentLevel].repairCost);
+        currentTowerManager.RepairHealth();
     }
 }

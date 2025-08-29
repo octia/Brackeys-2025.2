@@ -7,6 +7,7 @@ public class ProjectileManager : MonoBehaviour
     public bool isAOEProjectile = false;
     public GameObject aoeObject;
     public TowerScriptableObject towerData;
+    public int currentLevel = 0;
     void Start()
     {
         timer = lifetime;
@@ -34,6 +35,7 @@ public class ProjectileManager : MonoBehaviour
                     if (aoeManager != null)
                     {
                         aoeManager.towerData = towerData;
+                        aoeManager.currentLevel = currentLevel;
                     }
 
                 }
@@ -46,7 +48,7 @@ public class ProjectileManager : MonoBehaviour
             DogManager dog = other.GetComponentInParent<DogManager>();
             if (dog != null)
             {
-                dog.TakeDamage(towerData.damageAmount);
+                dog.TakeDamage(towerData.levels[currentLevel].damageAmount);
                 Destroy(gameObject);
             }
         }

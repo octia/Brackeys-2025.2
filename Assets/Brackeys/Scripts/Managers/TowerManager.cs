@@ -1,15 +1,19 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Reflex.Attributes;
 
 public class TowerManager : MonoBehaviour
 {
+    public int currentLevel = 0;
     [SerializeField] bool spawnOnStart;
 
     public GameObject builderVisual;
-    
+
     [HideInInspector] public TowerScriptableObject towerData;
     private GameObject towerInstance;
+    private Animator towerAnimator;
+    private ParticleSystem towerParticles;
     private Transform firePoint;
     private GameObject projectileContainer;
 
@@ -22,13 +26,17 @@ public class TowerManager : MonoBehaviour
     private float rotationSpeed = 5f;
 
     public float attackCooldown;
+    public float currentHealth;
+    public float maxHealth;
     private float lastRadius = 0;
     public bool abilityActive = false;
-    public bool shouldLookAtTarget = true;
+    private bool isAttacking = false;
+
 
     private TowerUI towerUI;
 
-    // ...
+    [Inject]
+    private TimerManager timerManager;
     [HideInInspector] public bool spawned;
 
     void Start()
@@ -44,41 +52,81 @@ public class TowerManager : MonoBehaviour
         if (!spawned)
             return;
 
-        if (towerData.attackRadius != lastRadius)
+        if (towerData.levels[currentLevel].attackRadius != lastRadius)
         {
-            lastRadius = towerData.attackRadius;
+            lastRadius = towerData.levels[currentLevel].attackRadius;
             rangeCollider.radius = lastRadius / 2f;
             rangeIndicator.transform.localScale = new Vector3(lastRadius, 0.01f, lastRadius);
         }
-
-        if (currentTarget != null && shouldLookAtTarget)
+        if (towerData.levels[currentLevel].towerHealth != maxHealth)
         {
-            Vector3 lookPos = currentTarget.position - towerInstance.transform.position;
-            lookPos.y = 0;
-
-            if (lookPos != Vector3.zero)
-                towerInstance.transform.rotation = Quaternion.Slerp(
-                    towerInstance.transform.rotation,
-                    Quaternion.LookRotation(-lookPos),
-                    Time.deltaTime * rotationSpeed
-                );
+            maxHealth = towerData.levels[currentLevel].towerHealth;
+            if (currentHealth > maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
         }
 
-        attackCooldown += Time.deltaTime;
-        towerUI.UpdateCooldown(attackCooldown / towerData.attackRate);
-        if (attackCooldown >= towerData.attackRate)
+        if (!timerManager.IsPaused)
         {
-            attackCooldown = towerData.attackRate;
             if (currentTarget != null)
             {
-                attackCooldown = 0;
-                if (towerData.isAttackAOE)
+                if (!currentTarget.CompareTag("Dog"))
                 {
-                    StartCoroutine(AOEAbilityCoroutine());
+                    currentTarget = GetClosestDog();
                 }
-                else
+                else if (towerData.shouldLookAtTarget && currentHealth > 0)
                 {
-                    FireProjectile(currentTarget);
+                    Vector3 lookPos = currentTarget.position - towerInstance.transform.position;
+                    lookPos.y = 0;
+
+                    if (lookPos != Vector3.zero)
+                        towerInstance.transform.rotation = Quaternion.Slerp(
+                            towerInstance.transform.rotation,
+                            Quaternion.LookRotation(-lookPos),
+                            Time.deltaTime * rotationSpeed
+                        );
+                }
+            }
+
+            attackCooldown += Time.deltaTime;
+            currentHealth -= Time.deltaTime;
+            towerUI.UpdateCooldown(attackCooldown / towerData.levels[currentLevel].attackRate);
+            towerUI.UpdateHealth(currentHealth / towerData.levels[currentLevel].towerHealth);
+
+            if (currentHealth < 0)
+            {
+                currentHealth = 0;
+            }
+            else
+            {
+                if (attackCooldown >= towerData.levels[currentLevel].attackRate && currentTarget != null && !isAttacking)
+                {
+                    attackCooldown = towerData.levels[currentLevel].attackRate;
+                    towerAnimator.Play("Attack");
+                    if (towerParticles)
+                    {
+                        towerParticles.Play();
+                    }
+                    isAttacking = true;
+                }
+                if (attackCooldown >= towerData.levels[currentLevel].attackRate + towerData.animationDelay)
+                {
+                    attackCooldown = towerData.levels[currentLevel].attackRate;
+                    if (currentTarget != null)
+                    {
+                        attackCooldown = 0;
+                        if (towerData.isAttackAOE)
+                        {
+                            StartCoroutine(AOEAbilityCoroutine());
+                        }
+                        else
+                        {
+                            FireProjectile(currentTarget);
+                        }
+                        isAttacking = false;
+
+                    }
                 }
             }
         }
@@ -92,7 +140,15 @@ public class TowerManager : MonoBehaviour
         towerInstance = Instantiate(towerData.towerPrefab, spawnPos, Quaternion.identity, transform);
         towerInstance.AddComponent<TowerHover>().parent = this;
         towerUI = towerInstance.transform.Find("UI_Canvas").GetComponent<TowerUI>();
+        towerAnimator = towerInstance.GetComponentInChildren<Animator>();
+        towerParticles = towerInstance.GetComponentInChildren<ParticleSystem>();
 
+        maxHealth = towerData.levels[currentLevel].towerHealth;
+        currentHealth = maxHealth;
+        if (towerParticles)
+        {
+            towerParticles.Stop();
+        }
         if (towerData.isAttackAOE)
         {
 
@@ -112,7 +168,7 @@ public class TowerManager : MonoBehaviour
         rangeIndicator.transform.localPosition = Vector3.zero;
         rangeIndicator.GetComponent<Renderer>().material.color = new Color(0f, 0f, 1f, 0.15f);
         Destroy(rangeIndicator.GetComponent<Collider>());
-        rangeIndicator.SetActive(true);
+        rangeIndicator.SetActive(false);
 
         rangeCollider = gameObject.AddComponent<SphereCollider>();
         rangeCollider.isTrigger = true;
@@ -163,37 +219,44 @@ public class TowerManager : MonoBehaviour
 
     void FireProjectile(Transform target)
     {
-        if (towerData.projectilePrefab != null)
-        {
-            GameObject proj = Instantiate(towerData.projectilePrefab, firePoint.position, Quaternion.identity, projectileContainer.transform);
-            proj.GetComponent<ProjectileManager>().towerData = towerData;
+        if (towerData.projectilePrefab == null) return;
+        if (target == null || !target.CompareTag("Dog") || !dogsInRange.Contains(target)) return;
 
+        //towerAnimator.SetTrigger("Attack");
 
-            Rigidbody projRb = proj.GetComponent<Rigidbody>();
-            Vector3 targetPos = currentTarget.position;
-            Vector3 startPos = firePoint.position;
+        GameObject proj = Instantiate(towerData.projectilePrefab, firePoint.position, Quaternion.identity, projectileContainer.transform);
+        proj.GetComponent<ProjectileManager>().towerData = towerData;
+        proj.GetComponent<ProjectileManager>().currentLevel = currentLevel;
+        Rigidbody projRb = proj.GetComponent<Rigidbody>();
 
-            Vector3 delta = currentTarget.position - firePoint.position;
-            Vector3 deltaXZ = new Vector3(delta.x, 0, delta.z);
-            float distance = deltaXZ.magnitude;
+        Vector3 startPos = firePoint.position;
+        Vector3 targetPos = currentTarget.position;
+        Vector3 targetVel = currentTarget.GetComponentInParent<DogManager>().currentVelocity;
 
-            float height = 0f;
-            float gravity = -Physics.gravity.y;
-            float minHeight = Mathf.Max(height, delta.y + 0.5f);
-            float Vy = Mathf.Sqrt(2f * gravity * minHeight);
+        Vector3 deltaInitial = targetPos - startPos;
+        float height = towerData.levels[currentLevel].attackHeight;
+        float gravity = -Physics.gravity.y;
+        float minHeight = Mathf.Max(height, deltaInitial.y + 0.5f);
+        float Vy = Mathf.Sqrt(2f * gravity * minHeight);
+        float timeUp = Vy / gravity;
+        float timeDown = Mathf.Sqrt(2f * (minHeight - deltaInitial.y) / gravity);
+        float timeTotal = timeUp + timeDown;
 
-            float timeUp = Vy / gravity;
+        Vector3 predictedPos = targetPos + targetVel * timeTotal;
 
-            float timeDown = Mathf.Sqrt(2f * (minHeight - delta.y) / gravity);
-            float timeTotal = timeUp + timeDown;
+        Vector3 delta = predictedPos - startPos;
+        Vector3 deltaXZ = new Vector3(delta.x, 0, delta.z);
+        float distance = deltaXZ.magnitude;
+        minHeight = Mathf.Max(height, delta.y + 0.5f);
+        Vy = Mathf.Sqrt(2f * gravity * minHeight);
+        timeUp = Vy / gravity;
+        timeDown = Mathf.Sqrt(2f * (minHeight - delta.y) / gravity);
+        timeTotal = timeUp + timeDown;
 
-            float Vxz = distance / timeTotal;
-            Vector3 velocity = deltaXZ.normalized * Vxz + Vector3.up * Vy;
-            projRb.linearVelocity = velocity;
-
-            projRb.useGravity = true;
-
-        }
+        float Vxz = distance / timeTotal;
+        Vector3 velocity = deltaXZ.normalized * Vxz + Vector3.up * Vy;
+        projRb.linearVelocity = velocity;
+        projRb.useGravity = true;
     }
 
     private IEnumerator AOEAbilityCoroutine()
@@ -201,15 +264,15 @@ public class TowerManager : MonoBehaviour
         float elapsed = 0f;
         float tickRate = 1f;
 
-        while (elapsed < towerData.damageDuration)
+        while (elapsed < towerData.levels[currentLevel].damageDuration)
         {
             abilityActive = true;
             foreach (Transform dog in dogsInRange)
             {
                 if (dog != null)
                 {
-                    dog.GetComponentInParent<DogManager>().ModifySpeed(towerData.enemySpeed);   // apply slow
-                    dog.GetComponentInParent<DogManager>().TakeDamage(towerData.damageAmount); // apply tick damage
+                    dog.GetComponentInParent<DogManager>().ModifySpeed(towerData.levels[currentLevel].enemySpeed);
+                    dog.GetComponentInParent<DogManager>().TakeDamage(towerData.levels[currentLevel].damageAmount);
                 }
             }
 
@@ -219,6 +282,11 @@ public class TowerManager : MonoBehaviour
 
         attackCooldown = 0;
         abilityActive = false;
+        towerAnimator.Play("Idle");
+        if (towerParticles)
+        {
+            towerParticles.Stop();
+        }
 
         // Reset speeds at the end
         foreach (Transform dog in dogsInRange)
@@ -240,6 +308,7 @@ public class TowerManager : MonoBehaviour
         foreach (Transform dog in dogsInRange)
         {
             if (dog == null) continue;
+            if (!dog.CompareTag("Dog")) continue;
             float dist = Vector3.Distance(transform.position, dog.position);
             if (dist < minDist)
             {
@@ -252,8 +321,21 @@ public class TowerManager : MonoBehaviour
 
     public void RemoveDog(Transform dog)
     {
-        dogsInRange.RemoveAll(d => d == null || d == dog);
+        dogsInRange.RemoveAll(d => d == null || d == dog || !d.CompareTag("Dog"));
         if (dog == currentTarget)
             currentTarget = GetClosestDog();
+    }
+
+    public void UpgradeLevel()
+    {
+        if (currentLevel + 1 < towerData.levels.Count)
+        {
+            currentLevel++;
+        }
+    }
+
+    public void RepairHealth()
+    {
+        currentHealth = maxHealth;
     }
 }

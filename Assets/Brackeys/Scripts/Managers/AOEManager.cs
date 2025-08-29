@@ -6,9 +6,10 @@ public class AOEManager : MonoBehaviour
     private float timer;
     private Dictionary<DogManager, Coroutine> activeDogs = new Dictionary<DogManager, Coroutine>();
     public TowerScriptableObject towerData;
+    public int currentLevel;
     void Start()
     {
-        timer = towerData.damageDuration;
+        timer = towerData.levels[currentLevel].damageDuration;
     }
     void Update()
     {
@@ -34,7 +35,7 @@ public class AOEManager : MonoBehaviour
         DogManager dog = other.GetComponentInParent<DogManager>();
         if (dog != null)
         {
-            dog.ModifySpeed(towerData.enemySpeed);
+            dog.ModifySpeed(towerData.levels[currentLevel].enemySpeed);
             if (!activeDogs.ContainsKey(dog))
             {
                 Coroutine c = StartCoroutine(ApplyDamageOverTime(dog));
@@ -49,7 +50,7 @@ public class AOEManager : MonoBehaviour
         DogManager dog = other.GetComponentInParent<DogManager>();
         if (dog != null)
         {
-            dog.ModifySpeed(towerData.enemySpeed);
+            dog.ModifySpeed(towerData.levels[currentLevel].enemySpeed);
             if (!activeDogs.ContainsKey(dog))
             {
                 Coroutine c = StartCoroutine(ApplyDamageOverTime(dog));
@@ -76,7 +77,7 @@ public class AOEManager : MonoBehaviour
     {
         while (dog != null)
         {
-            dog.TakeDamage(towerData.damageAmount);
+            dog.TakeDamage(towerData.levels[currentLevel].damageAmount);
             yield return new WaitForSeconds(1f); // damage every second
         }
     }

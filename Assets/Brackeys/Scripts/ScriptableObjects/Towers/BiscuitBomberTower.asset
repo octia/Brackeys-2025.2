@@ -10,32 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d1440879f9bd4f418510193d76dd8c3, type: 3}
-  m_Name: SpitterTower
+  m_Name: BiscuitBomberTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
-  towerName: Spitter Tower
+  towerName: Biscuit Bomber Tower
   isAttackAOE: 0
   isDamageOverTime: 0
   shouldLookAtTarget: 1
-  animationDelay: 1.1
-  towerPrefab: {fileID: 6860334283455107405, guid: ec3d60a288421464e8bd9e4071486b84, type: 3}
+  animationDelay: 2
+  towerPrefab: {fileID: 3198328198701065408, guid: 828dfa9b72c9e6443bfff1dd78cd959e, type: 3}
   projectilePrefab: {fileID: 7401666130811874402, guid: 04db2d51688515e4c82580e82f095f52, type: 3}
   levels:
   - towerCost: 5
     attackRadius: 10
-    attackRate: 2
-    attackHeight: 1
-    damageAmount: 0
-    damageDuration: 0
-    enemySpeed: 0
-    towerHealth: 100
-    repairCost: 1
-  - towerCost: 5
-    attackRadius: 10
-    attackRate: 1
-    attackHeight: 1
+    attackRate: 10
+    attackHeight: 2
     damageAmount: 0
     damageDuration: 0
     enemySpeed: 0
     towerHealth: 100
     repairCost: 2
+  - towerCost: 5
+    attackRadius: 10
+    attackRate: 7.5
+    attackHeight: 2
+    damageAmount: 0
+    damageDuration: 0
+    enemySpeed: 0
+    towerHealth: 150
+    repairCost: 3
   icon: {fileID: 2800000, guid: 2df115a1226996b4a95cb1b546abf775, type: 3}
