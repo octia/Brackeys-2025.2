@@ -5282,7 +5282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   waves:
-  - {fileID: 11400000, guid: 8a7f16d8772548744b6ed5eaee6db3fc, type: 2}
+  - {fileID: 11400000, guid: 1854e78f61580504cb226ddfb4314cb0, type: 2}
   - {fileID: 11400000, guid: 8a7f16d8772548744b6ed5eaee6db3fc, type: 2}
   spawnPoint: {fileID: 2029437327}
   timeBetweenWaves: 5
