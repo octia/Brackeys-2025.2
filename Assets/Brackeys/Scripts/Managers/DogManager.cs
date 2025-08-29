@@ -1,6 +1,6 @@
+using Reflex.Attributes;
 using System.Collections;
 using System.Collections.Generic;
-using Reflex.Attributes;
 using UnityEngine;
 using UnityEngine.AI;
 public class DogManager : MonoBehaviour
@@ -20,9 +20,10 @@ public class DogManager : MonoBehaviour
 
     int direction = 1;
     Vector3[] splinePoints;
-    bool isPaused;
+    bool isPausedForAnimation;
 
     private CapsuleCollider myAgentsCollider;
+    private Rigidbody myAgentsRigidbody;
 
     [Inject]
     private TimerManager timerManager;
@@ -47,11 +48,23 @@ public class DogManager : MonoBehaviour
         splinePoints = GetSplinePoints(Waypoints.points, resolution);
 
         myAgentsCollider = agent.GetComponent<CapsuleCollider>();
+        myAgentsRigidbody = agent.GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        if (timerManager.IsPaused || isPaused || splinePoints.Length == 0) return;
+        if (timerManager.IsPaused == true)
+        {
+            agent.isStopped = true;
+            myAgentsRigidbody.isKinematic = true;
+        }
+        else
+        {
+            myAgentsRigidbody.isKinematic = false;
+            agent.isStopped = false;
+        }
+
+        if (isPausedForAnimation == true || splinePoints.Length == 0) return;
         if (!agent.pathPending && agent.remainingDistance < threshold)
         {
             waypointIndex += direction;
@@ -103,7 +116,7 @@ public class DogManager : MonoBehaviour
 
     IEnumerator PauseAndReverse()
     {
-        isPaused = true;
+        isPausedForAnimation = true;
         agent.ResetPath();
         agent.isStopped = true;
         yield return new WaitForSeconds(pauseTime);
@@ -115,7 +128,7 @@ public class DogManager : MonoBehaviour
         waypointIndex = Mathf.Max(0, waypointIndex);
         agent.isStopped = false;
         agent.SetDestination(splinePoints[waypointIndex]);
-        isPaused = false;
+        isPausedForAnimation = false;
     }
 
     Vector3[] GetSplinePoints(Transform[] cps, float res)
