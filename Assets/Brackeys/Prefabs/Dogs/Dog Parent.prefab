@@ -52,7 +52,7 @@ MonoBehaviour:
   pauseTime: 0.1
   offsetScale: 5
   damage: 5
-  runAwaySpeed: 5
+  runAwaySpeed: 7
   waypointLineIndex: 0
   biscuitManager: {fileID: 0}
   currentVelocity: {x: 0, y: 0, z: 0}
