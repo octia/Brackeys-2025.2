@@ -156,3 +156,11 @@ MonoBehaviour:
   isAOEProjectile: 0
   aoeObject: {fileID: 0}
   towerData: {fileID: 0}
+  currentLevel: 0
+  projectileSfx:
+    Guid:
+      Data1: 1191917371
+      Data2: 1258537262
+      Data3: -385498733
+      Data4: -2105438975
+    Path: event:/SFX/Tower/sfx_BallSqueakHit

@@ -158,6 +158,13 @@ MonoBehaviour:
   aoeObject: {fileID: 7221711936382514972, guid: d08e374dae2101945ab6443c3672b1f3, type: 3}
   towerData: {fileID: 0}
   currentLevel: 0
+  projectileSfx:
+    Guid:
+      Data1: -91449269
+      Data2: 1317749606
+      Data3: -1252882015
+      Data4: 1280968461
+    Path: event:/SFX/Tower/sfx_PBsplat
 --- !u!1001 &353625797521812227
 PrefabInstance:
   m_ObjectHideFlags: 0

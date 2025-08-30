@@ -2,6 +2,7 @@ using Reflex.Attributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class TowerManager : MonoBehaviour
 {
@@ -42,6 +43,8 @@ public class TowerManager : MonoBehaviour
 
     [Inject]
     private BiscuitManager biscuitManager;
+
+    private bool towerDownSfx = false;
 
     void Start()
     {
@@ -102,7 +105,13 @@ public class TowerManager : MonoBehaviour
             if (currentHealth < 0)
             {
                 currentHealth = 0;
+            if (!towerDownSfx)
+                {
+                    towerDownSfx = true;
+                    PlaySfx(towerData.towerDown);
+                }
             }
+            
             else
             {
                 if (biscuitManager.Biscuit - Mathf.RoundToInt(towerData.levels[currentLevel].attackCost) < 1)
@@ -115,6 +124,9 @@ public class TowerManager : MonoBehaviour
                     biscuitManager.Biscuit -= Mathf.RoundToInt(towerData.levels[currentLevel].attackCost);
                     attackCooldown = towerData.levels[currentLevel].attackRate;
                     towerAnimator.Play("Attack");
+
+                    // towerData.towerAttack
+
                     if (towerParticles)
                     {
                         towerParticles.Play();
@@ -130,10 +142,12 @@ public class TowerManager : MonoBehaviour
                         if (towerData.isAttackAOE)
                         {
                             StartCoroutine(AOEAbilityCoroutine());
+                            //play daisy sfx here
                         }
                         else
                         {
                             FireProjectile(currentTarget);
+                            PlaySfx(towerData.towerAttack);
                         }
                         isAttacking = false;
 
@@ -270,6 +284,7 @@ public class TowerManager : MonoBehaviour
         projRb.useGravity = true;
     }
 
+    // Crazy Daisy Attack
     private IEnumerator AOEAbilityCoroutine()
     {
         float elapsed = 0f;
@@ -287,6 +302,7 @@ public class TowerManager : MonoBehaviour
         while (elapsed < towerData.levels[currentLevel].damageDuration)
         {
             abilityActive = true;
+            // play daisy sfx here
             foreach (Transform dog in dogsInRange)
             {
                 if (dog != null)
@@ -304,6 +320,7 @@ public class TowerManager : MonoBehaviour
 
         attackCooldown = 0;
         abilityActive = false;
+        // end daisy sfx here
         towerAnimator.Play("Idle");
         if (towerParticles)
         {
@@ -359,5 +376,18 @@ public class TowerManager : MonoBehaviour
     public void RepairHealth()
     {
         currentHealth = maxHealth;
+        towerDownSfx = false;
     }
+
+    private void PlaySfx(EventReference sfx)
+    {
+        if (!sfx.IsNull)
+            RuntimeManager.PlayOneShot(sfx);
+    }
+
+    // private void StopSfx(EventReference sfx)
+    //{
+      //  if (!sfx.IsNull)
+        //    RuntimeManager.PlayOneShot(sfx);
+    //}
 }
