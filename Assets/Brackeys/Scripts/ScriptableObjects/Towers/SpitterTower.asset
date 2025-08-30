@@ -16,26 +16,53 @@ MonoBehaviour:
   isAttackAOE: 0
   isDamageOverTime: 0
   shouldLookAtTarget: 1
-  animationDelay: 1.1
+  animationDelay: 1.15
   towerPrefab: {fileID: 6860334283455107405, guid: ec3d60a288421464e8bd9e4071486b84, type: 3}
   projectilePrefab: {fileID: 7401666130811874402, guid: 04db2d51688515e4c82580e82f095f52, type: 3}
   levels:
   - towerCost: 5
     attackRadius: 10
+    attackRate: 3
+    attackHeight: 1
+    damageAmount: 1
+    damageDuration: 0
+    enemySpeed: 0
+    towerHealth: 45
+    repairCost: 3
+  - towerCost: 10
+    attackRadius: 10.5
+    attackRate: 2.75
+    attackHeight: 1
+    damageAmount: 1.25
+    damageDuration: 0
+    enemySpeed: 0
+    towerHealth: 55
+    repairCost: 3
+  - towerCost: 15
+    attackRadius: 11
+    attackRate: 2.5
+    attackHeight: 1
+    damageAmount: 1.5
+    damageDuration: 0
+    enemySpeed: 0
+    towerHealth: 70
+    repairCost: 3
+  - towerCost: 20
+    attackRadius: 12
     attackRate: 2
     attackHeight: 1
-    damageAmount: 0
+    damageAmount: 2
     damageDuration: 0
     enemySpeed: 0
-    towerHealth: 100
-    repairCost: 1
-  - towerCost: 5
-    attackRadius: 10
-    attackRate: 1
+    towerHealth: 85
+    repairCost: 3
+  - towerCost: 20
+    attackRadius: 12
+    attackRate: 2
     attackHeight: 1
-    damageAmount: 0
+    damageAmount: 2
     damageDuration: 0
     enemySpeed: 0
     towerHealth: 100
-    repairCost: 2
+    repairCost: 3
   icon: {fileID: 2800000, guid: 2df115a1226996b4a95cb1b546abf775, type: 3}

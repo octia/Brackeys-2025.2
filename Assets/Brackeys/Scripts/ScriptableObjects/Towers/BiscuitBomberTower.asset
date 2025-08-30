@@ -20,22 +20,49 @@ MonoBehaviour:
   towerPrefab: {fileID: 3198328198701065408, guid: 828dfa9b72c9e6443bfff1dd78cd959e, type: 3}
   projectilePrefab: {fileID: 7401666130811874402, guid: 04db2d51688515e4c82580e82f095f52, type: 3}
   levels:
-  - towerCost: 5
+  - towerCost: 20
     attackRadius: 10
+    attackRate: 12
+    attackHeight: 1.5
+    damageAmount: 100
+    damageDuration: 0
+    enemySpeed: 0
+    towerHealth: 65
+    repairCost: 6
+  - towerCost: 40
+    attackRadius: 11
+    attackRate: 11
+    attackHeight: 1.5
+    damageAmount: 100
+    damageDuration: 0
+    enemySpeed: 0
+    towerHealth: 80
+    repairCost: 6
+  - towerCost: 60
+    attackRadius: 12
     attackRate: 10
-    attackHeight: 2
-    damageAmount: 0
+    attackHeight: 1.5
+    damageAmount: 100
     damageDuration: 0
     enemySpeed: 0
     towerHealth: 100
-    repairCost: 2
-  - towerCost: 5
-    attackRadius: 10
-    attackRate: 7.5
-    attackHeight: 2
-    damageAmount: 0
+    repairCost: 6
+  - towerCost: 80
+    attackRadius: 13
+    attackRate: 8
+    attackHeight: 1.5
+    damageAmount: 100
+    damageDuration: 0
+    enemySpeed: 0
+    towerHealth: 125
+    repairCost: 6
+  - towerCost: 100
+    attackRadius: 14
+    attackRate: 5
+    attackHeight: 1.5
+    damageAmount: 100
     damageDuration: 0
     enemySpeed: 0
     towerHealth: 150
-    repairCost: 3
+    repairCost: 6
   icon: {fileID: 2800000, guid: 2df115a1226996b4a95cb1b546abf775, type: 3}
