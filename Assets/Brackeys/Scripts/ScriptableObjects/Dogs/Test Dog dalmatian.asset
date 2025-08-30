@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DogScriptableBehaviour
   dogName: Dalmatian
   dogMaxHealth: 6
-  dogSpeed: 1.1
+  dogSpeed: 0.9
   dogDamage: 15
   dogPrefab: {fileID: 4590087052704925908, guid: d34c5c97890b73a4597e9b6e469278c6, type: 3}
