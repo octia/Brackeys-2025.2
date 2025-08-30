@@ -8,54 +8,44 @@ public class SceneAudio : MonoBehaviour
     [SerializeField] private EventReference musicEvent;
     [SerializeField] private float fadeTime = 1.25f;
     [SerializeField] private float delayBeforeStart = 1f;
-    [SerializeField] private float musicVolume = 1f;
 
     [Header("Ambient Settings")]
+    [SerializeField] private EventReference ambientEvent;
     [SerializeField] private float ambientFadeTime = 1f;
-    [SerializeField] private float mainMenuAmbientVolume = 1f;
-    [SerializeField] private float otherScenesAmbientVolume = 0f;
-
-    private bool firstLoad = true;
 
     private void Start()
     {
         if (AudioManager.Instance == null) return;
 
-        AudioManager.Instance.SetMusicVolume(musicVolume);
-
         string sceneName = SceneManager.GetActiveScene().name;
 
-        // --- Scene Music ---
-        if (sceneName == "MainMenu" && firstLoad)
-        {
-            // Start Main Menu music instantly on first load
+        // --- Music ---
+        if (sceneName == "MainMenu")
             AudioManager.Instance.PlayMusicInstant(musicEvent);
-            firstLoad = false;
-        }
         else
-        {
-            // Fade in normally for all other cases
             AudioManager.Instance.PlayMusic(musicEvent, fadeTime, delayBeforeStart);
-        }
 
         // --- Ambient ---
-        AudioManager.Instance.StartAmbient();
+        AudioManager.Instance.StartAmbient(ambientEvent);
 
-        float initialAmbientVolume = (sceneName == "MainMenu") ? mainMenuAmbientVolume : otherScenesAmbientVolume;
-        AudioManager.Instance.FadeAmbient(initialAmbientVolume, ambientFadeTime);
+        float initialAmbient = (sceneName == "MainMenu")
+            ? AudioManager.Instance.DefaultAmbientVolume
+            : 0f;
+
+        AudioManager.Instance.FadeAmbient(initialAmbient, ambientFadeTime);
     }
 
     // --- Minigame Controls ---
-    public void OnMinigameStart(float targetVolume = 1f)
+    public void OnMinigameStart()
     {
         if (AudioManager.Instance != null)
-            AudioManager.Instance.FadeAmbient(targetVolume, ambientFadeTime);
+            AudioManager.Instance.FadeAmbient(AudioManager.Instance.DefaultAmbientVolume, ambientFadeTime);
     }
 
-    public void OnMinigameEnd(float targetVolume = 0f)
+    public void OnMinigameEnd()
     {
         if (AudioManager.Instance != null)
-            AudioManager.Instance.FadeAmbient(targetVolume, ambientFadeTime);
+            AudioManager.Instance.FadeAmbient(0f, ambientFadeTime);
     }
 
     private void OnDestroy()

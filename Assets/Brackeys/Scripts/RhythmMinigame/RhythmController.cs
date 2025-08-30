@@ -2,6 +2,7 @@ using Reflex.Attributes;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FMODUnity;
 
 public class RhythmController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class RhythmController : MonoBehaviour
     [SerializeField] private int multiplierLimit;
     [SerializeField] private float newNoteTime;
     public float speed;
+    
+    [SerializeField] private EventReference minigameMusic;
 
     [Space]
     [SerializeField] Transform trackPerformPoint;
@@ -19,22 +22,28 @@ public class RhythmController : MonoBehaviour
     [Space]
     [SerializeField] private Transform performPerfectPoint;
     [SerializeField] private Transform failPerfectPoint;
+    [SerializeField] private EventReference missedNoteSfx;
 
     [Space]
     [SerializeField] private GameObject main;
     [SerializeField] private TMP_Text perfectText;
     [SerializeField] private TMP_Text produceText;
+    [SerializeField] private EventReference minigameStartSfx;
+    [SerializeField] private EventReference minigameExitSfx;
 
     [Space]
     [SerializeField] private RectTransform progressBar;
     [SerializeField] private RectTransform progressBarProgress;
     [SerializeField] private TMP_Text multiplierText;
+    [SerializeField] private EventReference multiplierSfx;
 
     [Space]
     [SerializeField] private Transform leftTrack;
     [SerializeField] private Transform rightTrack;
     [SerializeField] private GameObject leftNote;
     [SerializeField] private GameObject rightNote;
+    [SerializeField] private EventReference leftNoteSfx;
+    [SerializeField] private EventReference rightNoteSfx;
 
     // ...
     private InputAction leftPerformInput;
@@ -55,10 +64,14 @@ public class RhythmController : MonoBehaviour
     int perfectNotes;
     int multiplierProgress;
 
+    private SceneAudio sceneAudio;
+
     private void Start()
     {
         leftPerformInput = InputSystem.actions.FindAction("ANote");
         rightPerformInput = InputSystem.actions.FindAction("DNote");
+        
+        sceneAudio = FindObjectOfType<SceneAudio>();
     }
 
     private void Update()
@@ -75,12 +88,14 @@ public class RhythmController : MonoBehaviour
         {
             nearestNote = leftTrack.GetChild(0);
             performed = true;
+            PlayButtonSfx(leftNoteSfx);
         }
 
         if (rightPerformInput.WasPressedThisFrame())
         {
             nearestNote = rightTrack.GetChild(0);
             performed = true;
+            PlayButtonSfx(rightNoteSfx);
         }
 
         if (performed)
@@ -114,6 +129,7 @@ public class RhythmController : MonoBehaviour
             else
             {
                 ResetTracks();
+                PlayButtonSfx(missedNoteSfx);
             }
         }
 
@@ -143,15 +159,17 @@ public class RhythmController : MonoBehaviour
         {
             produceText.text = "Leave";
 
+            PlayButtonSfx(minigameStartSfx);
+
             ResetTracks();
 
             // Start ambience/music when active
             if (AudioManager.Instance != null)
             {
                 // Fade ambience in
-                AudioManager.Instance.FadeAmbient(1f, 1.5f);
+                sceneAudio?.OnMinigameStart();
 
-                // Or play specific music
+                // Fade minigame music in
                 // AudioManager.Instance.PlayMusic(produceMusicEvent, 1.5f);
             }
         }
@@ -159,15 +177,20 @@ public class RhythmController : MonoBehaviour
         {
             produceText.text = "Bake";
 
+            PlayButtonSfx(minigameExitSfx);
+
             // Stop ambience/music when deactivated
             if (AudioManager.Instance != null)
             {
                 // Fade ambience out
-                AudioManager.Instance.FadeAmbient(0f, 1.5f);
+                sceneAudio?.OnMinigameEnd();
 
-                // Or stop current music
+                // Fade minigame music out
                 // AudioManager.Instance.FadeMusic(0f, 1.5f, stopAfterFade: true);
             }
+
+
+
         }
     }
 
@@ -179,6 +202,7 @@ public class RhythmController : MonoBehaviour
         {
             biscuitManager.Biscuit += biscuitPerBatch * multiplier;
             notesProgress = 0;
+            PlayButtonSfx(multiplierSfx);
         }
 
         RectSetRight(progressBarProgress, 600 - progressBar.rect.width / notesForBatch * notesProgress);
@@ -214,7 +238,7 @@ public class RhythmController : MonoBehaviour
 
         for (int i = 1; i < rightTrackNotes.Length; i++)
         {
-            Destroy(rightTrackNotes[i].gameObject);
+           Destroy(rightTrackNotes[i].gameObject);
         }
     }
 
@@ -222,4 +246,11 @@ public class RhythmController : MonoBehaviour
     {
         rect.offsetMax = new Vector2(-right, rect.offsetMax.y);
     }
+
+    private void PlayButtonSfx(EventReference sfx)
+    {
+        if (!sfx.IsNull)
+            RuntimeManager.PlayOneShot(sfx);
+    }
+
 }

@@ -196,18 +196,11 @@ MonoBehaviour:
   subMenuPopupDuration: 0.5
   buttonClickSfx:
     Guid:
-      Data1: -1534327305
-      Data2: 1136165659
-      Data3: 2098434466
-      Data4: -1434741251
-    Path: event:/SFX/UI/sfx_MeowSelectClick
-  buttonGameStartClickSfx:
-    Guid:
-      Data1: 891188930
-      Data2: 1199431193
-      Data3: -717720920
-      Data4: -2024361949
-    Path: event:/SFX/UI/sfx_MeowGameStart
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   mainMenuButtonsContainer: {fileID: 716789840}
   htpContainer: {fileID: 1247970435}
   optionsContainer: {fileID: 1329080872}
@@ -312,7 +305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
       propertyPath: m_fontSize
-      value: 36.4
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -430,7 +423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
       propertyPath: m_fontSize
-      value: 36.4
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -1464,7 +1457,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
       propertyPath: m_fontSize
-      value: 36.4
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
       propertyPath: m_Pivot.x
@@ -1997,7 +1990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
       propertyPath: m_fontSize
-      value: 36.4
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -2148,7 +2141,7 @@ MonoBehaviour:
       Data3: -1542035802
       Data4: -489003508
     Path: event:/Music/mus_MainMenu_loop
-  fadeTime: 2
+  fadeTime: 1.25
   delayBeforeStart: 0
   ambientEvent:
     Guid:
@@ -2157,7 +2150,7 @@ MonoBehaviour:
       Data3: -12527474
       Data4: -1547284039
     Path: event:/Music/mus_CatPurr_loop
-  ambientFadeTime: 2
+  ambientFadeTime: 1.25
 --- !u!1001 &825734035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2335,7 +2328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
       propertyPath: m_fontSize
-      value: 36.4
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -2931,7 +2924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
       propertyPath: m_fontSize
-      value: 39.3
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
       propertyPath: m_overflowMode
@@ -3811,7 +3804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
       propertyPath: m_fontSize
-      value: 36.4
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -4114,7 +4107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
       propertyPath: m_fontSize
-      value: 36.4
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
       propertyPath: m_fontColor32.rgba

@@ -2,6 +2,7 @@ using Reflex.Attributes;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class TowersPanel : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class TowersPanel : MonoBehaviour
     [SerializeField] GameObject towerInfoUI;
     [SerializeField] GameObject buyableTowersUI;
     [SerializeField] GameObject buyableTowerButtonInstance;
+    [SerializeField] private EventReference towerBuildSfx;
+    [SerializeField] private EventReference towerUpgradeSfx;
+    [SerializeField] private EventReference towerUpkeepSfx;
 
     [Space]
     [SerializeField] RawImage infoIcon;
@@ -81,11 +85,14 @@ public class TowersPanel : MonoBehaviour
         currentTowerManager.builderVisual.SetActive(false);
 
         HideButton();
+        PlayButtonSfx(towerBuildSfx);
     }
 
     public void HideButton()
     {
         anim.SetTrigger("Hide");
+
+        // PlayButtonSfx();
     }
 
     //HEY DOUGLAS! Sorry this is so messy. I just wanted a quick and dirty, hardcoded way to call upgrade and repair!
@@ -109,6 +116,7 @@ public class TowersPanel : MonoBehaviour
             infoUpgradeCostText.text = currentTowerManager.towerData.levels[currentTowerManager.currentLevel].towerCost + "b";
         }
 
+        PlayButtonSfx(towerUpgradeSfx);
     }
 
     public void RepairTower()
@@ -120,5 +128,15 @@ public class TowersPanel : MonoBehaviour
 
         biscuitManager.Biscuit -= Mathf.RoundToInt(currentTowerManager.towerData.levels[currentTowerManager.currentLevel].repairCost);
         currentTowerManager.RepairHealth();
+
+        PlayButtonSfx(towerUpkeepSfx);
+
     }
+
+    private void PlayButtonSfx(EventReference sfx)
+    {
+        if (!sfx.IsNull)
+            RuntimeManager.PlayOneShot(sfx);
+    }
+
 }

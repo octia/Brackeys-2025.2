@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
 public class MainMenuUi : MonoBehaviour
 {
     [SerializeField] private Canvas mainCanvas;
     [SerializeField] private float subMenuPopupDuration = 0.5f;
     [SerializeField] private EventReference buttonClickSfx;
+    [SerializeField] private EventReference buttonGameStartClickSfx;
 
     private string mainGameLevelName = "Gameplay";
 
@@ -31,6 +31,7 @@ public class MainMenuUi : MonoBehaviour
     private Button creditsBackButton;
 
     private bool IsAPanelOpen = false;
+
     void Awake()
     {
         mainCanvas = GameObject.Find("MainCanvas")?.GetComponent<Canvas>();
@@ -74,12 +75,13 @@ public class MainMenuUi : MonoBehaviour
         creditsContainer.transform.localScale = Vector3.zero;
     }
 
-    private void PlayButtonSfx()
+    private void PlayButtonSfx(EventReference? sfxOverride = null)
     {
-        if (!buttonClickSfx.IsNull)
-            RuntimeManager.PlayOneShot(buttonClickSfx);
-    }
+        EventReference sfxToPlay = sfxOverride.HasValue ? sfxOverride.Value : buttonClickSfx;
 
+        if (!sfxToPlay.IsNull)
+            RuntimeManager.PlayOneShot(sfxToPlay);
+    }
 
     private void OnDestroy()
     {
@@ -97,21 +99,14 @@ public class MainMenuUi : MonoBehaviour
     private void OnPlayClicked()
     {
         Debug.Log("Play button clicked");
-        PlayButtonSfx();
+        PlayButtonSfx(buttonGameStartClickSfx);
 
-        if (AudioManager.Instance != null)
-        {
-            // Optional: fade ambient and menu music while loading the scene immediately
+        // Fade ambient out immediately
+        // if (AudioManager.Instance != null)
             AudioManager.Instance.FadeAmbient(0f, 1f);
-            AudioManager.Instance.FadeMusic(0f, 1f); // You�ll need a FadeMusic method in AudioManager
 
-            // Load scene immediately
-            SceneManager.LoadScene(mainGameLevelName);
-        }
-        else
-        {
-            SceneManager.LoadScene(mainGameLevelName);
-        }
+        // Load scene normally
+        SceneManager.LoadScene(mainGameLevelName);
     }
 
     private void OnQuitClicked()
@@ -123,7 +118,6 @@ public class MainMenuUi : MonoBehaviour
 
     private void OnOpenSubMenu(GameObject targetContainer)
     {
-
         if (IsAPanelOpen == true) return;
         PlayButtonSfx();
         IsAPanelOpen = true;
