@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Master volume
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4c2a792f20ac3954e9778e695fae0506, type: 2}
-  m_sharedMaterial: {fileID: 8570082003902111082, guid: 4c2a792f20ac3954e9778e695fae0506, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f5dcedd55997d3a28d72abe144c0da4, type: 2}
+  m_sharedMaterial: {fileID: 1640055349771125170, guid: 2f5dcedd55997d3a28d72abe144c0da4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
