@@ -99,10 +99,6 @@ MonoBehaviour:
     multiplier: 2
   - cost: 30
     multiplier: 3
-  - cost: 40
-    multiplier: 4
-  - cost: 50
-    multiplier: 5
   produceButton: {fileID: 0}
   rhythmController: {fileID: 0}
   currentMaxBiscuitLevel: 0
