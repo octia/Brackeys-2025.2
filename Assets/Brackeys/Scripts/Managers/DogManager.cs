@@ -37,7 +37,7 @@ public class DogManager : MonoBehaviour
 
     private Transform exit;
     private bool isRunningAway = false;
-    
+
     void Start()
     {
         currentHealth = dogData.dogMaxHealth;
@@ -136,6 +136,12 @@ public class DogManager : MonoBehaviour
     {
         currentDogSpeed = dogData.dogSpeed;
         agent.speed = currentDogSpeed;
+    }
+
+    public void LookAtTarget(Vector3 target)
+    {
+        agent.transform.rotation = Quaternion.LookRotation(target - agent.transform.position, Vector3.up);
+        anim.SetTrigger("Distract");
     }
 
     void RunAway()
