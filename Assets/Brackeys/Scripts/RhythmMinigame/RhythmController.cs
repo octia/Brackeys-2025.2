@@ -197,6 +197,7 @@ public class RhythmController : MonoBehaviour
         notesProgress = 0;
         multiplier = 1;
         perfectNotes = 0;
+        multiplierProgress = 0;
 
         perfectText.gameObject.SetActive(false);
 
