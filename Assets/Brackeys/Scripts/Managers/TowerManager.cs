@@ -95,7 +95,7 @@ public class TowerManager : MonoBehaviour
 
             attackCooldown += Time.deltaTime;
             currentHealth -= Time.deltaTime;
-            towerUI.UpdateCooldown(attackCooldown / towerData.levels[currentLevel].attackRate);
+            towerUI.UpdateCooldown(attackCooldown / (towerData.levels[currentLevel].attackRate + towerData.animationDelay));
             towerUI.UpdateHealth(currentHealth / towerData.levels[currentLevel].towerHealth);
 
             if (currentHealth < 0)

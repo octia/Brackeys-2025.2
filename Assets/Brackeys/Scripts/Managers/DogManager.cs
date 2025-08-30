@@ -13,7 +13,7 @@ public class DogManager : MonoBehaviour
     private int waypointIndex = 0;
     public float currentDogSpeed = 0;
     public float resolution = 10f;
-    public float threshold = 0.5f;
+    public float threshold = 0.05f;
     public float pauseTime = 2f;
     public float offsetScale = 5f;
     public int damage = 5;
@@ -35,6 +35,9 @@ public class DogManager : MonoBehaviour
 
     private Animator anim;
 
+    private Transform exit;
+    private bool isRunningAway = false;
+    
     void Start()
     {
         currentHealth = dogData.dogMaxHealth;
@@ -57,6 +60,7 @@ public class DogManager : MonoBehaviour
         myAgentsRigidbody = agent.GetComponent<Rigidbody>();
 
         anim = GetComponentInChildren<Animator>();
+        exit = GameObject.FindGameObjectWithTag("Exit").transform;
     }
 
     void Update()
@@ -77,20 +81,32 @@ public class DogManager : MonoBehaviour
         }
 
         if (isPausedForAnimation == true || splinePoints.Length == 0) return;
+
+
         if (!agent.pathPending && agent.remainingDistance < threshold)
         {
-            waypointIndex += direction;
-            if (waypointIndex >= splinePoints.Length || waypointIndex < 0)
+            if (isRunningAway == true)
             {
                 Destroy(gameObject);
-
-                // TODO: Change the amount of damage to be based on bakery upgrade
-                biscuitManager.Biscuit -= damage;
-
-                return;
             }
-            agent.SetDestination(splinePoints[waypointIndex]);
+            else
+            {
+                waypointIndex += direction;
+                if (waypointIndex >= splinePoints.Length || waypointIndex < 0)
+                {
+                    RunAway();
+                    //reach to end and do stuff about that
+                    // TODO: Change the amount of damage to be based on bakery upgrade
+                    biscuitManager.Biscuit -= damage;
+
+                    return;
+                }
+                agent.SetDestination(splinePoints[waypointIndex]);
+            }
+
         }
+
+
 
         if (transform.childCount > 0)
         {
@@ -139,20 +155,19 @@ public class DogManager : MonoBehaviour
 
     IEnumerator PauseAndReverse()
     {
+
         isPausedForAnimation = true;
         agent.ResetPath();
         agent.isStopped = true;
         yield return new WaitForSeconds(pauseTime);
+        isRunningAway = true;
         ModifySpeed(runAwaySpeed);
         myAgentsCollider.radius = 0.1f;
         myAgentsCollider.height = 0.1f;
         direction *= -1;
-        waypointIndex += direction;
-        waypointIndex += direction;
-        waypointIndex = Mathf.Max(0, waypointIndex);
         waypointIndex = 0;
         agent.isStopped = false;
-        agent.SetDestination(splinePoints[waypointIndex]);
+        agent.SetDestination(exit.position);
         isPausedForAnimation = false;
     }
 

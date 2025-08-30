@@ -6,7 +6,7 @@ public class WaveSpawner : MonoBehaviour
 {
     public List<WaveScriptableObject> waves;
     public Transform spawnPoint;
-    //public Transform dogPrefab;
+    public GameObject dogPrefab;
 
     public float timeBetweenWaves = 5f;
     public float countdown = 2f;
@@ -45,8 +45,10 @@ public class WaveSpawner : MonoBehaviour
                 DogScriptableBehaviour dog = spawnPool[randomIndex];
                 spawnPool.RemoveAt(randomIndex);
 
-                GameObject dogGO = new GameObject(dog.dogName);
-                DogManager dogManager = dogGO.AddComponent<DogManager>();
+                //GameObject dogGO = new GameObject(dog.dogName);
+                //DogManager dogManager = dogGO.AddComponent<DogManager>();
+                GameObject dogGO = Instantiate(dogPrefab);
+                var dogManager = dogGO.GetComponent<DogManager>();
                 dogManager.dogData = dog;
                 dogManager.waypointLineIndex = Random.Range(0, Waypoints.pointsList.Count);
                 dogManager.timerManager = timerManager;
