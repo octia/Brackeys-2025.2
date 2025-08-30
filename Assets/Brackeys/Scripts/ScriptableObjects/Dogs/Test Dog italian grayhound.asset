@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DogScriptableBehaviour
   dogName: Italian Greyhound
   dogMaxHealth: 2
-  dogSpeed: 1.75
+  dogSpeed: 1.65
   dogDamage: 5
   dogPrefab: {fileID: 4590087052704925908, guid: d9bce085354e21949837676329bc388b, type: 3}

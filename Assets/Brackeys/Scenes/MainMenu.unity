@@ -842,6 +842,124 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1910660858996041560, guid: 62052002930442244bc8efdc7677ccf1, type: 3}
   m_PrefabInstance: {fileID: 893684680}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &221406180
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1657881129}
+    m_Modifications:
+    - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_text
+      value: " Code \n<color=white><size=50%>by</size></color>\nOctia"
+      objectReference: {fileID: 0}
+    - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_fontSize
+      value: 36.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278226175
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261599206585383440, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_Name
+      value: Credits Element Button (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455786192361261959, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: link
+      value: https://octia.itch.io/
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+--- !u!224 &221406181 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+  m_PrefabInstance: {fileID: 221406180}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &233486636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1586,6 +1704,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Credits Element Button
       objectReference: {fileID: 0}
+    - target: {fileID: 4455786192361261959, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: link
+      value: 'https://ghostelight.itch.io/ '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2125,6 +2247,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Credits Element Button (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4455786192361261959, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: link
+      value: https://tyckou.itch.io/
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2470,6 +2596,10 @@ PrefabInstance:
     - target: {fileID: 4261599206585383440, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
       propertyPath: m_Name
       value: Credits Element Button (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455786192361261959, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: link
+      value: https://itch.io/profile/vaquariis
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3082,6 +3212,10 @@ PrefabInstance:
     - target: {fileID: 4261599206585383440, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
       propertyPath: m_Name
       value: Credits Element Button (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455786192361261959, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: link
+      value: 'https://linktr.ee/douglas.asted '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4133,6 +4267,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Credits Element Button (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4455786192361261959, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: link
+      value: https://zachbrunomusic.itch.io/
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4174,14 +4312,16 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 573201769}
   - {fileID: 131645040}
-  - {fileID: 1229322496}
+  - {fileID: 573201769}
   - {fileID: 889096358}
   - {fileID: 779187401}
   - {fileID: 1530051621}
+  - {fileID: 1229322496}
   - {fileID: 1963002086}
   - {fileID: 112428256}
+  - {fileID: 221406181}
+  - {fileID: 1893857072}
   m_Father: {fileID: 2037801801}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
@@ -4209,7 +4349,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 400, y: 200}
+  m_CellSize: {x: 350, y: 200}
   m_Spacing: {x: 36.21, y: 30.57}
   m_Constraint: 2
   m_ConstraintCount: 2
@@ -4252,6 +4392,124 @@ CanvasRenderer:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1910660858996041560, guid: 62052002930442244bc8efdc7677ccf1, type: 3}
   m_PrefabInstance: {fileID: 1155575421}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1893857071
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1657881129}
+    m_Modifications:
+    - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_text
+      value: " Code \n<color=white><size=50%>by</size></color>\nLophane"
+      objectReference: {fileID: 0}
+    - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 540820565792150029, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278226175
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4261599206585383440, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: m_Name
+      value: Credits Element Button (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455786192361261959, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: link
+      value: 'https://trickster-forge.itch.io/ '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+--- !u!224 &1893857072 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2931957718116755193, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+  m_PrefabInstance: {fileID: 1893857071}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1956005979
 GameObject:
@@ -4435,6 +4693,10 @@ PrefabInstance:
     - target: {fileID: 4261599206585383440, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
       propertyPath: m_Name
       value: Credits Element Button (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455786192361261959, guid: bde3bb925b43c9d4eb900d5e0ca4f439, type: 3}
+      propertyPath: link
+      value: 'https://danish-gamedev.itch.io/ '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

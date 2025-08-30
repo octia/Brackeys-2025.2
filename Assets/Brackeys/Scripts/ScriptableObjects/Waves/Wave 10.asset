@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac479651d514914ea41ae8ff667b608, type: 3}
+  m_Name: Wave 10
+  m_EditorClassIdentifier: Assembly-CSharp::WaveScriptableObject
+  waveName: Wave 10
+  spawnRateRange: {x: 1, y: 3}
+  dogs:
+  - dogType: {fileID: 11400000, guid: 65d7954ef25e1c740823069ba00c12c5, type: 2}
+    count: 38
+  - dogType: {fileID: 11400000, guid: a5f15fd39b057bf4eba9744ff7befb83, type: 2}
+    count: 35
+  - dogType: {fileID: 11400000, guid: 472b855eccec1ca4da4bb242f98317bd, type: 2}
+    count: 40

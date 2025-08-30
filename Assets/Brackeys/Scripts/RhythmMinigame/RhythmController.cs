@@ -45,6 +45,9 @@ public class RhythmController : MonoBehaviour
     [SerializeField] private EventReference leftNoteSfx;
     [SerializeField] private EventReference rightNoteSfx;
 
+    [Space]
+    [SerializeField] private BakeryController bakeryController;
+
     // ...
     private InputAction leftPerformInput;
     private InputAction rightPerformInput;
@@ -156,6 +159,7 @@ public class RhythmController : MonoBehaviour
     {
         main.SetActive(!main.activeSelf);
 
+        bakeryController.infoButton.SetActive(!main.activeSelf);
         playerController.movement.canMove = !main.activeSelf;
         playerController.visual.gameObject.SetActive(!main.activeSelf);
 
@@ -200,6 +204,7 @@ public class RhythmController : MonoBehaviour
 
     public void PerformNote()
     {
+        print(biscuitPerBatch * baseMultiplier * multiplier);
         notesProgress += 1;
 
         if (notesProgress >= notesForBatch)

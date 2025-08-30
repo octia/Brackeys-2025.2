@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Wave 5
   m_EditorClassIdentifier: Assembly-CSharp::WaveScriptableObject
   waveName: Wave 5
-  spawnRateRange: {x: 1, y: 4}
+  spawnRateRange: {x: 5, y: 8}
   dogs:
   - dogType: {fileID: 11400000, guid: 65d7954ef25e1c740823069ba00c12c5, type: 2}
-    count: 32
+    count: 6
   - dogType: {fileID: 11400000, guid: a5f15fd39b057bf4eba9744ff7befb83, type: 2}
-    count: 36
+    count: 4
   - dogType: {fileID: 11400000, guid: 472b855eccec1ca4da4bb242f98317bd, type: 2}
-    count: 18
+    count: 2

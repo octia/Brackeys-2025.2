@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a740502731dab025bdeccf416ca83a4, type: 3}
+  m_Name: ShipIntroTutorial
+  m_EditorClassIdentifier: 
+  <ShouldBlockInteraction>k__BackingField: 1
+  <ShouldBeSkippable>k__BackingField: 1
+  <ChainType>k__BackingField: 2
+  <Dialogues>k__BackingField:
+  - <Message>k__BackingField: "Alright kid, here\u2019s where things start getting
+      tricky. Several objects are approaching, and you gotta pick which one to approve."
+    <IconOverride>k__BackingField: {fileID: 21300000, guid: 12271be7b6dbe0943b30a3c458b60890, type: 3}
+  - <Message>k__BackingField: "Fortunately, the ships and satellites you have right
+      now stop moving while making your choice. When you hover over a choice, you\u2019ll
+      see what their preferred orbit would be."
+    <IconOverride>k__BackingField: {fileID: 21300000, guid: b4bbc7d15be8fb3418c68d09405fd50e, type: 3}
+  - <Message>k__BackingField: "Once you make your choice, a new ship will enter from
+      either above or below the other orbits, so they usually won\u2019t crash immediately."
+    <IconOverride>k__BackingField: {fileID: 21300000, guid: 1229d9a81f257254d9cb2e43ecd8b7b8, type: 3}

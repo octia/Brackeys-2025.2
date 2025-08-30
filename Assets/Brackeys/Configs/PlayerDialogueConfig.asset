@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c114ca98d9e1e58a1b5deea0e8af0f50, type: 3}
+  m_Name: PlayerDialogueConfig
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDialogueConfig
+  <PlayerDialogueChains>k__BackingField:
+  - {fileID: 11400000, guid: 6e2d4e9680d6fb2a69ab5e70f982d1ca, type: 2}
+  - {fileID: 11400000, guid: e7f262af25d8a358fa1ac65bb05e8016, type: 2}
+  - {fileID: 11400000, guid: e29b0d704758968519994373bc3d9209, type: 2}
+  - {fileID: 11400000, guid: fefcc201978df09f0a71877e1c7884c6, type: 2}
+  - {fileID: 11400000, guid: 21934f987e505fd6297b291aa6c877f5, type: 2}
+  - {fileID: 11400000, guid: 9d505ee31cc68108e8a7d6301b52367c, type: 2}
+  <CharactersPerSecond>k__BackingField: 20
+  <DefaultIcon>k__BackingField: {fileID: 21300000, guid: 3948016081c12584488842d3d3acabb7, type: 3}

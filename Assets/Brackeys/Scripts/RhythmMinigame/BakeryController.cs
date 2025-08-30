@@ -10,6 +10,7 @@ public class BakeryController : MonoBehaviour
 
     [Space]
     [SerializeField] private GameObject produceButton;
+    [SerializeField] public GameObject infoButton;
 
     [Space]
     [SerializeField] private RhythmController rhythmController;
