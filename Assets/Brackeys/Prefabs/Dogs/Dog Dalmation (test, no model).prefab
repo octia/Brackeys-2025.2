@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4541525816287619135}
   - component: {fileID: -6406872279054024758}
   m_Layer: 7
-  m_Name: Dog Corki
+  m_Name: Dog Dalmation (test, no model)
   m_TagString: Dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5068758249778188658}

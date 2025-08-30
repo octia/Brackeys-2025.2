@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92c72c1627b0530418fc99f6940dc9ec, type: 3}
   m_Name: Test Dog dalmatian
   m_EditorClassIdentifier: Assembly-CSharp::DogScriptableBehaviour
-  dogName: Corki
+  dogName: Dalmatian
   dogMaxHealth: 6
   dogSpeed: 1
-  dogDamage: 10
-  dogPrefab: {fileID: 4590087052704925908, guid: 5972c7758215b7c45bfe8dfb829518e1, type: 3}
+  dogDamage: 15
+  dogPrefab: {fileID: 4590087052704925908, guid: 2b81239d1ba74f44096e5ece62b7eef4, type: 3}
