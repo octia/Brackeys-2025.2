@@ -136,6 +136,8 @@ public class PlayerDialogueController : MonoBehaviour, IPointerClickHandler
 
     private void Awake()
     {
+        skipButton.GetComponent<Button>().onClick.AddListener(SkipAllText);
+        skipAction.performed += (_) => SkipAllText();
         PlayTextChain(PlayerDialogueChainType.InitialTutorial);
     }
 
