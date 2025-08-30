@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
     [SerializeField] private GameObject visual;
+    [SerializeField] private Animator animator;
+    private int hashVelocity = Animator.StringToHash("Velocity");
 
     // ...
     private InputAction movementAction;
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         if (!canMove || timerManager.IsPaused)
         {
             rb.linearVelocity = Vector3.zero;
+            animator.SetFloat(hashVelocity, 0);
             return;
         }
 
@@ -43,6 +46,11 @@ public class PlayerMovement : MonoBehaviour
         if (movementInput.sqrMagnitude > float.Epsilon)
         {
             visual.transform.rotation = Quaternion.LookRotation(rb.linearVelocity);
+            animator.SetFloat(hashVelocity, 1);
+        }
+        else
+        {
+            animator.SetFloat(hashVelocity, 0);
         }
 
     }
