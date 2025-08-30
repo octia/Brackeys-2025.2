@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a740502731dab025bdeccf416ca83a4, type: 3}
+  m_Name: TimeSlowTutorial
+  m_EditorClassIdentifier: 
+  <ShouldBlockInteraction>k__BackingField: 0
+  <ShouldBeSkippable>k__BackingField: 1
+  <ChainType>k__BackingField: 4
+  <Dialogues>k__BackingField:
+  - <Message>k__BackingField: "Now we\u2019re talking, kid. Since you bought the
+      Slow Time ability, there\u2019s a button in the bottom left corner of the screen."
+    <IconOverride>k__BackingField: {fileID: 21300000, guid: 6b1cb82faed95ba4b87da762c903a1e8, type: 3}
+  - <Message>k__BackingField: When you click it, all of your ships will slow down
+      on their orbits to give you more time to swap them around. You can also activate
+      this ability by pressing Q.
+    <IconOverride>k__BackingField: {fileID: 21300000, guid: fe40fe75d7474bf45aba5790721e8c11, type: 3}
+  - <Message>k__BackingField: "You\u2019ll see a bar that shows you how much time
+      is left on the ability. After a cooldown, you\u2019ll be able to use it again."
+    <IconOverride>k__BackingField: {fileID: 21300000, guid: 1229d9a81f257254d9cb2e43ecd8b7b8, type: 3}
