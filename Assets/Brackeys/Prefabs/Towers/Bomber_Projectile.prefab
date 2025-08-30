@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4327203127795109359}
   - component: {fileID: 3876414797839605693}
   m_Layer: 0
-  m_Name: Projectile 02
+  m_Name: Bomber_Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -121,7 +121,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7401666130811874402}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   lifetime: 5
-  isAOEProjectile: 1
-  aoeObject: {fileID: 7221711936382514972, guid: d08e374dae2101945ab6443c3672b1f3, type: 3}
+  isAOEProjectile: 0
+  aoeObject: {fileID: 0}
   towerData: {fileID: 0}
+  currentLevel: 0
