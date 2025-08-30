@@ -48,9 +48,11 @@ MonoBehaviour:
   currentHealth: 0
   currentDogSpeed: 0
   resolution: 10
-  threshold: 0.5
-  pauseTime: 2
+  threshold: 0.3
+  pauseTime: 0.1
   offsetScale: 5
   damage: 5
   runAwaySpeed: 5
+  waypointLineIndex: 0
+  biscuitManager: {fileID: 0}
   currentVelocity: {x: 0, y: 0, z: 0}

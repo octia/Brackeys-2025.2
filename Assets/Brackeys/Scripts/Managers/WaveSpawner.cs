@@ -1,12 +1,12 @@
-using UnityEngine;
+using Reflex.Attributes;
 using System.Collections;
 using System.Collections.Generic;
-using Reflex.Attributes;
+using UnityEngine;
 public class WaveSpawner : MonoBehaviour
 {
     public List<WaveScriptableObject> waves;
     public Transform spawnPoint;
-    //public Transform dogPrefab;
+    public GameObject dogPrefab;
 
     public float timeBetweenWaves = 5f;
     public float countdown = 2f;
@@ -45,13 +45,19 @@ public class WaveSpawner : MonoBehaviour
                 DogScriptableBehaviour dog = spawnPool[randomIndex];
                 spawnPool.RemoveAt(randomIndex);
 
-                GameObject dogGO = new GameObject(dog.dogName);
-                DogManager dogManager = dogGO.AddComponent<DogManager>();
+                //GameObject dogGO = new GameObject(dog.dogName);
+                //DogManager dogManager = dogGO.AddComponent<DogManager>();
+                GameObject dogGO = Instantiate(dogPrefab);
+                var dogManager = dogGO.GetComponent<DogManager>();
                 dogManager.dogData = dog;
+                dogManager.waypointLineIndex = Random.Range(0, Waypoints.pointsList.Count);
+                dogManager.timerManager = timerManager;
+                dogManager.biscuitManager = biscuitManager;
 
-                dogGO.transform.SetParent(spawnPoint, false);
+                //dogGO.transform.SetParent(Waypoints.pointsList[dogManager.waypointLineIndex][0], false);
                 dogGO.transform.localPosition = Vector3.zero;
                 dogGO.transform.localRotation = Quaternion.identity;
+                dogGO.transform.position = Waypoints.pointsList[dogManager.waypointLineIndex][0].position;
 
 
                 float waitTime = Random.Range(waves[waveIndex].spawnRateRange.x, waves[waveIndex].spawnRateRange.y);

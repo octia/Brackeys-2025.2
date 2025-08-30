@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c999eb104a4da4e47a091026c71c1ceb, type: 3}
   m_Name: BiscuitManagerConfig
   m_EditorClassIdentifier: Assembly-CSharp::BiscuitManagerConfig
-  initialBiscuits: 15
+  initialBiscuits: 25

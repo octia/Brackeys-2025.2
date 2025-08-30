@@ -1,15 +1,23 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Waypoints : MonoBehaviour
 {
-    public static Transform[] points;
+    // public static Transform[] points;
 
+    public static List<Transform[]> pointsList;
     void Awake()
     {
-        points = new Transform[transform.childCount];
-        for (int i = 0; i < points.Length; i++)
+        pointsList = new List<Transform[]>();
+        for (int k = 0; k < transform.childCount; k++)
         {
-            points[i] = transform.GetChild(i);
+            var points = new Transform[transform.GetChild(k).childCount];
+            for (int i = 0; i < points.Length; i++)
+            {
+                points[i] = transform.GetChild(k).GetChild(i);
+            }
+            pointsList.Add(points);
         }
+
     }
 }

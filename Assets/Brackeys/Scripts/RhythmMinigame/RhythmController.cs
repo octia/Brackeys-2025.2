@@ -48,6 +48,7 @@ public class RhythmController : MonoBehaviour
     // ...
     private InputAction leftPerformInput;
     private InputAction rightPerformInput;
+    private InputAction interactInput;
 
     [Inject, HideInInspector]
     public BiscuitManager biscuitManager;
@@ -55,14 +56,16 @@ public class RhythmController : MonoBehaviour
     [Inject]
     private PlayerController playerController;
 
-    float currentNewNoteTime;
+    private float currentNewNoteTime;
 
-    bool onLeft;
+    private bool onLeft;
 
-    int notesProgress;
-    int multiplier = 1;
-    int perfectNotes;
-    int multiplierProgress;
+    private int notesProgress;
+    private int multiplier = 1;
+    private int perfectNotes;
+    private int multiplierProgress;
+
+    [HideInInspector] public int baseMultiplier;
 
     private SceneAudio sceneAudio;
 
@@ -70,6 +73,7 @@ public class RhythmController : MonoBehaviour
     {
         leftPerformInput = InputSystem.actions.FindAction("ANote");
         rightPerformInput = InputSystem.actions.FindAction("DNote");
+        interactInput = InputSystem.actions.FindAction("Interact");
         
         sceneAudio = FindObjectOfType<SceneAudio>();
     }
@@ -200,7 +204,7 @@ public class RhythmController : MonoBehaviour
 
         if (notesProgress >= notesForBatch)
         {
-            biscuitManager.Biscuit += biscuitPerBatch * multiplier;
+            biscuitManager.Biscuit += biscuitPerBatch * baseMultiplier * multiplier;
             notesProgress = 0;
             PlayButtonSfx(multiplierSfx);
         }
