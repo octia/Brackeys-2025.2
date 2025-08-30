@@ -39,6 +39,7 @@ public class RhythmController : MonoBehaviour
     // ...
     private InputAction leftPerformInput;
     private InputAction rightPerformInput;
+    private InputAction interactInput;
 
     [Inject, HideInInspector]
     public BiscuitManager biscuitManager;
@@ -59,6 +60,7 @@ public class RhythmController : MonoBehaviour
     {
         leftPerformInput = InputSystem.actions.FindAction("ANote");
         rightPerformInput = InputSystem.actions.FindAction("DNote");
+        interactInput = InputSystem.actions.FindAction("Interact");
     }
 
     private void Update()

@@ -1,6 +1,7 @@
 using Reflex.Attributes;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class TowersPanel : MonoBehaviour
@@ -27,6 +28,12 @@ public class TowersPanel : MonoBehaviour
 
     private TowerManager currentTowerManager;
 
+    private InputAction interactInput;
+
+    private bool hidden;
+
+    private UIGamePauser uiGamePauser;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -39,6 +46,18 @@ public class TowersPanel : MonoBehaviour
             newBuyableTowerButton.GetComponentsInChildren<TMP_Text>()[0].text = towerData.towerName;
             newBuyableTowerButton.GetComponentsInChildren<TMP_Text>()[1].text = towerData.levels[0].towerCost + " Biscuits";
             newBuyableTowerButton.GetComponentInChildren<RawImage>().texture = towerData.icon;
+        }
+
+        uiGamePauser = GetComponent<UIGamePauser>();
+
+        interactInput = InputSystem.actions.FindAction("Interact");
+    }
+
+    private void Update()
+    {
+        if (interactInput.WasPressedThisFrame() && uiGamePauser.enabled)
+        {
+            HideButton();
         }
     }
 
@@ -86,6 +105,7 @@ public class TowersPanel : MonoBehaviour
     public void HideButton()
     {
         anim.SetTrigger("Hide");
+        hidden = true;
     }
 
     //HEY DOUGLAS! Sorry this is so messy. I just wanted a quick and dirty, hardcoded way to call upgrade and repair!

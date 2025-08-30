@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!canMove || timerManager.IsPaused)
         {
+            rb.linearVelocity = Vector3.zero;
             return;
         }
 

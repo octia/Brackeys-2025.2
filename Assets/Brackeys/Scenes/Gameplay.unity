@@ -1100,6 +1100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BakeryController
   interactionRange: 4
   produceButton: {fileID: 805859823}
+  rhythmController: {fileID: 1486201874}
 --- !u!1001 &304489945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5114,6 +5115,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2257331300320770877, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
   m_PrefabInstance: {fileID: 1462680551}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1486201874 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+  m_PrefabInstance: {fileID: 4625516625302975159}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4ef85f2157d90b4686867aff14c92d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RhythmController
 --- !u!224 &1489409090 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7692385400867657201, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
@@ -6537,11 +6549,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -346.4889
+      value: -329.36462
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.3333335
+      value: -12.018779
       objectReference: {fileID: 0}
     - target: {fileID: 8888386948762599298, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: Target.TrackingTarget
