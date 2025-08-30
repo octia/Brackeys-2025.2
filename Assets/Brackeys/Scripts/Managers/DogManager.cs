@@ -17,6 +17,7 @@ public class DogManager : MonoBehaviour
     public float threshold = 0.5f;
     public float pauseTime = 2f;
     public float offsetScale = 5f;
+    public int damage = 5;
 
     int direction = 1;
     Vector3[] splinePoints;
@@ -77,7 +78,7 @@ public class DogManager : MonoBehaviour
                 Destroy(gameObject);
 
                 // TODO: Change the amount of damage to be based on bakery upgrade
-                biscuitManager.Biscuit -= 5;
+                biscuitManager.Biscuit -= damage;
 
                 return;
             }
