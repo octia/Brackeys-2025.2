@@ -19,6 +19,7 @@ public class DogManager : MonoBehaviour
     public int damage = 5;
     public int runAwaySpeed = 10;
 
+    public int waypointLineIndex = 0;
     int direction = 1;
     Vector3[] splinePoints;
     bool isPausedForAnimation;
@@ -26,8 +27,8 @@ public class DogManager : MonoBehaviour
     private CapsuleCollider myAgentsCollider;
     private Rigidbody myAgentsRigidbody;
 
-    private TimerManager timerManager;
-    private BiscuitManager biscuitManager;
+    public TimerManager timerManager;
+    public BiscuitManager biscuitManager;
 
     private Vector3 lastPos;
     public Vector3 currentVelocity;
@@ -37,20 +38,20 @@ public class DogManager : MonoBehaviour
     {
 
         currentHealth = dogData.dogMaxHealth;
-        targetWaypoint = Waypoints.points[0];
+        targetWaypoint = Waypoints.pointsList[waypointLineIndex][0];
 
         Vector3 spawnPos = new Vector3(transform.position.x, dogData.dogPrefab.transform.position.y, transform.position.z);
         //TODO use rotation of spawn point
         dogInstance = Instantiate(dogData.dogPrefab, spawnPos, dogData.dogPrefab.transform.rotation, transform);
         currentDogSpeed = dogData.dogSpeed;
 
-        timerManager = transform.parent.GetComponent<WaveSpawner>().timerManager;
-        biscuitManager = transform.parent.GetComponent<WaveSpawner>().biscuitManager;
+        //timerManager = transform.parent.GetComponent<WaveSpawner>().timerManager;
+        //biscuitManager = transform.parent.GetComponent<WaveSpawner>().biscuitManager;
         agent = dogInstance.GetComponent<NavMeshAgent>();
         agent.SetDestination(targetWaypoint.position);
         agent.speed = currentDogSpeed;
 
-        splinePoints = GetSplinePoints(Waypoints.points, resolution);
+        splinePoints = GetSplinePoints(Waypoints.pointsList[waypointLineIndex], resolution);
 
         myAgentsCollider = agent.GetComponent<CapsuleCollider>();
         myAgentsRigidbody = agent.GetComponent<Rigidbody>();
