@@ -5,6 +5,10 @@ using UnityEngine.InputSystem;
 public class BakeryController : MonoBehaviour
 {
     [SerializeField] private float interactionRange;
+    public MaxBiscuitLevel[] maxBiscuitLevels;
+    public BiscuitMultiplierLevel[] biscuitMultiplierLevels;
+
+    [Space]
     [SerializeField] private GameObject produceButton;
 
     [Space]
@@ -16,7 +20,14 @@ public class BakeryController : MonoBehaviour
     [Inject]
     private TimerManager timerManager;
 
+    [Inject]
+    private BiscuitManager biscuitManager;
+
     private InputAction interactInput;
+
+    // ...
+    [HideInInspector] public int currentMaxBiscuitLevel;
+    [HideInInspector] public int currentBiscuitMultiplierLevel;
 
     private void Start()
     {
@@ -37,4 +48,30 @@ public class BakeryController : MonoBehaviour
     {
         Gizmos.DrawWireSphere(transform.position, interactionRange);
     }
+
+    public void UpgradeMaxBiscuitLevel()
+    {
+        currentMaxBiscuitLevel += 1;
+        biscuitManager.maxBiscuits = maxBiscuitLevels[currentMaxBiscuitLevel].maxBiscuit;
+    }
+
+    public void UpgradeMultiplierLevel()
+    {
+        currentBiscuitMultiplierLevel += 1;
+        rhythmController.baseMultiplier = biscuitMultiplierLevels[currentBiscuitMultiplierLevel].multiplier;
+    }
+}
+
+[System.Serializable]
+public class MaxBiscuitLevel
+{
+    public int cost;
+    public int maxBiscuit;
+}
+
+[System.Serializable]
+public class BiscuitMultiplierLevel
+{
+    public int cost;
+    public int multiplier;
 }

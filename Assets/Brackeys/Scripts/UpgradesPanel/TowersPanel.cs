@@ -9,7 +9,11 @@ public class TowersPanel : MonoBehaviour
     [SerializeField] TowerScriptableObject[] buyableTowersData;
 
     [Space]
+    [SerializeField] BakeryController bakeryController;
+
+    [Space]
     [SerializeField] GameObject towerInfoUI;
+    [SerializeField] GameObject bakeryInfoUI;
     [SerializeField] GameObject buyableTowersUI;
     [SerializeField] GameObject buyableTowerButtonInstance;
 
@@ -20,6 +24,12 @@ public class TowersPanel : MonoBehaviour
     [SerializeField] TMP_Text infoLevelText;
     [SerializeField] TMP_Text infoUpgradeCostText;
     [SerializeField] TMP_Text infoRepairCostText;
+
+    [Space]
+    [SerializeField] TMP_Text bakeryMaxBiscuitText;
+    [SerializeField] TMP_Text bakeryMultiplierText;
+    [SerializeField] TMP_Text bakeryMaxBiscuitCostText;
+    [SerializeField] TMP_Text bakeryMultiplierCostText;
 
     [Inject]
     private BiscuitManager biscuitManager;
@@ -61,6 +71,19 @@ public class TowersPanel : MonoBehaviour
         }
     }
 
+    // Bakery info
+    public void ShowButton()
+    {
+        anim.SetTrigger("Show");
+
+        towerInfoUI.SetActive(false);
+        bakeryInfoUI.SetActive(true);
+        buyableTowersUI.SetActive(false);
+
+        UpdateBakeryText();
+    }
+
+    // Towers building & upgrades
     public void ShowButton(TowerManager towerManager)
     {
         anim.SetTrigger("Show");
@@ -70,6 +93,7 @@ public class TowersPanel : MonoBehaviour
         if (towerManager.spawned)
         {
             towerInfoUI.SetActive(true);
+            bakeryInfoUI.SetActive(false);
             buyableTowersUI.SetActive(false);
 
             infoIcon.texture = towerManager.towerData.icon;
@@ -82,24 +106,77 @@ public class TowersPanel : MonoBehaviour
         else
         {
             towerInfoUI.SetActive(false);
+            bakeryInfoUI.SetActive(false);
             buyableTowersUI.SetActive(true);
         }
     }
 
     public void BuyTower(TowerScriptableObject towerData)
     {
-        if (biscuitManager.Biscuit - towerData.levels[0].towerCost < 1)
+        if (biscuitManager.Biscuit - towerData.levels[currentTowerManager.currentLevel].towerCost < 1)
         {
             return;
         }
 
-        biscuitManager.Biscuit -= Mathf.RoundToInt(towerData.levels[0].towerCost);
+        biscuitManager.Biscuit -= Mathf.RoundToInt(towerData.levels[currentTowerManager.currentLevel].towerCost);
         currentTowerManager.towerData = towerData;
         currentTowerManager.SpawnTower();
 
         currentTowerManager.builderVisual.SetActive(false);
 
         HideButton();
+    }
+
+    public void MaxBiscuitUpgrade()
+    {
+        if (bakeryController.currentMaxBiscuitLevel + 1 >= bakeryController.maxBiscuitLevels.Length || biscuitManager.Biscuit - bakeryController.maxBiscuitLevels[bakeryController.currentMaxBiscuitLevel + 1].cost < 1)
+        {
+            return;
+        }
+
+        biscuitManager.Biscuit -= bakeryController.maxBiscuitLevels[bakeryController.currentMaxBiscuitLevel].cost;
+
+        bakeryController.UpgradeMaxBiscuitLevel();
+
+        UpdateBakeryText();
+    }
+
+    public void MultiplierUpgrade()
+    {
+        if (bakeryController.currentBiscuitMultiplierLevel + 1 >= bakeryController.biscuitMultiplierLevels.Length || biscuitManager.Biscuit - bakeryController.biscuitMultiplierLevels[bakeryController.currentBiscuitMultiplierLevel + 1].cost < 1)
+        {
+            return;
+        }
+
+        biscuitManager.Biscuit -= bakeryController.biscuitMultiplierLevels[bakeryController.currentBiscuitMultiplierLevel + 1].cost;
+
+        bakeryController.UpgradeMultiplierLevel();
+
+        UpdateBakeryText();
+    }
+
+    private void UpdateBakeryText()
+    {
+        bakeryMaxBiscuitText.text = bakeryController.maxBiscuitLevels[bakeryController.currentMaxBiscuitLevel].maxBiscuit + " Max Biscuit";
+        bakeryMultiplierText.text = bakeryController.biscuitMultiplierLevels[bakeryController.currentBiscuitMultiplierLevel].multiplier + " Multiplier";
+
+        if (bakeryController.currentMaxBiscuitLevel + 1 >= bakeryController.maxBiscuitLevels.Length)
+        {
+            bakeryMaxBiscuitCostText.text = "MAX";
+        }
+        else
+        {
+            bakeryMaxBiscuitCostText.text = bakeryController.maxBiscuitLevels[bakeryController.currentMaxBiscuitLevel + 1].cost + "b";
+        }
+
+        if (bakeryController.currentBiscuitMultiplierLevel + 1 >= bakeryController.biscuitMultiplierLevels.Length)
+        {
+            bakeryMultiplierCostText.text = "MAX";
+        }
+        else
+        {
+            bakeryMultiplierCostText.text = bakeryController.biscuitMultiplierLevels[bakeryController.currentBiscuitMultiplierLevel + 1].cost + "b";
+        }
     }
 
     public void HideButton()

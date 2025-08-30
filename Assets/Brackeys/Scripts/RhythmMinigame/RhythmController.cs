@@ -47,14 +47,16 @@ public class RhythmController : MonoBehaviour
     [Inject]
     private PlayerController playerController;
 
-    float currentNewNoteTime;
+    private float currentNewNoteTime;
 
-    bool onLeft;
+    private bool onLeft;
 
-    int notesProgress;
-    int multiplier = 1;
-    int perfectNotes;
-    int multiplierProgress;
+    private int notesProgress;
+    private int multiplier = 1;
+    private int perfectNotes;
+    private int multiplierProgress;
+
+    [HideInInspector] public int baseMultiplier;
 
     private void Start()
     {
@@ -179,7 +181,7 @@ public class RhythmController : MonoBehaviour
 
         if (notesProgress >= notesForBatch)
         {
-            biscuitManager.Biscuit += biscuitPerBatch * multiplier;
+            biscuitManager.Biscuit += biscuitPerBatch * baseMultiplier * multiplier;
             notesProgress = 0;
         }
 

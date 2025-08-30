@@ -14,8 +14,8 @@ public class TowerLevel
     public float enemySpeed;
     public float towerHealth;
     public float repairCost;
-
 }
+
 [CreateAssetMenu(fileName = "Base Tower", menuName = "ScriptableObjects/Tower")]
 public class TowerScriptableObject : ScriptableObject
 {

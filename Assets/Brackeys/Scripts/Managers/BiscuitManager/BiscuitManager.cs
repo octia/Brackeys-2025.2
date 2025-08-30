@@ -9,15 +9,17 @@ public class BiscuitManager : MonoBehaviour
     [Inject, HideInInspector]
     public BiscuitManagerConfig config;
 
+    public int maxBiscuits;
+
     private int biscuit;
     public int Biscuit
     {
         set
         {
-            biscuit = value;
-            biscuitController.biscuitText.text = biscuit + " Biscuits";
+            biscuit = Mathf.Clamp(value, 0, maxBiscuits);
+            biscuitController.biscuitText.text = biscuit + "/" + maxBiscuits + " Biscuits";
 
-            if (value <= 0)
+            if (value == 0)
             {
                 // TODO: Create a death scene
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

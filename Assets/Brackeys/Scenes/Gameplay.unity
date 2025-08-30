@@ -684,7 +684,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 10, y: -10}
-  m_SizeDelta: {x: 250, y: 50}
+  m_SizeDelta: {x: 350, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &74963986
 MonoBehaviour:
@@ -797,6 +797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f61f7133f1fe392499743540839e4664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BiscuitController
+  bakeryController: {fileID: 300102179}
   biscuitText: {fileID: 74963986}
 --- !u!1001 &79438302
 PrefabInstance:
@@ -1758,8 +1759,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BakeryController
   interactionRange: 4
+  maxBiscuitLevels:
+  - cost: 0
+    maxBiscuit: 50
+  - cost: 25
+    maxBiscuit: 75
+  biscuitMultiplierLevels:
+  - cost: 0
+    multiplier: 1
+  - cost: 25
+    multiplier: 2
   produceButton: {fileID: 805859823}
   rhythmController: {fileID: 1154584755}
+  currentMaxBiscuitLevel: 0
+  currentBiscuitMultiplierLevel: 0
 --- !u!1001 &304489945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10689,9 +10702,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: BiscuitMakingMinigame
       objectReference: {fileID: 0}
-    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
-      propertyPath: speed
-      value: 40
+    - target: {fileID: 1397989304483170626, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397989304483170626, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1489409091}
+    - target: {fileID: 1397989304483170626, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShowButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397989304483170626, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowersPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397989304483170626, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2835580950498543194, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
       propertyPath: m_IsActive
@@ -10867,9 +10896,57 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 983194221}
     m_Modifications:
+    - target: {fileID: 3225968558061049386, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225968558061049386, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225968558061049386, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225968558061049386, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682289975619547713, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682289975619547713, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682289975619547713, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682289975619547713, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -65
+      objectReference: {fileID: 0}
     - target: {fileID: 5159193709795126110, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_Name
       value: TowersPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5253573602514896514, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5253573602514896514, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5253573602514896514, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5253573602514896514, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 7692385400867657201, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_Pivot.x
@@ -10951,17 +11028,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: bakeryController
+      value: 
+      objectReference: {fileID: 300102179}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.x
       value: -640
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -346.70834
+      value: -326.52017
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.3105316
+      value: -8.256901
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815717012800316479, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815717012800316479, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815717012800316479, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815717012800316479, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8888386948762599298, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: Target.TrackingTarget
