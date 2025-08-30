@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: CrazyDaisyTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
   towerName: Crazy Daisy Tower
+  towerDescription: ...
   isAttackAOE: 1
   isDamageOverTime: 1
   shouldLookAtTarget: 0
@@ -24,45 +25,50 @@ MonoBehaviour:
     attackRadius: 9
     attackRate: 10
     attackHeight: 0
+    attackCost: 0
     damageAmount: 0.2
-    damageDuration: 2
+    damageDuration: 2.5
     enemySpeed: 0
-    towerHealth: 55
+    towerHealth: 110
     repairCost: 5
   - towerCost: 30
     attackRadius: 9.5
     attackRate: 9
     attackHeight: 0
+    attackCost: 0
     damageAmount: 0.3
-    damageDuration: 2.25
+    damageDuration: 3
     enemySpeed: 0
-    towerHealth: 65
+    towerHealth: 130
     repairCost: 5
   - towerCost: 45
     attackRadius: 10
     attackRate: 8
     attackHeight: 0
+    attackCost: 0
     damageAmount: 0.5
-    damageDuration: 2.5
+    damageDuration: 3.5
     enemySpeed: 0
-    towerHealth: 80
+    towerHealth: 160
     repairCost: 5
   - towerCost: 60
     attackRadius: 10.5
     attackRate: 7
     attackHeight: 0
+    attackCost: 0
     damageAmount: 0.75
-    damageDuration: 3
+    damageDuration: 4
     enemySpeed: 0
-    towerHealth: 100
+    towerHealth: 200
     repairCost: 5
   - towerCost: 75
     attackRadius: 11.5
     attackRate: 6
     attackHeight: 0
-    damageAmount: 1
+    attackCost: 0
+    damageAmount: 5
     damageDuration: 3.5
     enemySpeed: 0
-    towerHealth: 125
+    towerHealth: 250
     repairCost: 5
   icon: {fileID: 2800000, guid: 2df115a1226996b4a95cb1b546abf775, type: 3}

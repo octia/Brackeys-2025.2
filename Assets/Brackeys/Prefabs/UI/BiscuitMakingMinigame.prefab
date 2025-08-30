@@ -277,7 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RhythmController
   notesForBatch: 10
   biscuitPerBatch: 5
-  pointsForMultiplier: 0f0000001e0000002d000000
+  pointsForMultiplier: 14000000280000003c000000
   multiplierLimit: 3
   newNoteTime: 1
   speed: 40
