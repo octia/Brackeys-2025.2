@@ -59,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5121540869746674834}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12, y: 1.5, z: -7.5}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -83,14 +83,26 @@ MonoBehaviour:
   interactionRange: 4
   maxBiscuitLevels:
   - cost: 0
+    maxBiscuit: 30
+  - cost: 20
     maxBiscuit: 50
-  - cost: 25
+  - cost: 35
     maxBiscuit: 75
+  - cost: 50
+    maxBiscuit: 125
+  - cost: 100
+    maxBiscuit: 200
   biscuitMultiplierLevels:
   - cost: 0
     multiplier: 1
-  - cost: 25
+  - cost: 20
     multiplier: 2
+  - cost: 30
+    multiplier: 3
+  - cost: 40
+    multiplier: 4
+  - cost: 50
+    multiplier: 5
   produceButton: {fileID: 0}
   rhythmController: {fileID: 0}
   currentMaxBiscuitLevel: 0
