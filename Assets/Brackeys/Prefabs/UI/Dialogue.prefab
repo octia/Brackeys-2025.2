@@ -482,7 +482,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 0.41509432, g: 0.2825143, b: 0.06069775, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -593,7 +593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDialogueController
   dialogueBox: {fileID: 7322676877664645636}
-  interactionBlocker: {fileID: 7530139154108061804}
+  interactionBlocker: {fileID: 876092491545636717}
   skipButton: {fileID: 2653703047529974285}
   dialogueTextBox: {fileID: 3144349034212885882}
   speakerIcon: {fileID: 6205951258188558876}

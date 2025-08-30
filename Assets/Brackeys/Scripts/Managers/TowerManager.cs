@@ -37,6 +37,7 @@ public class TowerManager : MonoBehaviour
 
     [Inject]
     private TimerManager timerManager;
+
     [HideInInspector] public bool spawned;
 
     [Inject]
@@ -143,7 +144,7 @@ public class TowerManager : MonoBehaviour
     }
 
     public void SpawnTower()
-    {
+    {     
         spawned = true;
 
         Vector3 spawnPos = new Vector3(transform.position.x, towerData.towerPrefab.transform.position.y, transform.position.z);

@@ -7,6 +7,9 @@ using FMODUnity;
 
 public class TowersPanel : MonoBehaviour
 {
+    [Inject]
+    private PlayerDialogueController dialogueController;
+
     [SerializeField] TowerScriptableObject[] buyableTowersData;
 
     [Space]
@@ -47,6 +50,8 @@ public class TowersPanel : MonoBehaviour
     private bool hidden;
 
     private UIGamePauser uiGamePauser;
+
+    private static bool hasPurchasedATower = false;
 
     private void Start()
     {
@@ -90,6 +95,12 @@ public class TowersPanel : MonoBehaviour
     // Towers building & upgrades
     public void ShowButton(TowerManager towerManager)
     {
+        if (!hasPurchasedATower)
+        {
+            dialogueController.PlayTextChain(PlayerDialogueChainType.PurchaseTowerTutorial);
+            hasPurchasedATower = true;
+        }
+
         anim.SetTrigger("Show");
 
         currentTowerManager = towerManager;
