@@ -3411,6 +3411,7 @@ GameObject:
   - component: {fileID: 1360547922}
   - component: {fileID: 1360547924}
   - component: {fileID: 1360547923}
+  - component: {fileID: 1360547925}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -3475,6 +3476,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1360547921}
   m_CullTransparentMesh: 1
+--- !u!114 &1360547925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360547921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9763547baffdbd4ea4a7aab609900fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoveBackgroundImage
+  image: {fileID: 1360547923}
+  speed: {x: 0.03, y: 0.03}
 --- !u!1001 &1467274691
 PrefabInstance:
   m_ObjectHideFlags: 0
