@@ -6,6 +6,13 @@ using UnityEngine.InputSystem;
 public class TowerBuilder : MonoBehaviour
 {
     [SerializeField] private float interactionRange;
+    [SerializeField] private int buildCost;
+
+    [Space]
+    [SerializeField] private MeshRenderer mesh;
+    [SerializeField] private Material freeMaterial;
+    [SerializeField] private Material buyableMaterial;
+    [SerializeField] private TMP_Text costText;
 
     [Space]
     [SerializeField] private GameObject buildButton;
@@ -21,11 +28,17 @@ public class TowerBuilder : MonoBehaviour
     [Inject]
     private TimerManager timerManager;
 
+    [Inject]
+    private BiscuitManager biscuitManager;
+
     private void Start()
     {
         towerManager = GetComponent<TowerManager>();
 
         interactAction = InputSystem.actions.FindAction("Interact");
+
+        CostUpdate();
+
     }
 
     private void Update()
@@ -40,7 +53,25 @@ public class TowerBuilder : MonoBehaviour
 
     public void BuildButton()
     {
+        if (biscuitManager.Biscuit - buildCost < 1)
+        {
+            return;
+        }
+        else
+        {
+            biscuitManager.Biscuit -= buildCost;
+            buildCost = 0;
+            CostUpdate();
+        }
+
         towersPanel.ShowButton(towerManager);
+    }
+
+    private void CostUpdate()
+    {
+        mesh.material = buildCost == 0 ? freeMaterial : buyableMaterial;
+        costText.transform.parent.gameObject.SetActive(buildCost != 0);
+        costText.text = buildCost + " biscuits for this spot!";
     }
 
     private void OnDrawGizmos()

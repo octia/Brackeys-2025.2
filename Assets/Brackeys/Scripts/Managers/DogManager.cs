@@ -33,10 +33,10 @@ public class DogManager : MonoBehaviour
     private Vector3 lastPos;
     public Vector3 currentVelocity;
 
+    private Animator anim;
 
     void Start()
     {
-
         currentHealth = dogData.dogMaxHealth;
         targetWaypoint = Waypoints.pointsList[waypointLineIndex][0];
 
@@ -55,17 +55,23 @@ public class DogManager : MonoBehaviour
 
         myAgentsCollider = agent.GetComponent<CapsuleCollider>();
         myAgentsRigidbody = agent.GetComponent<Rigidbody>();
+
+        anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
-        if (timerManager.IsPaused == true)
+        if (timerManager.IsPaused)
         {
+            anim.speed = 0;
+
             agent.isStopped = true;
             myAgentsRigidbody.isKinematic = true;
         }
         else
         {
+            anim.speed = 1;
+
             myAgentsRigidbody.isKinematic = false;
             agent.isStopped = false;
         }

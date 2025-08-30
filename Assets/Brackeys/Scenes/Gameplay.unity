@@ -234,6 +234,10 @@ PrefabInstance:
       value: TowerBuilder (19)
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
@@ -526,6 +530,10 @@ PrefabInstance:
     - target: {fileID: 2908320631050149689, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: m_Name
       value: TowerBuilder (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
@@ -3177,6 +3185,10 @@ PrefabInstance:
       value: TowerBuilder (12)
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
@@ -4549,6 +4561,10 @@ PrefabInstance:
     - target: {fileID: 2908320631050149689, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: m_Name
       value: TowerBuilder (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
@@ -8805,6 +8821,10 @@ PrefabInstance:
       value: TowerBuilder (6)
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
@@ -8869,6 +8889,10 @@ PrefabInstance:
     - target: {fileID: 2908320631050149689, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: m_Name
       value: TowerBuilder (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
@@ -9622,6 +9646,10 @@ PrefabInstance:
     - target: {fileID: 2908320631050149689, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: m_Name
       value: TowerBuilder (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
@@ -10542,6 +10570,10 @@ PrefabInstance:
       value: TowerBuilder (4)
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
@@ -11362,15 +11394,15 @@ PrefabInstance:
       objectReference: {fileID: 300102179}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -640
+      value: -640.00006
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -346.70834
+      value: -329.394
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.3105316
+      value: -7.548155
       objectReference: {fileID: 0}
     - target: {fileID: 8815717012800316479, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_AnchorMax.y
