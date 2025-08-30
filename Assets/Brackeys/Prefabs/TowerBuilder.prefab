@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ff032baff2ec1478450434d025398e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerBuilder
-  interactionRange: 2.3
+  interactionRange: 2
   buildButton: {fileID: 316362269251108544}
   towersPanel: {fileID: 0}
 --- !u!114 &6676604287276071938
