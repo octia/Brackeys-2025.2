@@ -78,13 +78,13 @@ public class RhythmController : MonoBehaviour
         Transform nearestNote = null;
         bool performed = false;
 
-        if (leftPerformInput.WasPressedThisFrame())
+        if (leftPerformInput.WasPressedThisFrame()&& leftTrack.childCount > 0)
         {
             nearestNote = leftTrack.GetChild(0);
             performed = true;
         }
 
-        if (rightPerformInput.WasPressedThisFrame())
+        if (rightPerformInput.WasPressedThisFrame() && rightTrack.childCount > 0)
         {
             nearestNote = rightTrack.GetChild(0);
             performed = true;
