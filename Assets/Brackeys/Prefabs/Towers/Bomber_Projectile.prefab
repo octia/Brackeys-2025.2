@@ -157,3 +157,10 @@ MonoBehaviour:
   aoeObject: {fileID: 0}
   towerData: {fileID: 0}
   currentLevel: 0
+  projectileSfx:
+    Guid:
+      Data1: -1985088852
+      Data2: 1110481608
+      Data3: 584076730
+      Data4: -234221807
+    Path: event:/SFX/Tower/sfx_BiscuitBomb

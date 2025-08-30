@@ -1,4 +1,5 @@
 using UnityEngine;
+using FMODUnity;
 
 public class ProjectileManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class ProjectileManager : MonoBehaviour
     public GameObject aoeObject;
     public TowerScriptableObject towerData;
     public int currentLevel = 0;
+    [SerializeField] private EventReference projectileSfx;
+
     void Start()
     {
         timer = lifetime;
@@ -39,7 +42,8 @@ public class ProjectileManager : MonoBehaviour
                     }
 
                 }
-
+                
+                PlaySfx(projectileSfx);
                 Destroy(gameObject);
             }
         }
@@ -49,8 +53,15 @@ public class ProjectileManager : MonoBehaviour
             if (dog != null)
             {
                 dog.TakeDamage(towerData.levels[currentLevel].damageAmount);
+                PlaySfx(projectileSfx);
                 Destroy(gameObject);
             }
         }
     }
+    private void PlaySfx(EventReference sfx)
+    {
+        if (!sfx.IsNull)
+            RuntimeManager.PlayOneShot(sfx);
+    }
+
 }

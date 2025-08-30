@@ -19,7 +19,21 @@ MonoBehaviour:
   shouldLookAtTarget: 0
   animationDelay: 0
   towerPrefab: {fileID: 559453494342003169, guid: d6cb49b39d9717445be53b6265781d9d, type: 3}
-  projectilePrefab: {fileID: 7401666130811874402, guid: 04db2d51688515e4c82580e82f095f52, type: 3}
+  projectilePrefab: {fileID: 0}
+  towerAttack:
+    Guid:
+      Data1: 339171902
+      Data2: 1197996017
+      Data3: -2091383116
+      Data4: 1566480287
+    Path: event:/SFX/Tower/sfx_CrazyDaisy
+  towerDown:
+    Guid:
+      Data1: 210337345
+      Data2: 1293550117
+      Data3: 1685296275
+      Data4: -470407725
+    Path: event:/SFX/Tower/sfx_TowerDown
   levels:
   - towerCost: 15
     attackRadius: 9
