@@ -13,11 +13,9 @@ MonoBehaviour:
   m_Name: PlayerDialogueConfig
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDialogueConfig
   <PlayerDialogueChains>k__BackingField:
-  - {fileID: 11400000, guid: 6e2d4e9680d6fb2a69ab5e70f982d1ca, type: 2}
-  - {fileID: 11400000, guid: e7f262af25d8a358fa1ac65bb05e8016, type: 2}
+  - {fileID: 11400000, guid: 21934f987e505fd6297b291aa6c877f5, type: 2}
   - {fileID: 11400000, guid: e29b0d704758968519994373bc3d9209, type: 2}
   - {fileID: 11400000, guid: fefcc201978df09f0a71877e1c7884c6, type: 2}
-  - {fileID: 11400000, guid: 21934f987e505fd6297b291aa6c877f5, type: 2}
-  - {fileID: 11400000, guid: 9d505ee31cc68108e8a7d6301b52367c, type: 2}
-  <CharactersPerSecond>k__BackingField: 20
+  - {fileID: 11400000, guid: 6e2d4e9680d6fb2a69ab5e70f982d1ca, type: 2}
+  <CharactersPerSecond>k__BackingField: 100
   <DefaultIcon>k__BackingField: {fileID: 21300000, guid: 3948016081c12584488842d3d3acabb7, type: 3}

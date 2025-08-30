@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a740502731dab025bdeccf416ca83a4, type: 3}
+  m_Name: PurchaseTowerTutorial
+  m_EditorClassIdentifier: 
+  <ShouldBlockInteraction>k__BackingField: 0
+  <ShouldBeSkippable>k__BackingField: 1
+  <ChainType>k__BackingField: 2
+  <Dialogues>k__BackingField:
+  - <Message>k__BackingField: Perfect! Now you can select a tower to build. Each
+      tower has a different specialty and costs a different amount of biscuits.
+    <IconOverride>k__BackingField: {fileID: 21300000, guid: 5b5b94519563f524aa7cb9f0658a1a7d, type: 3}
+  - <Message>k__BackingField: "Towers will attempt to distract the dogs on a cooldown,
+      which you can see on the left of each tower. When a dog is fully distracted,
+      it\u2019ll run back to where it came from!"
+    <IconOverride>k__BackingField: {fileID: 21300000, guid: 5b5b94519563f524aa7cb9f0658a1a7d, type: 3}
+  - <Message>k__BackingField: "There\u2019s also a timer on the right that shows
+      how long it\u2019ll be until you need to repair it. Once that timer runs out,
+      the tower will stop working until you can repair it."
+    <IconOverride>k__BackingField: {fileID: 21300000, guid: 5b5b94519563f524aa7cb9f0658a1a7d, type: 3}
+  - <Message>k__BackingField: When a tower is built, you can walk up to it and hit
+      space to repair it. When you do, you can also upgrade the tower to improve
+      its stats!
+    <IconOverride>k__BackingField: {fileID: 21300000, guid: 5b5b94519563f524aa7cb9f0658a1a7d, type: 3}
+  - <Message>k__BackingField: "It\u2019s important to remember you can never hit
+      0 biscuits by spending them, so you may need to clock in at the bakery to make
+      some more biscuits."
+    <IconOverride>k__BackingField: {fileID: 21300000, guid: 5b5b94519563f524aa7cb9f0658a1a7d, type: 3}
