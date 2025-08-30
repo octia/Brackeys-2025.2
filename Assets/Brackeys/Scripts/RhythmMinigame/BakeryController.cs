@@ -32,6 +32,8 @@ public class BakeryController : MonoBehaviour
     private void Start()
     {
         interactInput = InputSystem.actions.FindAction("Interact");
+        
+        rhythmController.baseMultiplier = biscuitMultiplierLevels[currentBiscuitMultiplierLevel].multiplier;
     }
 
     private void Update()
