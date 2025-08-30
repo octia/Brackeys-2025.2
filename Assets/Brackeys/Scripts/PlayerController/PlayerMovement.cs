@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
+    [SerializeField] private GameObject visual;
 
     // ...
     private InputAction movementAction;
@@ -38,5 +39,10 @@ public class PlayerMovement : MonoBehaviour
         float speed = runAction.IsPressed() ? runSpeed : walkSpeed;
 
         rb.linearVelocity = new Vector3(movementInput.x, 0, movementInput.y) * speed;
+        if (movementInput.sqrMagnitude > float.Epsilon)
+        {
+            visual.transform.rotation = Quaternion.LookRotation(rb.linearVelocity);
+        }
+
     }
 }
