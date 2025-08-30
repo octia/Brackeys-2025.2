@@ -36,6 +36,9 @@ public class RhythmController : MonoBehaviour
     [SerializeField] private GameObject leftNote;
     [SerializeField] private GameObject rightNote;
 
+    [Space]
+    [SerializeField] private BakeryController bakeryController;
+
     // ...
     private InputAction leftPerformInput;
     private InputAction rightPerformInput;
@@ -140,6 +143,7 @@ public class RhythmController : MonoBehaviour
     {
         main.SetActive(!main.activeSelf);
 
+        bakeryController.infoButton.SetActive(!main.activeSelf);
         playerController.movement.canMove = !main.activeSelf;
         playerController.visual.gameObject.SetActive(!main.activeSelf);
 

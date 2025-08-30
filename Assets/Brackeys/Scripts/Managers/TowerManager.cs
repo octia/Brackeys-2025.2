@@ -1,7 +1,7 @@
-using UnityEngine;
+using Reflex.Attributes;
 using System.Collections;
 using System.Collections.Generic;
-using Reflex.Attributes;
+using UnityEngine;
 
 public class TowerManager : MonoBehaviour
 {
@@ -274,6 +274,15 @@ public class TowerManager : MonoBehaviour
         float elapsed = 0f;
         float tickRate = 1f;
 
+        foreach (Transform dog in dogsInRange)
+        {
+            if (towerData.levels[currentLevel].enemySpeed == 0)
+            {
+                if (dog != null)
+                    dog.GetComponentInParent<DogManager>().LookAtTarget(builderVisual.transform.position);
+            }
+        }
+
         while (elapsed < towerData.levels[currentLevel].damageDuration)
         {
             abilityActive = true;
@@ -289,6 +298,8 @@ public class TowerManager : MonoBehaviour
             yield return new WaitForSeconds(tickRate);
             elapsed += tickRate;
         }
+
+
 
         attackCooldown = 0;
         abilityActive = false;

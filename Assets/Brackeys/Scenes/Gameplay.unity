@@ -9201,6 +9201,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223213186}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1252919264 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1737713536885488002, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+  m_PrefabInstance: {fileID: 4625516625302975159}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1256145288
 GameObject:
   m_ObjectHideFlags: 0
@@ -13999,6 +14004,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 338945877}
     m_Modifications:
     - target: {fileID: 1574879297645270933, guid: 53fe7f923ca097448899f046c2f1ce26, type: 3}
+      propertyPath: infoButton
+      value: 
+      objectReference: {fileID: 1252919264}
+    - target: {fileID: 1574879297645270933, guid: 53fe7f923ca097448899f046c2f1ce26, type: 3}
       propertyPath: produceButton
       value: 
       objectReference: {fileID: 805859823}
@@ -14136,6 +14145,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1489409091}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: bakeryController
+      value: 
+      objectReference: {fileID: 300102179}
     - target: {fileID: 5111920791082119107, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
