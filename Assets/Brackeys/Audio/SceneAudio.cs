@@ -45,7 +45,7 @@ public class SceneAudio : MonoBehaviour
         AudioManager.Instance.FadeAmbient(initialAmbientVolume, ambientFadeTime);
     }
 
-    // --- Minigame Ambience Controls ---
+    // --- Minigame Controls ---
     public void OnMinigameStart(float targetVolume = 1f)
     {
         if (AudioManager.Instance != null)

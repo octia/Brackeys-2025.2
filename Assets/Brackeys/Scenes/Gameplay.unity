@@ -5094,7 +5094,7 @@ MonoBehaviour:
       Data2: 1178045538
       Data3: 1866490779
       Data4: -1902635855
-    Path: event:/mus_LevelMusic_loop
+    Path: event:/Music/mus_LevelMusic_loop
   fadeTime: 0.2
   delayBeforeStart: 1
   musicVolume: 0.75
@@ -6219,11 +6219,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -346.4889
+      value: -324.41296
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.3333335
+      value: -13.935763
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalRotation.w

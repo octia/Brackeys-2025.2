@@ -1697,7 +1697,7 @@ MonoBehaviour:
       Data2: 1299317509
       Data3: -12527474
       Data4: -1547284039
-    Path: event:/sfx_CatPurr_loop
+    Path: event:/Music/mus_CatPurr_loop
   defaultAmbientVolume: 1
 --- !u!4 &639843798
 Transform:
@@ -2083,7 +2083,7 @@ MonoBehaviour:
       Data2: 1089294770
       Data3: -1542035802
       Data4: -489003508
-    Path: event:/mus_MainMenu_loop
+    Path: event:/Music/mus_MainMenu_loop
   fadeTime: 1
   delayBeforeStart: 0
   musicVolume: 0.75
