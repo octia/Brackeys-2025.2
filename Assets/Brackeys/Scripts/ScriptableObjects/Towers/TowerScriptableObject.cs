@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using FMODUnity;
 
 [System.Serializable]
 public class TowerLevel
@@ -27,6 +28,8 @@ public class TowerScriptableObject : ScriptableObject
     public float animationDelay;
     public GameObject towerPrefab;
     public GameObject projectilePrefab;
+    public EventReference towerAttack;
+    public EventReference towerDown;
 
     [Header("Levels")]
     public List<TowerLevel> levels = new List<TowerLevel>();
