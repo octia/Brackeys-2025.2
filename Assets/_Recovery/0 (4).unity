@@ -1798,9 +1798,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9716a78224436f448028f64011f7bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  DefaultMusicVolume: 0.8
-  DefaultAmbientVolume: 1
-  DefaultMinigameVolume: 1
+  defaultMusicVolume: 0.8
+  defaultAmbientVolume: 1
+  defaultMinigameVolume: 1
+  fadeOutOnSceneUnload: 0.75
 --- !u!4 &639843798
 Transform:
   m_ObjectHideFlags: 0
@@ -2186,7 +2187,7 @@ MonoBehaviour:
       Data3: -1542035802
       Data4: -489003508
     Path: event:/Music/mus_MainMenu_loop
-  musicFadeTime: 0.5
+  fadeTime: 1.5
   delayBeforeStart: 0
   ambientEvent:
     Guid:
@@ -2195,15 +2196,15 @@ MonoBehaviour:
       Data3: -12527474
       Data4: -1547284039
     Path: event:/Music/mus_CatPurr_loop
-  ambientFadeTime: 0.5
+  ambientFadeTime: 1.5
   minigameEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  minigameFadeTime: 0
+      Data1: -1160346551
+      Data2: 1106958520
+      Data3: 163526580
+      Data4: -1798481196
+    Path: event:/Music/mus_RiD_LevelThemeMinigame_v1
+  minigameFadeTime: 1.5
 --- !u!1001 &825734035
 PrefabInstance:
   m_ObjectHideFlags: 0

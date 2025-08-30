@@ -5,25 +5,16 @@ using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance { get; private set; }
+    public static AudioManager Instance;
 
     [Header("Default Volumes")]
-    [SerializeField] private float defaultMusicVolume = 1f;
-    [SerializeField] private float defaultAmbientVolume = 1f;
-
-    public float DefaultMusicVolume => defaultMusicVolume;
-    public float DefaultAmbientVolume => defaultAmbientVolume;
-
-    [Header("VCAs")]
-    [SerializeField] private VCA masterVCA;
-    [SerializeField] private VCA musicVCA;
-    [SerializeField] private VCA sfxVCA;
+    public float DefaultMusicVolume = 1f;
+    public float DefaultAmbientVolume = 1f;
+    public float DefaultMinigameVolume = 1f;
 
     private EventInstance musicInstance;
     private EventInstance ambientInstance;
-
-    private Coroutine musicFadeCoroutine;
-    private Coroutine ambientFadeCoroutine;
+    private EventInstance minigameInstance;
 
     private void Awake()
     {
@@ -32,102 +23,96 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
-    // --- VCA Volume ---
-    public void SetMasterVolume(float volume) => masterVCA.setVolume(volume);
-    public void SetMusicVolume(float volume) => musicVCA.setVolume(volume);
-    public void SetSFXVolume(float volume) => sfxVCA.setVolume(volume);
-
-    // --- Music ---
-    public void PlayMusic(EventReference musicEvent, float fadeTime, float delay = 0f)
+    // --- MUSIC ---
+    public void PlayMusic(EventReference musicEvent, float fadeTime = 1f, float delay = 0f)
     {
-        StopAllCoroutines();
-        StartCoroutine(FadeInMusic(musicEvent, fadeTime, delay));
+        StartCoroutine(StartMusicCoroutine(musicEvent, fadeTime, delay));
+    }
+
+    private IEnumerator StartMusicCoroutine(EventReference musicEvent, float fadeTime, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (musicInstance.isValid())
+            StartCoroutine(FadeOutAndRelease(musicInstance, fadeTime));
+
+        musicInstance = RuntimeManager.CreateInstance(musicEvent);
+        musicInstance.setVolume(0f);
+        musicInstance.start();
+
+        StartCoroutine(FadeVolume(musicInstance, DefaultMusicVolume, fadeTime));
     }
 
     public void PlayMusicInstant(EventReference musicEvent)
     {
-        StopMusicInstant();
-        musicInstance = RuntimeManager.CreateInstance(musicEvent);
-        musicInstance.start();
-        musicInstance.setVolume(defaultMusicVolume);
-    }
-
-    public void StopMusic(float fadeTime = 1f)
-    {
         if (musicInstance.isValid())
-            StartCoroutine(FadeOutMusic(fadeTime));
-    }
-
-    private void StopMusicInstant()
-    {
-        if (musicInstance.isValid())
-        {
             musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-            musicInstance.release();
-        }
+
+        musicInstance = RuntimeManager.CreateInstance(musicEvent);
+        musicInstance.setVolume(DefaultMusicVolume);
+        musicInstance.start();
     }
 
-    // --- Ambient ---
+    // --- AMBIENT ---
     public void StartAmbient(EventReference ambientEvent)
     {
-        if (ambientInstance.isValid()) return;
+        if (ambientInstance.isValid())
+            ambientInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
         ambientInstance = RuntimeManager.CreateInstance(ambientEvent);
+        ambientInstance.setVolume(0f); // start muted
         ambientInstance.start();
-        ambientInstance.setVolume(defaultAmbientVolume);
     }
 
-    public void FadeAmbient(float targetVolume, float fadeTime)
+    // --- MINIGAME ---
+    public void StartMinigame(EventReference minigameEvent)
     {
-        if (!ambientInstance.isValid()) return;
+        if (minigameInstance.isValid())
+            minigameInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
-        if (ambientFadeCoroutine != null)
-            StopCoroutine(ambientFadeCoroutine);
-
-        ambientFadeCoroutine = StartCoroutine(FadeParameter(ambientInstance, targetVolume, fadeTime));
+        minigameInstance = RuntimeManager.CreateInstance(minigameEvent);
+        minigameInstance.setVolume(0f); // start muted
+        minigameInstance.start();
     }
 
-    // --- Coroutines ---
-    private IEnumerator FadeInMusic(EventReference musicEvent, float fadeTime, float delay)
+    // --- FADE HELPERS ---
+    public void FadeMusic(float target, float time) => StartCoroutine(FadeVolume(musicInstance, target, time));
+    public void FadeAmbient(float target, float time) => StartCoroutine(FadeVolume(ambientInstance, target, time));
+    public void FadeMinigame(float target, float time) => StartCoroutine(FadeVolume(minigameInstance, target, time));
+
+    private IEnumerator FadeOutAndRelease(EventInstance instance, float time)
     {
-        if (musicInstance.isValid())
-            yield return FadeOutMusic(fadeTime);
-
-        if (delay > 0f)
-            yield return new WaitForSeconds(delay);
-
-        musicInstance = RuntimeManager.CreateInstance(musicEvent);
-        musicInstance.start();
-        yield return FadeParameter(musicInstance, defaultMusicVolume, fadeTime);
+        yield return FadeVolume(instance, 0f, time);
+        instance.release();
     }
 
-    private IEnumerator FadeOutMusic(float fadeTime)
-    {
-        yield return FadeParameter(musicInstance, 0f, fadeTime);
-        musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        musicInstance.release();
-    }
-
-    private IEnumerator FadeParameter(EventInstance instance, float targetVolume, float duration)
+    private IEnumerator FadeVolume(EventInstance instance, float targetVolume, float time)
     {
         if (!instance.isValid()) yield break;
 
-        instance.getVolume(out float startVolume);
+        instance.getVolume(out float startVol);
         float elapsed = 0f;
 
-        while (elapsed < duration)
+        while (elapsed < time)
         {
             elapsed += Time.deltaTime;
-            float newVol = Mathf.Lerp(startVolume, targetVolume, elapsed / duration);
+            float t = Mathf.Clamp01(elapsed / time);
+            float newVol = Mathf.Lerp(startVol, targetVolume, t);
             instance.setVolume(newVol);
             yield return null;
         }
 
         instance.setVolume(targetVolume);
+    }
+
+    private void OnDestroy()
+    {
+        if (musicInstance.isValid()) musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        if (ambientInstance.isValid()) ambientInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        if (minigameInstance.isValid()) minigameInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 }

@@ -9466,6 +9466,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2415543103301255505, guid: 62844b90b6a84b34a80d273d30d72600, type: 3}
   m_PrefabInstance: {fileID: 1730670603}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1741026731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1741026733}
+  - component: {fileID: 1741026732}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1741026732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741026731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9716a78224436f448028f64011f7bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  defaultMusicVolume: 0.75
+  defaultAmbientVolume: 1
+  defaultMinigameVolume: 0.9
+--- !u!4 &1741026733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741026731}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1813789918
 GameObject:
   m_ObjectHideFlags: 0
@@ -9502,8 +9549,8 @@ MonoBehaviour:
       Data3: 1866490779
       Data4: -1902635855
     Path: event:/Music/mus_LevelMusic_loop
-  musicFadeTime: 1.5
-  delayBeforeStart: 1.5
+  fadeTime: 0.2
+  delayBeforeStart: 1
   ambientEvent:
     Guid:
       Data1: 657289089
@@ -9511,15 +9558,15 @@ MonoBehaviour:
       Data3: -12527474
       Data4: -1547284039
     Path: event:/Music/mus_CatPurr_loop
-  ambientFadeTime: 0.2
+  ambientFadeTime: 0.5
   minigameEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  minigameFadeTime: 0.2
+      Data1: -1160346551
+      Data2: 1106958520
+      Data3: 163526580
+      Data4: -1798481196
+    Path: event:/Music/mus_RiD_LevelThemeMinigame_v1
+  minigameFadeTime: 0.5
 --- !u!4 &1813789920
 Transform:
   m_ObjectHideFlags: 0
@@ -11710,3 +11757,4 @@ SceneRoots:
   - {fileID: 782922390}
   - {fileID: 1221775469}
   - {fileID: 1881282340}
+  - {fileID: 1741026733}
