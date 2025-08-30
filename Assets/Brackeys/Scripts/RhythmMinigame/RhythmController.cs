@@ -7,7 +7,7 @@ public class RhythmController : MonoBehaviour
 {
     [SerializeField] private int notesForBatch;
     [SerializeField] private int biscuitPerBatch;
-    [SerializeField] private int perfectNotesForMultiplier;
+    [SerializeField] private int[] pointsForMultiplier;
     [SerializeField] private int multiplierLimit;
     [SerializeField] private float newNoteTime;
     public float speed;
@@ -53,6 +53,7 @@ public class RhythmController : MonoBehaviour
     int notesProgress;
     int multiplier = 1;
     int perfectNotes;
+    int multiplierProgress;
 
     private void Start()
     {
@@ -91,10 +92,20 @@ public class RhythmController : MonoBehaviour
                 if (nearestNote.transform.position.y > failPerfectPoint.position.y && nearestNote.transform.position.y < performPerfectPoint.position.y)
                 {
                     PerformPerfectNote();
+                    multiplierProgress += 2;
                 }
                 else
                 {
                     perfectText.gameObject.SetActive(false);
+                    multiplierProgress += 1;
+                    perfectNotes = 0;
+                }
+
+                if (multiplierProgress >= pointsForMultiplier[multiplier - 1] && multiplier < multiplierLimit)
+                {
+                    multiplier++;
+                    multiplierText.text = multiplier + "x";
+
                     perfectNotes = 0;
                 }
 
@@ -179,14 +190,6 @@ public class RhythmController : MonoBehaviour
 
         perfectText.text = "Perfect hit! (" + perfectNotes + "x)";
         perfectText.gameObject.SetActive(true);
-
-        if (perfectNotes >= perfectNotesForMultiplier && multiplier < multiplierLimit)
-        {
-            multiplier++;
-            multiplierText.text = multiplier + "x";
-
-            perfectNotes = 0;
-        }
     }
 
     public void ResetTracks()

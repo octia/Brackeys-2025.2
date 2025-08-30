@@ -277,10 +277,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RhythmController
   notesForBatch: 10
   biscuitPerBatch: 5
-  perfectNotesForMultiplier: 20
+  pointsForMultiplier: 0a000000140000001e000000
   multiplierLimit: 3
   newNoteTime: 1
-  speed: 25
+  speed: 40
   trackPerformPoint: {fileID: 7885665769259638694}
   failPoint: {fileID: 4638117294471012999}
   performPerfectPoint: {fileID: 413055330009331381}
@@ -421,7 +421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1832360594246263449
 RectTransform:
   m_ObjectHideFlags: 0
@@ -552,7 +552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2562144469621217847
 RectTransform:
   m_ObjectHideFlags: 0
