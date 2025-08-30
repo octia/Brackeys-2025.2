@@ -1007,6 +1007,10 @@ PrefabInstance:
       value: TowerBuilder (10)
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
@@ -3459,7 +3463,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2908320631050149689, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
@@ -5115,6 +5123,10 @@ PrefabInstance:
       value: TowerBuilder (16)
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
@@ -5179,6 +5191,10 @@ PrefabInstance:
     - target: {fileID: 2908320631050149689, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: m_Name
       value: TowerBuilder (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
@@ -6688,13 +6704,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840895612}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.04954702, z: 0, w: 0.99877185}
-  m_LocalPosition: {x: -3, y: 0, z: -4.59}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3, y: 0, z: -4.5}
   m_LocalScale: {x: 1, y: 0.099999994, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 925549163}
-  m_LocalEulerAnglesHint: {x: 0, y: -5.68, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &840895614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6826,7 +6842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2908320631050149689, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
@@ -8664,6 +8680,10 @@ PrefabInstance:
       value: TowerBuilder (14)
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
@@ -8731,7 +8751,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2908320631050149689, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
@@ -10378,7 +10402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2908320631050149689, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
@@ -10575,7 +10599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2908320631050149689, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
@@ -10930,6 +10954,10 @@ PrefabInstance:
     - target: {fileID: 2908320631050149689, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: m_Name
       value: TowerBuilder (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
@@ -13018,9 +13046,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   waves:
   - {fileID: 11400000, guid: 8a7f16d8772548744b6ed5eaee6db3fc, type: 2}
+  - {fileID: 11400000, guid: e27120b25c5f63a40b6b1c7e712d97b3, type: 2}
+  - {fileID: 11400000, guid: a785068ced353df41a5f5bdefa11ffe9, type: 2}
+  - {fileID: 11400000, guid: 70b6d7d9ce0c4634b94a9deaccd0ba22, type: 2}
+  - {fileID: 11400000, guid: 7ffbd6305c627444e88ece4ab185dea8, type: 2}
+  - {fileID: 11400000, guid: 54bd87480dd01a344bd069aa714d4519, type: 2}
+  - {fileID: 11400000, guid: 053e2faf9ee270c468a3a78ab6159a3e, type: 2}
+  - {fileID: 11400000, guid: 6c611c0c61f3a20449cbbe0c3eda85e0, type: 2}
   spawnPoint: {fileID: 2029437327}
   dogPrefab: {fileID: 7189018912072491315, guid: dcde086cfd6460043ae0a94fa6312076, type: 3}
-  timeBetweenWaves: 10
+  timeBetweenWaves: 25
   countdown: 2
   waveIndex: 0
   biscuitManager: {fileID: 0}
@@ -13248,6 +13283,10 @@ PrefabInstance:
     - target: {fileID: 2908320631050149689, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: m_Name
       value: TowerBuilder (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
@@ -13804,7 +13843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5022467354087913011, guid: 53fe7f923ca097448899f046c2f1ce26, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7660445
+      value: 0.71030825
       objectReference: {fileID: 0}
     - target: {fileID: 5022467354087913011, guid: 53fe7f923ca097448899f046c2f1ce26, type: 3}
       propertyPath: m_LocalRotation.x
@@ -13812,7 +13851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5022467354087913011, guid: 53fe7f923ca097448899f046c2f1ce26, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6427876
+      value: 0.70389074
       objectReference: {fileID: 0}
     - target: {fileID: 5022467354087913011, guid: 53fe7f923ca097448899f046c2f1ce26, type: 3}
       propertyPath: m_LocalRotation.z
@@ -13824,7 +13863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5022467354087913011, guid: 53fe7f923ca097448899f046c2f1ce26, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 80
+      value: 89.48
       objectReference: {fileID: 0}
     - target: {fileID: 5022467354087913011, guid: 53fe7f923ca097448899f046c2f1ce26, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -13917,33 +13956,9 @@ PrefabInstance:
       value: BiscuitMakingMinigame
       objectReference: {fileID: 0}
     - target: {fileID: 1397989304483170626, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1397989304483170626, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1489409091}
-    - target: {fileID: 1397989304483170626, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 1397989304483170626, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TowersPanel, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1397989304483170626, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2835580950498543194, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3553313398066503592, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5111920791082119107, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14252,11 +14267,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -332.42285
+      value: -346.62277
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.863298
+      value: -3.3105319
       objectReference: {fileID: 0}
     - target: {fileID: 8815717012800316479, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_AnchorMax.y

@@ -29,7 +29,7 @@ MonoBehaviour:
     damageAmount: 100
     damageDuration: 0
     enemySpeed: 0
-    towerHealth: 65
+    towerHealth: 130
     repairCost: 6
   - towerCost: 40
     attackRadius: 11
@@ -39,7 +39,7 @@ MonoBehaviour:
     damageAmount: 100
     damageDuration: 0
     enemySpeed: 0
-    towerHealth: 80
+    towerHealth: 160
     repairCost: 6
   - towerCost: 60
     attackRadius: 12
@@ -49,7 +49,7 @@ MonoBehaviour:
     damageAmount: 100
     damageDuration: 0
     enemySpeed: 0
-    towerHealth: 100
+    towerHealth: 200
     repairCost: 6
   - towerCost: 80
     attackRadius: 13
@@ -59,7 +59,7 @@ MonoBehaviour:
     damageAmount: 100
     damageDuration: 0
     enemySpeed: 0
-    towerHealth: 125
+    towerHealth: 250
     repairCost: 6
   - towerCost: 100
     attackRadius: 14
@@ -69,6 +69,6 @@ MonoBehaviour:
     damageAmount: 100
     damageDuration: 0
     enemySpeed: 0
-    towerHealth: 150
+    towerHealth: 300
     repairCost: 6
   icon: {fileID: 2800000, guid: 2df115a1226996b4a95cb1b546abf775, type: 3}
