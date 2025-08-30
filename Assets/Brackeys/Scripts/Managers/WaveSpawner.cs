@@ -52,9 +52,10 @@ public class WaveSpawner : MonoBehaviour
                 dogManager.timerManager = timerManager;
                 dogManager.biscuitManager = biscuitManager;
 
-                dogGO.transform.SetParent(Waypoints.pointsList[dogManager.waypointLineIndex][0], false);
+                //dogGO.transform.SetParent(Waypoints.pointsList[dogManager.waypointLineIndex][0], false);
                 dogGO.transform.localPosition = Vector3.zero;
                 dogGO.transform.localRotation = Quaternion.identity;
+                dogGO.transform.position = Waypoints.pointsList[dogManager.waypointLineIndex][0].position;
 
 
                 float waitTime = Random.Range(waves[waveIndex].spawnRateRange.x, waves[waveIndex].spawnRateRange.y);
