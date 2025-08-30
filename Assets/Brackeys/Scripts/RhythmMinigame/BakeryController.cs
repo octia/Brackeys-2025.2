@@ -10,6 +10,7 @@ public class BakeryController : MonoBehaviour
 
     [Space]
     [SerializeField] private GameObject produceButton;
+    [HideInInspector] public GameObject infoButton;
 
     [Space]
     [SerializeField] private RhythmController rhythmController;
@@ -42,6 +43,7 @@ public class BakeryController : MonoBehaviour
 
         if (produceButton.activeSelf && interactInput.WasPressedThisFrame())
         {
+            infoButton.SetActive(false);
             rhythmController.ProduceButton();
         }
     }
