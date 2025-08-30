@@ -177,6 +177,7 @@ public class RhythmController : MonoBehaviour
 
     public void PerformNote()
     {
+        print(biscuitPerBatch * baseMultiplier * multiplier);
         notesProgress += 1;
 
         if (notesProgress >= notesForBatch)
