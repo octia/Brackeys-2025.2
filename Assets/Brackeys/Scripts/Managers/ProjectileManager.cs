@@ -25,8 +25,6 @@ public class ProjectileManager : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        PlaySfx(projectileSfx);
-
         if (isAOEProjectile)
         {
             if (other.CompareTag("Dog") || other.CompareTag("Ground") || other.CompareTag("Path"))
@@ -44,7 +42,8 @@ public class ProjectileManager : MonoBehaviour
                     }
 
                 }
-
+                
+                PlaySfx(projectileSfx);
                 Destroy(gameObject);
             }
         }
@@ -54,6 +53,7 @@ public class ProjectileManager : MonoBehaviour
             if (dog != null)
             {
                 dog.TakeDamage(towerData.levels[currentLevel].damageAmount);
+                PlaySfx(projectileSfx);
                 Destroy(gameObject);
             }
         }

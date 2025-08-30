@@ -19,7 +19,21 @@ MonoBehaviour:
   shouldLookAtTarget: 1
   animationDelay: 2
   towerPrefab: {fileID: 3198328198701065408, guid: 828dfa9b72c9e6443bfff1dd78cd959e, type: 3}
-  projectilePrefab: {fileID: 7401666130811874402, guid: 04db2d51688515e4c82580e82f095f52, type: 3}
+  projectilePrefab: {fileID: 7401666130811874402, guid: bd67af2154d09b940b54a2ff7997c25c, type: 3}
+  towerAttack:
+    Guid:
+      Data1: -1551942526
+      Data2: 1278864532
+      Data3: -1122282853
+      Data4: -256506453
+    Path: event:/SFX/Tower/sfx_LaunchLowLow
+  towerDown:
+    Guid:
+      Data1: 210337345
+      Data2: 1293550117
+      Data3: 1685296275
+      Data4: -470407725
+    Path: event:/SFX/Tower/sfx_TowerDown
   levels:
   - towerCost: 20
     attackRadius: 10
