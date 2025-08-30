@@ -8,6 +8,7 @@ public class TowerLevel
     public float attackRadius;
     public float attackRate;
     public float attackHeight;
+    public float attackCost;
     public float damageAmount;
     public float damageDuration;
     public float enemySpeed;

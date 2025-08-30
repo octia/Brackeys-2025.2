@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: standardSurface1
-    second: {fileID: 2100000, guid: 5ee2aee6a8a6f794e85e5fa7d1677d9d, type: 2}
+    second: {fileID: 2100000, guid: ccd26044c1e0c2649a6d0fc1b0368f51, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

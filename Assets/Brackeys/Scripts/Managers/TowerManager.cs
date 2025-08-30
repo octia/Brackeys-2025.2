@@ -39,6 +39,9 @@ public class TowerManager : MonoBehaviour
     private TimerManager timerManager;
     [HideInInspector] public bool spawned;
 
+    [Inject]
+    private BiscuitManager biscuitManager;
+
     void Start()
     {
         if (spawnOnStart)
@@ -69,6 +72,7 @@ public class TowerManager : MonoBehaviour
 
         if (!timerManager.IsPaused)
         {
+
             if (currentTarget != null)
             {
                 if (!currentTarget.CompareTag("Dog"))
@@ -100,8 +104,14 @@ public class TowerManager : MonoBehaviour
             }
             else
             {
+                if (biscuitManager.Biscuit - Mathf.RoundToInt(towerData.levels[currentLevel].attackCost) < 1)
+                {
+                    return;
+                }
+
                 if (attackCooldown >= towerData.levels[currentLevel].attackRate && currentTarget != null && !isAttacking)
                 {
+                    biscuitManager.Biscuit -= Mathf.RoundToInt(towerData.levels[currentLevel].attackCost);
                     attackCooldown = towerData.levels[currentLevel].attackRate;
                     towerAnimator.Play("Attack");
                     if (towerParticles)
