@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PBCatapultTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
   towerName: Peanut Butter Launcher
+  towerDescription: ...
   isAttackAOE: 0
   isDamageOverTime: 0
   shouldLookAtTarget: 1
@@ -22,8 +23,9 @@ MonoBehaviour:
   levels:
   - towerCost: 10
     attackRadius: 10
-    attackRate: 7
+    attackRate: 6.9
     attackHeight: 1
+    attackCost: 0
     damageAmount: 0.1
     damageDuration: 1.5
     enemySpeed: 0.5
@@ -31,8 +33,9 @@ MonoBehaviour:
     repairCost: 4
   - towerCost: 20
     attackRadius: 10.5
-    attackRate: 6.75
+    attackRate: 6.65
     attackHeight: 1
+    attackCost: 0
     damageAmount: 0.15
     damageDuration: 2
     enemySpeed: 0.5
@@ -40,8 +43,9 @@ MonoBehaviour:
     repairCost: 4
   - towerCost: 30
     attackRadius: 11
-    attackRate: 6.5
+    attackRate: 6.4
     attackHeight: 1
+    attackCost: 0
     damageAmount: 0.2
     damageDuration: 2.5
     enemySpeed: 0.5
@@ -49,8 +53,9 @@ MonoBehaviour:
     repairCost: 4
   - towerCost: 40
     attackRadius: 11.5
-    attackRate: 6
+    attackRate: 5.9
     attackHeight: 1
+    attackCost: 0
     damageAmount: 0.3
     damageDuration: 3
     enemySpeed: 0.5
@@ -58,8 +63,9 @@ MonoBehaviour:
     repairCost: 4
   - towerCost: 50
     attackRadius: 12
-    attackRate: 5
+    attackRate: 4.9
     attackHeight: 1
+    attackCost: 0
     damageAmount: 0.5
     damageDuration: 3.5
     enemySpeed: 0.5

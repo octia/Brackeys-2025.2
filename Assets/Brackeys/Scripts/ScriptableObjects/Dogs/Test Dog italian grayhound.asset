@@ -16,4 +16,4 @@ MonoBehaviour:
   dogMaxHealth: 2
   dogSpeed: 1.75
   dogDamage: 5
-  dogPrefab: {fileID: 4590087052704925908, guid: b3457c446b4d9e945bd6385fecefe596, type: 3}
+  dogPrefab: {fileID: 4590087052704925908, guid: d9bce085354e21949837676329bc388b, type: 3}

@@ -10304,12 +10304,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   waves:
   - {fileID: 11400000, guid: 8a7f16d8772548744b6ed5eaee6db3fc, type: 2}
-  - {fileID: 11400000, guid: 3d622a5f59cf91c4fabcab7c828037c6, type: 2}
-  - {fileID: 11400000, guid: e86715af681e525429b233182b163a40, type: 2}
-  - {fileID: 11400000, guid: f86bfe6d87b1d864eb69ac19e060f151, type: 2}
-  - {fileID: 11400000, guid: 854aa9c8ea2893345b99525b982468ec, type: 2}
+  - {fileID: 11400000, guid: e27120b25c5f63a40b6b1c7e712d97b3, type: 2}
+  - {fileID: 11400000, guid: a785068ced353df41a5f5bdefa11ffe9, type: 2}
+  - {fileID: 11400000, guid: 70b6d7d9ce0c4634b94a9deaccd0ba22, type: 2}
+  - {fileID: 11400000, guid: 7ffbd6305c627444e88ece4ab185dea8, type: 2}
+  - {fileID: 11400000, guid: 54bd87480dd01a344bd069aa714d4519, type: 2}
+  - {fileID: 11400000, guid: 053e2faf9ee270c468a3a78ab6159a3e, type: 2}
+  - {fileID: 11400000, guid: 6c611c0c61f3a20449cbbe0c3eda85e0, type: 2}
   spawnPoint: {fileID: 2029437327}
-  timeBetweenWaves: 10
+  timeBetweenWaves: 15
   countdown: 2
   waveIndex: 0
   biscuitManager: {fileID: 0}
