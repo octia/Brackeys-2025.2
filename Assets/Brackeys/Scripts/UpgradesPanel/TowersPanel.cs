@@ -12,6 +12,14 @@ public class TowersPanel : MonoBehaviour
     [SerializeField] GameObject buyableTowersUI;
     [SerializeField] GameObject buyableTowerButtonInstance;
 
+    [Space]
+    [SerializeField] RawImage infoIcon;
+    [SerializeField] TMP_Text infoNameText;
+    [SerializeField] TMP_Text infoDescriptionText;
+    [SerializeField] TMP_Text infoLevelText;
+    [SerializeField] TMP_Text infoUpgradeCostText;
+    [SerializeField] TMP_Text infoRepairCostText;
+
     [Inject]
     private BiscuitManager biscuitManager;
 
@@ -44,6 +52,13 @@ public class TowersPanel : MonoBehaviour
         {
             towerInfoUI.SetActive(true);
             buyableTowersUI.SetActive(false);
+
+            infoIcon.texture = towerManager.towerData.icon;
+            infoNameText.text = towerManager.towerData.towerName;
+            infoDescriptionText.text = towerManager.towerData.towerDescription;
+            infoLevelText.text = "Level " + (towerManager.currentLevel + 1);
+            infoUpgradeCostText.text = towerManager.towerData.levels[towerManager.currentLevel].towerCost + "b";
+            infoRepairCostText.text = towerManager.towerData.levels[towerManager.currentLevel].repairCost + "b";
         }
         else
         {
@@ -89,15 +104,20 @@ public class TowersPanel : MonoBehaviour
         {
             biscuitManager.Biscuit -= Mathf.RoundToInt(currentTowerManager.towerData.levels[currentTowerManager.currentLevel + 1].towerCost);
             currentTowerManager.UpgradeLevel();
+
+            infoLevelText.text = "Level " + (currentTowerManager.currentLevel + 1);
+            infoUpgradeCostText.text = currentTowerManager.towerData.levels[currentTowerManager.currentLevel].towerCost + "b";
         }
 
     }
+
     public void RepairTower()
     {
         if (biscuitManager.Biscuit - currentTowerManager.towerData.levels[currentTowerManager.currentLevel].repairCost < 1)
         {
             return;
         }
+
         biscuitManager.Biscuit -= Mathf.RoundToInt(currentTowerManager.towerData.levels[currentTowerManager.currentLevel].repairCost);
         currentTowerManager.RepairHealth();
     }

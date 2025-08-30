@@ -16,6 +16,9 @@ public class WaveSpawner : MonoBehaviour
     [Inject]
     public TimerManager timerManager;
 
+    [Inject]
+    public BiscuitManager biscuitManager;
+
     void Start()
     {
         StartCoroutine(RunWaves());

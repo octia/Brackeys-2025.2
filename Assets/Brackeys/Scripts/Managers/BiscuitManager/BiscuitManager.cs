@@ -1,5 +1,6 @@
 using Reflex.Attributes;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BiscuitManager : MonoBehaviour
 {
@@ -15,6 +16,12 @@ public class BiscuitManager : MonoBehaviour
         {
             biscuit = value;
             biscuitController.biscuitText.text = biscuit + " Biscuits";
+
+            if (value <= 0)
+            {
+                // TODO: Create a death scene
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
         get { return biscuit; }
     }

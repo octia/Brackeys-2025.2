@@ -25,8 +25,8 @@ public class DogManager : MonoBehaviour
     private CapsuleCollider myAgentsCollider;
     private Rigidbody myAgentsRigidbody;
 
-    [Inject]
     private TimerManager timerManager;
+    private BiscuitManager biscuitManager;
 
     private Vector3 lastPos;
     public Vector3 currentVelocity;
@@ -44,6 +44,7 @@ public class DogManager : MonoBehaviour
         currentDogSpeed = dogData.dogSpeed;
 
         timerManager = transform.parent.GetComponent<WaveSpawner>().timerManager;
+        biscuitManager = transform.parent.GetComponent<WaveSpawner>().biscuitManager;
         agent = dogInstance.GetComponent<NavMeshAgent>();
         agent.SetDestination(targetWaypoint.position);
         agent.speed = currentDogSpeed;
@@ -73,8 +74,11 @@ public class DogManager : MonoBehaviour
             waypointIndex += direction;
             if (waypointIndex >= splinePoints.Length || waypointIndex < 0)
             {
-                //TODO reach end
                 Destroy(gameObject);
+
+                // TODO: Change the amount of damage to be based on bakery upgrade
+                biscuitManager.Biscuit -= 5;
+
                 return;
             }
             agent.SetDestination(splinePoints[waypointIndex]);
