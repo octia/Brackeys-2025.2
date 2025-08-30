@@ -12132,12 +12132,24 @@ MonoBehaviour:
       Data3: 1866490779
       Data4: -1902635855
     Path: event:/Music/mus_LevelMusic_loop
-  fadeTime: 0.2
+  musicFadeTime: 1
   delayBeforeStart: 1
-  musicVolume: 0.75
+  ambientEvent:
+    Guid:
+      Data1: 657289089
+      Data2: 1299317509
+      Data3: -12527474
+      Data4: -1547284039
+    Path: event:/Music/mus_CatPurr_loop
   ambientFadeTime: 0.5
-  mainMenuAmbientVolume: 1
-  otherScenesAmbientVolume: 0
+  minigameEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  minigameFadeTime: 1
 --- !u!4 &1813789920
 Transform:
   m_ObjectHideFlags: 0
@@ -14149,6 +14161,126 @@ PrefabInstance:
       propertyPath: bakeryController
       value: 
       objectReference: {fileID: 300102179}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: leftNoteSfx.Path
+      value: event:/SFX/Minigame/sfx_DoughSquish_L
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: rightNoteSfx.Path
+      value: event:/SFX/Minigame/sfx_DoughSquish_R
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: missedNoteSfx.Path
+      value: event:/SFX/Minigame/sfx_MeowMissedNote
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: multiplierSfx.Path
+      value: event:/SFX/Minigame/sfx_ServiceBellMultiplier2Hits
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameExitSfx.Path
+      value: event:/SFX/UI/sfx_MeowSelectClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameStartSfx.Path
+      value: event:/SFX/Minigame/sfx_ServiceBell
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: leftNoteSfx.Guid.Data1
+      value: -1095028719
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: leftNoteSfx.Guid.Data2
+      value: 1200052398
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: leftNoteSfx.Guid.Data3
+      value: -754183018
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: leftNoteSfx.Guid.Data4
+      value: -1969660278
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: rightNoteSfx.Guid.Data1
+      value: -1416918337
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: rightNoteSfx.Guid.Data2
+      value: 1207308764
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: rightNoteSfx.Guid.Data3
+      value: 1240795802
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: rightNoteSfx.Guid.Data4
+      value: 811725638
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: missedNoteSfx.Guid.Data1
+      value: 1782764217
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: missedNoteSfx.Guid.Data2
+      value: 1204229195
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: missedNoteSfx.Guid.Data3
+      value: 1886617216
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: missedNoteSfx.Guid.Data4
+      value: 310148267
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: multiplierSfx.Guid.Data1
+      value: 770423405
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: multiplierSfx.Guid.Data2
+      value: 1232913438
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: multiplierSfx.Guid.Data3
+      value: -378772329
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: multiplierSfx.Guid.Data4
+      value: 1020247668
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameExitSfx.Guid.Data1
+      value: -1534327305
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameExitSfx.Guid.Data2
+      value: 1136165659
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameExitSfx.Guid.Data3
+      value: 2098434466
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameExitSfx.Guid.Data4
+      value: -1434741251
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameStartSfx.Guid.Data1
+      value: 1954931939
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameStartSfx.Guid.Data2
+      value: 1337085744
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameStartSfx.Guid.Data3
+      value: 94860944
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameStartSfx.Guid.Data4
+      value: -1811875860
+      objectReference: {fileID: 0}
     - target: {fileID: 5111920791082119107, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14451,17 +14583,77 @@ PrefabInstance:
       propertyPath: bakeryController
       value: 
       objectReference: {fileID: 300102179}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerBuildSfx.Path
+      value: event:/SFX/Tower/sfx_TowerBuild
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpkeepSfx.Path
+      value: event:/SFX/Tower/sfx_TowerUpkeep
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpgradeSfx.Path
+      value: event:/SFX/Tower/sfx_TowerUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerBuildSfx.Guid.Data1
+      value: -1949408462
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerBuildSfx.Guid.Data2
+      value: 1205515360
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerBuildSfx.Guid.Data3
+      value: -683342932
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerBuildSfx.Guid.Data4
+      value: 300929390
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpkeepSfx.Guid.Data1
+      value: -371418712
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpkeepSfx.Guid.Data2
+      value: 1235992817
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpkeepSfx.Guid.Data3
+      value: -1766968169
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpkeepSfx.Guid.Data4
+      value: 116066873
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpgradeSfx.Guid.Data1
+      value: -2042548889
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpgradeSfx.Guid.Data2
+      value: 1103474543
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpgradeSfx.Guid.Data3
+      value: -166891120
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpgradeSfx.Guid.Data4
+      value: -80223543
+      objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.x
       value: -640
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -345.13202
+      value: -323.1099
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.6640003
+      value: -9.005224
       objectReference: {fileID: 0}
     - target: {fileID: 8815717012800316479, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_AnchorMax.y
