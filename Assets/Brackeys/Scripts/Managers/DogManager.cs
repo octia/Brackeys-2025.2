@@ -1,4 +1,3 @@
-using Reflex.Attributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +17,7 @@ public class DogManager : MonoBehaviour
     public float pauseTime = 2f;
     public float offsetScale = 5f;
     public int damage = 5;
+    public int runAwaySpeed = 10;
 
     int direction = 1;
     Vector3[] splinePoints;
@@ -136,12 +136,14 @@ public class DogManager : MonoBehaviour
         agent.ResetPath();
         agent.isStopped = true;
         yield return new WaitForSeconds(pauseTime);
+        ModifySpeed(runAwaySpeed);
         myAgentsCollider.radius = 0.1f;
         myAgentsCollider.height = 0.1f;
         direction *= -1;
         waypointIndex += direction;
         waypointIndex += direction;
         waypointIndex = Mathf.Max(0, waypointIndex);
+        waypointIndex = 0;
         agent.isStopped = false;
         agent.SetDestination(splinePoints[waypointIndex]);
         isPausedForAnimation = false;

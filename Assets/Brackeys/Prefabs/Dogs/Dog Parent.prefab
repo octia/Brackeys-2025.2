@@ -45,3 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DogManager
   dogData: {fileID: 11400000, guid: e29583496046a634eac5759e85a49bf9, type: 2}
+  currentHealth: 0
+  currentDogSpeed: 0
+  resolution: 10
+  threshold: 0.5
+  pauseTime: 2
+  offsetScale: 5
+  damage: 5
+  runAwaySpeed: 5
+  currentVelocity: {x: 0, y: 0, z: 0}
