@@ -9466,6 +9466,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2415543103301255505, guid: 62844b90b6a84b34a80d273d30d72600, type: 3}
   m_PrefabInstance: {fileID: 1730670603}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1741026731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1741026733}
+  - component: {fileID: 1741026732}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1741026732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741026731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9716a78224436f448028f64011f7bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  defaultMusicVolume: 0.75
+  defaultAmbientVolume: 1
+--- !u!4 &1741026733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741026731}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1813789918
 GameObject:
   m_ObjectHideFlags: 0
@@ -9504,10 +9550,14 @@ MonoBehaviour:
     Path: event:/Music/mus_LevelMusic_loop
   fadeTime: 0.2
   delayBeforeStart: 1
-  musicVolume: 0.75
+  ambientEvent:
+    Guid:
+      Data1: 657289089
+      Data2: 1299317509
+      Data3: -12527474
+      Data4: -1547284039
+    Path: event:/Music/mus_CatPurr_loop
   ambientFadeTime: 0.5
-  mainMenuAmbientVolume: 1
-  otherScenesAmbientVolume: 0
 --- !u!4 &1813789920
 Transform:
   m_ObjectHideFlags: 0
@@ -11138,6 +11188,146 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: leftNoteSfx.Path
+      value: event:/SFX/Minigame/sfx_DoughSquish_L
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: rightNoteSfx.Path
+      value: event:/SFX/Minigame/sfx_DoughSquish_R
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameMusic.Path
+      value: event:/Music/mus_RiD_LevelThemeMinigame_v1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: missedNoteSfx.Path
+      value: event:/SFX/Minigame/sfx_MeowMissedNote
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: multiplierSfx.Path
+      value: event:/SFX/Minigame/sfx_ServiceBellMultiplier2Hits
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameExitSfx.Path
+      value: event:/SFX/UI/sfx_MeowSelectClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameStartSfx.Path
+      value: event:/SFX/Minigame/sfx_ServiceBell
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: leftNoteSfx.Guid.Data1
+      value: -1095028719
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: leftNoteSfx.Guid.Data2
+      value: 1200052398
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: leftNoteSfx.Guid.Data3
+      value: -754183018
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: leftNoteSfx.Guid.Data4
+      value: -1969660278
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: rightNoteSfx.Guid.Data1
+      value: -1416918337
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: rightNoteSfx.Guid.Data2
+      value: 1207308764
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: rightNoteSfx.Guid.Data3
+      value: 1240795802
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: rightNoteSfx.Guid.Data4
+      value: 811725638
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameMusic.Guid.Data1
+      value: -1160346551
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameMusic.Guid.Data2
+      value: 1106958520
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameMusic.Guid.Data3
+      value: 163526580
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameMusic.Guid.Data4
+      value: -1798481196
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: missedNoteSfx.Guid.Data1
+      value: 1782764217
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: missedNoteSfx.Guid.Data2
+      value: 1204229195
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: missedNoteSfx.Guid.Data3
+      value: 1886617216
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: missedNoteSfx.Guid.Data4
+      value: 310148267
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: multiplierSfx.Guid.Data1
+      value: 770423405
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: multiplierSfx.Guid.Data2
+      value: 1232913438
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: multiplierSfx.Guid.Data3
+      value: -378772329
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: multiplierSfx.Guid.Data4
+      value: 1020247668
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameExitSfx.Guid.Data1
+      value: -1534327305
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameExitSfx.Guid.Data2
+      value: 1136165659
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameExitSfx.Guid.Data3
+      value: 2098434466
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameExitSfx.Guid.Data4
+      value: -1434741251
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameStartSfx.Guid.Data1
+      value: 1954931939
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameStartSfx.Guid.Data2
+      value: 1337085744
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameStartSfx.Guid.Data3
+      value: 94860944
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: minigameStartSfx.Guid.Data4
+      value: -1811875860
+      objectReference: {fileID: 0}
     - target: {fileID: 2835580950498543194, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -11448,17 +11638,77 @@ PrefabInstance:
       propertyPath: bakeryController
       value: 
       objectReference: {fileID: 300102179}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerBuildSfx.Path
+      value: event:/SFX/Tower/sfx_TowerBuild
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpkeepSfx.Path
+      value: event:/SFX/Tower/sfx_TowerUpkeep
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpgradeSfx.Path
+      value: event:/SFX/Tower/sfx_TowerUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerBuildSfx.Guid.Data1
+      value: -1949408462
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerBuildSfx.Guid.Data2
+      value: 1205515360
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerBuildSfx.Guid.Data3
+      value: -683342932
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerBuildSfx.Guid.Data4
+      value: 300929390
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpkeepSfx.Guid.Data1
+      value: -371418712
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpkeepSfx.Guid.Data2
+      value: 1235992817
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpkeepSfx.Guid.Data3
+      value: -1766968169
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpkeepSfx.Guid.Data4
+      value: 116066873
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpgradeSfx.Guid.Data1
+      value: -2042548889
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpgradeSfx.Guid.Data2
+      value: 1103474543
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpgradeSfx.Guid.Data3
+      value: -166891120
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: towerUpgradeSfx.Guid.Data4
+      value: -80223543
+      objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.x
       value: -640
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -345.22668
+      value: -323.34256
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.664
+      value: -9.005223
       objectReference: {fileID: 0}
     - target: {fileID: 8815717012800316479, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_AnchorMax.y
@@ -11498,3 +11748,4 @@ SceneRoots:
   - {fileID: 782922390}
   - {fileID: 1221775469}
   - {fileID: 1881282340}
+  - {fileID: 1741026733}
