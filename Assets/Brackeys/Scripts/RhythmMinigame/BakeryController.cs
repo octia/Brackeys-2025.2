@@ -1,6 +1,7 @@
 using Reflex.Attributes;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FMODUnity;
 
 public class BakeryController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class BakeryController : MonoBehaviour
     [Space]
     [SerializeField] private PopupAnimator produceButton;
     [SerializeField] public GameObject infoButton;
+    [SerializeField] private EventReference buttonClickSfx;
 
     [Space]
     [SerializeField] private RhythmController rhythmController;
@@ -33,7 +35,7 @@ public class BakeryController : MonoBehaviour
     private void Start()
     {
         interactInput = InputSystem.actions.FindAction("Interact");
-        
+
         rhythmController.baseMultiplier = biscuitMultiplierLevels[currentBiscuitMultiplierLevel].multiplier;
     }
 
@@ -56,12 +58,22 @@ public class BakeryController : MonoBehaviour
     {
         currentMaxBiscuitLevel += 1;
         biscuitManager.maxBiscuits = maxBiscuitLevels[currentMaxBiscuitLevel].maxBiscuit;
+        PlayButtonSfx();
     }
 
     public void UpgradeMultiplierLevel()
     {
         currentBiscuitMultiplierLevel += 1;
         rhythmController.baseMultiplier = biscuitMultiplierLevels[currentBiscuitMultiplierLevel].multiplier;
+        PlayButtonSfx();
+    }
+
+    private void PlayButtonSfx(EventReference? sfxOverride = null)
+    {
+        EventReference sfxToPlay = sfxOverride.HasValue ? sfxOverride.Value : buttonClickSfx;
+
+        if (!sfxToPlay.IsNull)
+            RuntimeManager.PlayOneShot(sfxToPlay);
     }
 }
 

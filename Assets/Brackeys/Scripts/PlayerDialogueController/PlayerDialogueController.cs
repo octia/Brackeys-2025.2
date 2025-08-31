@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class PlayerDialogueController : MonoBehaviour, IPointerClickHandler
 {
@@ -26,6 +27,8 @@ public class PlayerDialogueController : MonoBehaviour, IPointerClickHandler
 
     [SerializeField]
     private InputAction skipAction;
+
+    [SerializeField] private EventReference buttonClickSfx;
 
     [Inject]
     private PlayerDialogueConfig config;
@@ -55,7 +58,7 @@ public class PlayerDialogueController : MonoBehaviour, IPointerClickHandler
                 (val) => dialogueTextBox.maxVisibleCharacters = Mathf.RoundToInt(val),
                 Ease.Linear
             );
-            //.OnComplete(() => soundManager.StopLoop(textSound));
+        //.OnComplete(() => soundManager.StopLoop(textSound));
     }
 
     public void PlayTextChain(PlayerDialogueChainType type)
@@ -85,7 +88,7 @@ public class PlayerDialogueController : MonoBehaviour, IPointerClickHandler
         currentDialogueIndex = 0;
         SetInteractionBlockEnabled(false);
         SetEnabled(false);
-        //soundManager.PlayOneShot("event:/Ship_select");
+        PlayButtonSfx();
     }
 
     private void PlayCurrentDialogue()
@@ -130,7 +133,7 @@ public class PlayerDialogueController : MonoBehaviour, IPointerClickHandler
             textAnimTween.Complete();
             return;
         }
-
+        PlayButtonSfx();
         PlayCurrentDialogue();
     }
 
@@ -167,5 +170,14 @@ public class PlayerDialogueController : MonoBehaviour, IPointerClickHandler
         {
             longerTween.OnComplete(() => dialogueBox.SetActive(false));
         }
+    }
+
+    private void PlayButtonSfx(EventReference? sfxOverride = null)
+    {
+        EventReference sfxToPlay = sfxOverride.HasValue ? sfxOverride.Value : buttonClickSfx;
+
+        if (!sfxToPlay.IsNull)
+            RuntimeManager.PlayOneShot(sfxToPlay);
+
     }
 }
