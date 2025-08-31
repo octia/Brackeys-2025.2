@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 public class DogManager : MonoBehaviour
 {
     public DogScriptableBehaviour dogData;
@@ -16,7 +17,6 @@ public class DogManager : MonoBehaviour
     public float threshold = 0.05f;
     public float pauseTime = 2f;
     public float offsetScale = 5f;
-    public int damage = 5;
     public int runAwaySpeed = 10;
 
     public int waypointLineIndex = 0;
@@ -29,6 +29,7 @@ public class DogManager : MonoBehaviour
 
     public TimerManager timerManager;
     public BiscuitManager biscuitManager;
+    public RhythmController rhythmController;
 
     private Vector3 lastPos;
     public Vector3 currentVelocity;
@@ -37,6 +38,8 @@ public class DogManager : MonoBehaviour
 
     private Transform exit;
     private bool isRunningAway = false;
+
+    private float attentionBarWidth;
 
     void Start()
     {
@@ -61,6 +64,8 @@ public class DogManager : MonoBehaviour
 
         anim = GetComponentInChildren<Animator>();
         exit = GameObject.FindGameObjectWithTag("Exit").transform;
+
+        attentionBarWidth = dogInstance.GetComponentsInChildren<RawImage>(true)[1].rectTransform.sizeDelta.x;
     }
 
     void Update()
@@ -97,7 +102,12 @@ public class DogManager : MonoBehaviour
                     RunAway();
                     //reach to end and do stuff about that
                     // TODO: Change the amount of damage to be based on bakery upgrade
-                    biscuitManager.Biscuit -= damage;
+                    biscuitManager.Biscuit -= Mathf.FloorToInt(dogData.dogDamage);
+
+                    if (rhythmController.main.activeSelf)
+                    {
+                        rhythmController.ProduceButton();
+                    }
 
                     return;
                 }
@@ -122,6 +132,18 @@ public class DogManager : MonoBehaviour
         if (currentHealth <= 0) return;
 
         currentHealth -= amount;
+        if (currentHealth != dogData.dogMaxHealth)
+        {
+            RectTransform rectTransform = dogInstance.GetComponentsInChildren<RawImage>(true)[1].rectTransform;
+
+            dogInstance.GetComponentInChildren<Canvas>(true).gameObject.SetActive(true);
+            rectTransform.sizeDelta = new Vector2(attentionBarWidth - attentionBarWidth / dogData.dogMaxHealth * currentHealth, rectTransform.sizeDelta.y);
+        }
+        else
+        {
+            dogInstance.GetComponentInChildren<Canvas>(true).gameObject.SetActive(false);
+        }
+
         if (currentHealth <= 0)
         {
             RunAway();

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1440879f9bd4f418510193d76dd8c3, type: 3}
   m_Name: SpitterTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
-  towerName: Spitter Tower
+  towerName: Ball Thrower
   towerDescription: Fire a tennis ball the dogs are sure to love! Deals distraction
     to one target, low cooldown, falls apart quickly. Upgrade to decrease cooldown,
     increase range, uptime, and distraction amount.
@@ -46,7 +46,7 @@ MonoBehaviour:
     damageDuration: 0
     enemySpeed: 0
     towerHealth: 90
-    repairCost: 3
+    repairCost: 2
   - towerCost: 10
     attackRadius: 10.5
     attackRate: 1.55
@@ -56,7 +56,7 @@ MonoBehaviour:
     damageDuration: 0
     enemySpeed: 0
     towerHealth: 110
-    repairCost: 3
+    repairCost: 2
   - towerCost: 15
     attackRadius: 11
     attackRate: 1.3
@@ -66,7 +66,7 @@ MonoBehaviour:
     damageDuration: 0
     enemySpeed: 0
     towerHealth: 140
-    repairCost: 3
+    repairCost: 2
   - towerCost: 20
     attackRadius: 12
     attackRate: 0.8
@@ -76,7 +76,7 @@ MonoBehaviour:
     damageDuration: 0
     enemySpeed: 0
     towerHealth: 170
-    repairCost: 3
+    repairCost: 2
   - towerCost: 20
     attackRadius: 12
     attackRate: 0.3
@@ -86,5 +86,5 @@ MonoBehaviour:
     damageDuration: 0
     enemySpeed: 0
     towerHealth: 200
-    repairCost: 3
-  icon: {fileID: 2800000, guid: 2df115a1226996b4a95cb1b546abf775, type: 3}
+    repairCost: 2
+  icon: {fileID: 2800000, guid: 3622a1989adea874b800451878460684, type: 3}

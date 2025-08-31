@@ -26,7 +26,7 @@ public class RhythmController : MonoBehaviour
     [SerializeField] private EventReference missedNoteSfx;
 
     [Space]
-    [SerializeField] private GameObject main;
+    public GameObject main;
     [SerializeField] private TMP_Text perfectText;
     [SerializeField] private TMP_Text produceText;
     [SerializeField] private EventReference minigameStartSfx;
