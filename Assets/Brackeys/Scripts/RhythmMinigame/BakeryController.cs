@@ -9,7 +9,7 @@ public class BakeryController : MonoBehaviour
     public BiscuitMultiplierLevel[] biscuitMultiplierLevels;
 
     [Space]
-    [SerializeField] private GameObject produceButton;
+    [SerializeField] private PopupAnimator produceButton;
     [SerializeField] public GameObject infoButton;
 
     [Space]
@@ -39,9 +39,9 @@ public class BakeryController : MonoBehaviour
 
     private void Update()
     {
-        produceButton.gameObject.SetActive(Vector3.Distance(playerController.player.position, transform.position) < interactionRange && !timerManager.IsPaused);
+        produceButton.SetActive(Vector3.Distance(playerController.player.position, transform.position) < interactionRange && !timerManager.IsPaused);
 
-        if (produceButton.activeSelf && interactInput.WasPressedThisFrame())
+        if (produceButton.enabled && interactInput.WasPressedThisFrame())
         {
             rhythmController.ProduceButton();
         }

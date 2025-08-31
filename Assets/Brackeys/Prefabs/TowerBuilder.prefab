@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6184280608829706619}
   - component: {fileID: 9038123959334388952}
   - component: {fileID: 2508984115882611882}
+  - component: {fileID: 2186725433121222766}
   m_Layer: 5
   m_Name: BuildButton
   m_TagString: Untagged
@@ -149,6 +150,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2186725433121222766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316362269251108544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa687dc0e55c27218989a6987ea0328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PopupAnimator
+  animationTime: 0.25
+  enabled: 0
 --- !u!1 &961318089269803203
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,7 +592,7 @@ MonoBehaviour:
   freeMaterial: {fileID: 2100000, guid: ed0df01c81e2ec84a98e2dc2d537ce7a, type: 2}
   buyableMaterial: {fileID: 2100000, guid: 89db75f86af48c3438784cda684f6d84, type: 2}
   costText: {fileID: 7965816101022602681}
-  buildButton: {fileID: 316362269251108544}
+  buildButton: {fileID: 2186725433121222766}
   towersPanel: {fileID: 0}
 --- !u!114 &6676604287276071938
 MonoBehaviour:

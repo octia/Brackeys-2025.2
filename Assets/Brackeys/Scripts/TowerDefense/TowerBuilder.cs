@@ -15,7 +15,7 @@ public class TowerBuilder : MonoBehaviour
     [SerializeField] private TMP_Text costText;
 
     [Space]
-    [SerializeField] private GameObject buildButton;
+    [SerializeField] private PopupAnimator buildButton;
     [SerializeField] private TowersPanel towersPanel;
 
     private TowerManager towerManager;
@@ -45,7 +45,7 @@ public class TowerBuilder : MonoBehaviour
     {
         buildButton.SetActive(Vector3.Distance(playerController.player.position, transform.position) < interactionRange && !timerManager.IsPaused);
 
-        if (buildButton.activeSelf && interactAction.WasPressedThisFrame())
+        if (buildButton.enabled && interactAction.WasPressedThisFrame())
         {
             BuildButton();
         }

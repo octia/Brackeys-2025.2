@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using FMODUnity;
+using PrimeTween;
 
 public class RhythmController : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class RhythmController : MonoBehaviour
     [SerializeField] private int multiplierLimit;
     [SerializeField] private float newNoteTime;
     public float speed;
-    
+
     [SerializeField] private EventReference minigameMusic;
 
     [Space]
@@ -78,6 +79,10 @@ public class RhythmController : MonoBehaviour
 
     private SceneAudio sceneAudio;
 
+    private Tween scaleTween;
+
+    private bool isActive = false;
+
     private static bool wasOpenedBefore = false;
 
     private void Start()
@@ -91,7 +96,7 @@ public class RhythmController : MonoBehaviour
 
     private void Update()
     {
-        if (!main.activeSelf || timerManager.IsPaused)
+        if (!isActive || timerManager.IsPaused)
         {
             return;
         }
@@ -99,7 +104,7 @@ public class RhythmController : MonoBehaviour
         Transform nearestNote = null;
         bool performed = false;
 
-        if (leftPerformInput.WasPressedThisFrame()&& leftTrack.childCount > 0)
+        if (leftPerformInput.WasPressedThisFrame() && leftTrack.childCount > 0)
         {
             nearestNote = leftTrack.GetChild(0);
             performed = true;
@@ -170,14 +175,14 @@ public class RhythmController : MonoBehaviour
             wasOpenedBefore = true;
             dialogueController.PlayTextChain(PlayerDialogueChainType.BiscuitMakingTutorial);
         }
+        
+        SetMainActive(!isActive);
 
-        main.SetActive(!main.activeSelf);
+        bakeryController.infoButton.SetActive(!isActive);
+        playerController.movement.canMove = !isActive;
+        playerController.visual.gameObject.SetActive(!isActive);
 
-        bakeryController.infoButton.SetActive(!main.activeSelf);
-        playerController.movement.canMove = !main.activeSelf;
-        playerController.visual.gameObject.SetActive(!main.activeSelf);
-
-        if (main.activeSelf)
+        if (isActive)
         {
             produceText.text = "Leave";
 
@@ -235,7 +240,7 @@ public class RhythmController : MonoBehaviour
     {
         perfectNotes++;
 
-        perfectText.text = "Perfect hit! (" + perfectNotes + "x)";
+        perfectText.text = "Perfect hit!\n(" + perfectNotes + "x)";
         perfectText.gameObject.SetActive(true);
     }
 
@@ -261,7 +266,7 @@ public class RhythmController : MonoBehaviour
 
         for (int i = 1; i < rightTrackNotes.Length; i++)
         {
-           Destroy(rightTrackNotes[i].gameObject);
+            Destroy(rightTrackNotes[i].gameObject);
         }
     }
 
@@ -274,6 +279,27 @@ public class RhythmController : MonoBehaviour
     {
         if (!sfx.IsNull)
             RuntimeManager.PlayOneShot(sfx);
+    }
+
+    private void SetMainActive(bool active)
+    {
+        isActive = active;
+        if (scaleTween.isAlive)
+        {
+            scaleTween.Stop();
+        }
+
+        if (active)
+        {
+            main.SetActive(active);
+        }
+
+        scaleTween = Tween.Scale(main.transform, active ? 1 : 0, 0.25f);
+
+        if (!active)
+        {
+            scaleTween.OnComplete(() => main.SetActive(false));
+        }
     }
 
 }

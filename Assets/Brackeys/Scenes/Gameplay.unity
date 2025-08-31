@@ -6278,11 +6278,17 @@ Transform:
   - {fileID: 909241780}
   m_Father: {fileID: 338945877}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &805859823 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3553313398066503592, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+--- !u!114 &805859826 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7884830043578582727, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
   m_PrefabInstance: {fileID: 4625516625302975159}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa687dc0e55c27218989a6987ea0328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PopupAnimator
 --- !u!1 &808903310
 GameObject:
   m_ObjectHideFlags: 0
@@ -10250,6 +10256,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407835602}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1413539070 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2186725433121222766, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+  m_PrefabInstance: {fileID: 1462680551}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa687dc0e55c27218989a6987ea0328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PopupAnimator
 --- !u!1 &1424386332
 GameObject:
   m_ObjectHideFlags: 0
@@ -10625,6 +10642,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildButton
+      value: 
+      objectReference: {fileID: 1413539070}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
       value: 
@@ -14348,7 +14369,7 @@ PrefabInstance:
     - target: {fileID: 1574879297645270933, guid: 53fe7f923ca097448899f046c2f1ce26, type: 3}
       propertyPath: produceButton
       value: 
-      objectReference: {fileID: 805859823}
+      objectReference: {fileID: 805859826}
     - target: {fileID: 1574879297645270933, guid: 53fe7f923ca097448899f046c2f1ce26, type: 3}
       propertyPath: rhythmController
       value: 
@@ -14483,6 +14504,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BiscuitMakingMinigame
       objectReference: {fileID: 0}
+    - target: {fileID: 988666254226850765, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988666254226850765, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1397989304483170626, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -14493,6 +14522,14 @@ PrefabInstance:
       objectReference: {fileID: 300102179}
     - target: {fileID: 2835580950498543194, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062650759723971891, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062650759723971891, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4638117294471012999, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
@@ -14951,15 +14988,15 @@ PrefabInstance:
       objectReference: {fileID: 300102179}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -640.00006
+      value: -640
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -347.04892
+      value: -345.13202
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.2005827
+      value: -3.6640003
       objectReference: {fileID: 0}
     - target: {fileID: 8815717012800316479, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_AnchorMax.y
