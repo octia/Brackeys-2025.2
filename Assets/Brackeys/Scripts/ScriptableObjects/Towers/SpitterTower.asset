@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SpitterTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
   towerName: Spitter Tower
-  towerDescription: Fire a tennis ball the dogs are sure to love! Deals consistent
-    distraction to one target, low cooldown, low time to next necessary repair. Upgrade
-    to decrease cooldown, increase range, time to next repair, and distraction amount.
+  towerDescription: Fire a tennis ball the dogs are sure to love! Deals distraction
+    to one target, low cooldown, falls apart quickly. Upgrade to decrease cooldown,
+    increase range, uptime, and distraction amount.
   isAttackAOE: 0
   isDamageOverTime: 0
   shouldLookAtTarget: 1
