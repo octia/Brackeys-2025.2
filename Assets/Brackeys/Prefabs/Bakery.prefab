@@ -83,23 +83,26 @@ MonoBehaviour:
   interactionRange: 4
   maxBiscuitLevels:
   - cost: 0
-    maxBiscuit: 30
+    maxBiscuit: 40
   - cost: 20
-    maxBiscuit: 50
+    maxBiscuit: 55
   - cost: 35
     maxBiscuit: 75
   - cost: 50
-    maxBiscuit: 125
-  - cost: 100
-    maxBiscuit: 200
+    maxBiscuit: 100
+  - cost: 75
+    maxBiscuit: 150
+  - cost: 150
+    maxBiscuit: 250
   biscuitMultiplierLevels:
   - cost: 0
     multiplier: 1
-  - cost: 20
+  - cost: 45
     multiplier: 2
-  - cost: 30
+  - cost: 90
     multiplier: 3
   produceButton: {fileID: 0}
+  infoButton: {fileID: 0}
   rhythmController: {fileID: 0}
   currentMaxBiscuitLevel: 0
   currentBiscuitMultiplierLevel: 0
