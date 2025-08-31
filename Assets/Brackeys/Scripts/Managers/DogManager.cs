@@ -152,11 +152,15 @@ public class DogManager : MonoBehaviour
     }
     public void ModifySpeed(float amount)
     {
+        if (isRunningAway) return;
+
         currentDogSpeed = amount;
         agent.speed = currentDogSpeed;
     }
     public void ResetSpeed()
     {
+        if (isRunningAway) return;
+
         currentDogSpeed = dogData.dogSpeed;
         agent.speed = currentDogSpeed;
     }
@@ -184,13 +188,13 @@ public class DogManager : MonoBehaviour
 
     IEnumerator PauseAndReverse()
     {
-
         isPausedForAnimation = true;
         agent.ResetPath();
         agent.isStopped = true;
         yield return new WaitForSeconds(pauseTime);
-        isRunningAway = true;
+
         ModifySpeed(runAwaySpeed);
+        isRunningAway = true;
         myAgentsCollider.radius = 0.1f;
         myAgentsCollider.height = 0.1f;
         direction *= -1;
