@@ -1942,7 +1942,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   defaultMusicVolume: 1
   defaultAmbientVolume: 1
-  defaultMinigameVolume: 1
 --- !u!4 &639843798
 Transform:
   m_ObjectHideFlags: 0
@@ -2345,14 +2344,6 @@ MonoBehaviour:
       Data4: -1547284039
     Path: event:/Music/mus_CatPurr_loop
   ambientFadeTime: 0.5
-  minigameEvent:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  minigameFadeTime: 0
 --- !u!1001 &825734035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3665,7 +3656,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 152.45
+  m_fontSize: 146.65
   m_fontSizeBase: 96
   m_fontWeight: 400
   m_enableAutoSizing: 1
