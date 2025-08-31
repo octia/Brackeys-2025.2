@@ -99,11 +99,12 @@ public class MainMenuUi : MonoBehaviour
     private void OnPlayClicked()
     {
         Debug.Log("Play button clicked");
-        PlayButtonSfx(buttonGameStartClickSfx);
+        // PlayButtonSfx(buttonGameStartClickSfx);
 
         // Fade ambient out immediately
         // if (AudioManager.Instance != null)
-            AudioManager.Instance.FadeAmbient(0f, 1f);
+        AudioManager.Instance.FadeAmbient(0f, 1f);
+
 
         // Load scene normally
         SceneManager.LoadScene(mainGameLevelName);
