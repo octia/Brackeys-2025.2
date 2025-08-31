@@ -231,7 +231,7 @@ public class TowersPanel : MonoBehaviour
             {
                 return;
             }
-            biscuitManager.Biscuit -= Mathf.RoundToInt(currentTowerManager.towerData.levels[currentTowerManager.currentLevel + 1].towerCost);
+            biscuitManager.Biscuit -= Mathf.RoundToInt(currentTowerManager.towerData.levels[currentTowerManager.currentLevel].towerCost);
             currentTowerManager.UpgradeLevel();
 
             infoLevelText.text = "Level " + (currentTowerManager.currentLevel + 1);
