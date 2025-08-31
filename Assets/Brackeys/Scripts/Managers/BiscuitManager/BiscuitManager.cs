@@ -16,10 +16,10 @@ public class BiscuitManager : MonoBehaviour
     {
         set
         {
-            biscuit = Mathf.Clamp(value, 0, maxBiscuits);
+            biscuit = Mathf.Clamp(value, int.MinValue, maxBiscuits);
             biscuitController.biscuitText.text = biscuit + "/" + maxBiscuits + " Biscuits";
 
-            if (value == 0)
+            if (value <= 0)
             {
                 // TODO: Create a death scene
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

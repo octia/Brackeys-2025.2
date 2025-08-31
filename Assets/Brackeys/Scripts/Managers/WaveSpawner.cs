@@ -15,10 +15,10 @@ public class WaveSpawner : MonoBehaviour
 
     [SerializeField] RhythmController rhythmController;
 
-    [Inject]
+    [Inject, HideInInspector]
     public TimerManager timerManager;
 
-    [Inject]
+    [Inject, HideInInspector]
     public BiscuitManager biscuitManager;
 
     private float currentTimeBetweenWaves;

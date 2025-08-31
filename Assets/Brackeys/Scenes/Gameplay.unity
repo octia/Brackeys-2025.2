@@ -477,7 +477,7 @@ Transform:
   m_GameObject: {fileID: 38614787}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.302, z: 2.504}
+  m_LocalPosition: {x: 0, y: 0.302, z: 5.016}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2535,8 +2535,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5736972, y: 0, z: 0, w: 0.8190675}
-  m_LocalPosition: {x: 0, y: 22.302, z: -5.4960003}
+  m_LocalRotation: {x: 0.46144003, y: 0, z: 0, w: 0.88717145}
+  m_LocalPosition: {x: 0, y: 16.202, z: -11.884}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3084,7 +3084,7 @@ Transform:
   m_GameObject: {fileID: 346418967}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3.13}
+  m_LocalPosition: {x: 0, y: 0, z: 6.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13592,9 +13592,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1da4044a3a47cfaa6a651876715c194a, type: 2}
   spawnPoint: {fileID: 2029437327}
   dogPrefab: {fileID: 7189018912072491315, guid: dcde086cfd6460043ae0a94fa6312076, type: 3}
-  timeBetweenWaves: 15
+  timeBetweenWaves: 1
   countdown: 2
   waveIndex: 0
+  rhythmController: {fileID: 1154584755}
   biscuitManager: {fileID: 0}
 --- !u!1 &2033390870
 GameObject:
@@ -14722,6 +14723,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1048044770236158742, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: LookAtOffset.y
+      value: -8.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1739192093825137315, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -14744,6 +14749,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3225968558061049386, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4184125903249377904, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4354855543139432310, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
@@ -14801,6 +14810,14 @@ PrefabInstance:
     - target: {fileID: 5253573602514896514, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342135026601450480, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: FollowOffset.y
+      value: 15.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342135026601450480, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: FollowOffset.z
+      value: -16.9
       objectReference: {fileID: 0}
     - target: {fileID: 5825484847503260181, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_hasFontAssetChanged
@@ -14992,11 +15009,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -345.13202
+      value: -334.88608
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.6640003
+      value: -18.52804
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.88717145
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.46144003
       objectReference: {fileID: 0}
     - target: {fileID: 8815717012800316479, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_AnchorMax.y

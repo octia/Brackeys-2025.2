@@ -159,7 +159,7 @@ public class TowersPanel : MonoBehaviour
             return;
         }
 
-        biscuitManager.Biscuit -= bakeryController.maxBiscuitLevels[bakeryController.currentMaxBiscuitLevel].cost;
+        biscuitManager.Biscuit -= bakeryController.maxBiscuitLevels[bakeryController.currentMaxBiscuitLevel + 1].cost;
 
         bakeryController.UpgradeMaxBiscuitLevel();
 
