@@ -17,7 +17,6 @@ public class DogManager : MonoBehaviour
     public float threshold = 0.05f;
     public float pauseTime = 2f;
     public float offsetScale = 5f;
-    public int damage = 5;
     public int runAwaySpeed = 10;
 
     public int waypointLineIndex = 0;
@@ -30,6 +29,7 @@ public class DogManager : MonoBehaviour
 
     public TimerManager timerManager;
     public BiscuitManager biscuitManager;
+    public RhythmController rhythmController;
 
     private Vector3 lastPos;
     public Vector3 currentVelocity;
@@ -102,7 +102,12 @@ public class DogManager : MonoBehaviour
                     RunAway();
                     //reach to end and do stuff about that
                     // TODO: Change the amount of damage to be based on bakery upgrade
-                    biscuitManager.Biscuit -= damage;
+                    biscuitManager.Biscuit -= Mathf.FloorToInt(dogData.dogDamage);
+
+                    if (rhythmController.main.activeSelf)
+                    {
+                        rhythmController.ProduceButton();
+                    }
 
                     return;
                 }

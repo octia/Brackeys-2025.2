@@ -13,6 +13,8 @@ public class WaveSpawner : MonoBehaviour
 
     public int waveIndex = 0;
 
+    [SerializeField] RhythmController rhythmController;
+
     [Inject]
     public TimerManager timerManager;
 
@@ -115,6 +117,7 @@ public class WaveSpawner : MonoBehaviour
         dogManager.waypointLineIndex = Random.Range(0, Waypoints.pointsList.Count);
         dogManager.timerManager = timerManager;
         dogManager.biscuitManager = biscuitManager;
+        dogManager.rhythmController = rhythmController;
 
         //dogGO.transform.SetParent(Waypoints.pointsList[dogManager.waypointLineIndex][0], false);
         dogGO.transform.localPosition = Vector3.zero;

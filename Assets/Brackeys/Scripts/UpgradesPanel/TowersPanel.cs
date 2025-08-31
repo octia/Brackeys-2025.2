@@ -31,6 +31,7 @@ public class TowersPanel : MonoBehaviour
     [SerializeField] TMP_Text infoLevelText;
     [SerializeField] TMP_Text infoUpgradeCostText;
     [SerializeField] TMP_Text infoRepairCostText;
+    [SerializeField] Button repairButton;
 
     [Space]
     [SerializeField] TMP_Text bakeryMaxBiscuitText;
@@ -124,6 +125,7 @@ public class TowersPanel : MonoBehaviour
             infoLevelText.text = "Level " + (towerManager.currentLevel + 1);
             infoUpgradeCostText.text = towerManager.towerData.levels[towerManager.currentLevel].towerCost + "b";
             infoRepairCostText.text = towerManager.towerData.levels[towerManager.currentLevel].repairCost + "b";
+            repairButton.interactable = true;
         }
         else
         {
@@ -244,8 +246,9 @@ public class TowersPanel : MonoBehaviour
         biscuitManager.Biscuit -= Mathf.RoundToInt(currentTowerManager.towerData.levels[currentTowerManager.currentLevel].repairCost);
         currentTowerManager.RepairHealth();
 
-        PlayButtonSfx(towerUpkeepSfx);
+        repairButton.interactable = false;
 
+        PlayButtonSfx(towerUpkeepSfx);
     }
 
     private void PlayButtonSfx(EventReference sfx)
@@ -253,5 +256,4 @@ public class TowersPanel : MonoBehaviour
         if (!sfx.IsNull)
             RuntimeManager.PlayOneShot(sfx);
     }
-
 }
