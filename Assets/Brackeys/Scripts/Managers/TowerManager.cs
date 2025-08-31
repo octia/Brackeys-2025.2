@@ -9,6 +9,8 @@ public class TowerManager : MonoBehaviour
     public int currentLevel = 0;
     [SerializeField] bool spawnOnStart;
 
+    [SerializeField] GameObject damagedParticle;
+
     public GameObject builderVisual;
 
     [HideInInspector] public TowerScriptableObject towerData;
@@ -162,6 +164,8 @@ public class TowerManager : MonoBehaviour
     private void TowerDestroyed()
     {
         currentHealth = 0;
+
+        damagedParticle.SetActive(true);
 
         if (!wasATowerDestroyedOrRepairedBefore)
         {
@@ -396,6 +400,7 @@ public class TowerManager : MonoBehaviour
 
     public void RepairHealth()
     {
+        damagedParticle.SetActive(false);
         currentHealth = maxHealth;
         towerDownSfx = false;
     }
