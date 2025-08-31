@@ -9,6 +9,7 @@ public class WaveSpawner : MonoBehaviour
     public GameObject dogPrefab;
 
     public float timeBetweenWaves = 5f;
+    public float timeBeforeFirstWave = 10f;
     public float countdown = 2f;
 
     public int waveIndex = 0;
@@ -84,7 +85,7 @@ public class WaveSpawner : MonoBehaviour
     private void RunAllWaves()
     {
         inGame = true;
-        currentTimeBetweenWaves = timeBetweenWaves;
+        currentTimeBetweenWaves = timeBeforeFirstWave;
     }
 
     private void RunWave()
