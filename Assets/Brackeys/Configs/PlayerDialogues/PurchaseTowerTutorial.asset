@@ -22,7 +22,7 @@ MonoBehaviour:
   - <Message>k__BackingField: "Towers will attempt to distract the dogs on a cooldown,
       which you can see on the left of each tower. When a dog is fully distracted,
       it\u2019ll run back to where it came from!"
-    <IconOverride>k__BackingField: {fileID: 21300000, guid: 5b5b94519563f524aa7cb9f0658a1a7d, type: 3}
+    <IconOverride>k__BackingField: {fileID: 21300000, guid: b691d168a133df34685b6481b536ce4e, type: 3}
   - <Message>k__BackingField: "There\u2019s also a timer on the right that shows
       a tower\u2019s uptime. When that timer runs out, you\u2019ll need to go to
       the tower and spend a couple biscuits to repair it."
@@ -30,7 +30,7 @@ MonoBehaviour:
   - <Message>k__BackingField: When a tower is built, you can walk up to it and hit
       space to repair it. When you do, you can also upgrade the tower to improve
       its stats!
-    <IconOverride>k__BackingField: {fileID: 21300000, guid: 5b5b94519563f524aa7cb9f0658a1a7d, type: 3}
+    <IconOverride>k__BackingField: {fileID: 21300000, guid: b691d168a133df34685b6481b536ce4e, type: 3}
   - <Message>k__BackingField: "It\u2019s important to remember you can never hit
       0 biscuits by spending them, so you may need to clock in at the bakery to make
       some more biscuits."
