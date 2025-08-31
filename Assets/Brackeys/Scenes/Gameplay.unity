@@ -14498,54 +14498,18 @@ PrefabInstance:
       propertyPath: canvasRect
       value: 
       objectReference: {fileID: 983194221}
-    - target: {fileID: 413055330009331381, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -46.6
-      objectReference: {fileID: 0}
     - target: {fileID: 672947553639062548, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
       propertyPath: m_Name
       value: BiscuitMakingMinigame
-      objectReference: {fileID: 0}
-    - target: {fileID: 988666254226850765, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 988666254226850765, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1397989304483170626, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1489409091}
     - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
-      propertyPath: speed
-      value: 43.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 2536006944259679797, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
       propertyPath: bakeryController
       value: 
       objectReference: {fileID: 300102179}
-    - target: {fileID: 2835580950498543194, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3062650759723971891, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3062650759723971891, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638117294471012999, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -73.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665662031587453988, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -65.3
-      objectReference: {fileID: 0}
     - target: {fileID: 5111920791082119107, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14625,18 +14589,6 @@ PrefabInstance:
     - target: {fileID: 5111920791082119107, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6844408679387193185, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 957331586}
-    - target: {fileID: 6844408679387193185, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
-      propertyPath: canvasRect
-      value: 
-      objectReference: {fileID: 983194221}
-    - target: {fileID: 7885665769259638694, guid: cfb7e054bccc9574cb9cc4784dae6f43, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -38.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15014,11 +14966,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -333.1048
+      value: -349.59183
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -19.471992
+      value: -7.6787076
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalRotation.w
