@@ -25,9 +25,9 @@ MonoBehaviour:
       run out of biscuits, it\u2019s game over! You can see your current biscuit
       count in the top left."
     <IconOverride>k__BackingField: {fileID: 0}
-  - <Message>k__BackingField: Head over to one of the YELLOW BLOCKS (CHANGE) and
-      press space to open up the tower options. The GRAY BLOCKS (CHANGE) are locations
-      you can build a tower if you pay to unlock them first.
+  - <Message>k__BackingField: Head over to one of the yellow signs and press space
+      to open up the tower options. The gray signs are locations you can build a
+      tower if you pay to unlock them first.
     <IconOverride>k__BackingField: {fileID: 0}
   - <Message>k__BackingField: If you ever need to make more biscuits, you can head
       down to the bakery in the bottom left and hit space.
