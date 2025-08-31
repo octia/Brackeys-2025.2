@@ -2,6 +2,7 @@ using Reflex.Attributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class WaveSpawner : MonoBehaviour
 {
     public List<WaveScriptableObject> waves;
@@ -78,6 +79,8 @@ public class WaveSpawner : MonoBehaviour
             if (waveIndex >= waves.Count)
             {
                 inGame = false;
+
+                SceneManager.LoadScene("EndScene");
             }
         }
     }
