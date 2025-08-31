@@ -59,6 +59,9 @@ public class RhythmController : MonoBehaviour
     [Inject]
     private PlayerController playerController;
 
+    [Inject]
+    private PlayerDialogueController dialogueController;
+
     private float currentNewNoteTime;
 
     private bool onLeft;
@@ -72,12 +75,14 @@ public class RhythmController : MonoBehaviour
 
     private SceneAudio sceneAudio;
 
+    private static bool wasOpenedBefore = false;
+
     private void Start()
     {
         leftPerformInput = InputSystem.actions.FindAction("ANote");
         rightPerformInput = InputSystem.actions.FindAction("DNote");
         interactInput = InputSystem.actions.FindAction("Interact");
-        
+
         sceneAudio = FindObjectOfType<SceneAudio>();
     }
 
@@ -157,6 +162,12 @@ public class RhythmController : MonoBehaviour
 
     public void ProduceButton()
     {
+        if (!wasOpenedBefore)
+        {
+            wasOpenedBefore = true;
+            dialogueController.PlayTextChain(PlayerDialogueChainType.BiscuitMakingTutorial);
+        }
+
         main.SetActive(!main.activeSelf);
 
         bakeryController.infoButton.SetActive(!main.activeSelf);

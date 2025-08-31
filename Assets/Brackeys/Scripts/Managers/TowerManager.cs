@@ -1,8 +1,8 @@
-using Reflex.Attributes;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using FMODUnity;
+using Reflex.Attributes;
+using UnityEngine;
 
 public class TowerManager : MonoBehaviour
 {
@@ -44,7 +44,14 @@ public class TowerManager : MonoBehaviour
     [Inject]
     private BiscuitManager biscuitManager;
 
+    [Inject]
+    private PlayerDialogueController dialogueController;
+
     private bool towerDownSfx = false;
+
+    private TowerLevel currentLevelData => towerData.levels[currentLevel];
+
+    private static bool wasATowerDestroyedOrRepairedBefore = false;
 
     void Start()
     {
@@ -59,15 +66,15 @@ public class TowerManager : MonoBehaviour
         if (!spawned)
             return;
 
-        if (towerData.levels[currentLevel].attackRadius != lastRadius)
+        if (currentLevelData.attackRadius != lastRadius)
         {
-            lastRadius = towerData.levels[currentLevel].attackRadius;
+            lastRadius = currentLevelData.attackRadius;
             rangeCollider.radius = lastRadius / 2f;
             rangeIndicator.transform.localScale = new Vector3(lastRadius, 0.01f, lastRadius);
         }
-        if (towerData.levels[currentLevel].towerHealth != maxHealth)
+        if (currentLevelData.towerHealth != maxHealth)
         {
-            maxHealth = towerData.levels[currentLevel].towerHealth;
+            maxHealth = currentLevelData.towerHealth;
             if (currentHealth > maxHealth)
             {
                 currentHealth = maxHealth;
@@ -99,30 +106,25 @@ public class TowerManager : MonoBehaviour
 
             attackCooldown += Time.deltaTime;
             currentHealth -= Time.deltaTime;
-            towerUI.UpdateCooldown(attackCooldown / (towerData.levels[currentLevel].attackRate + towerData.animationDelay));
-            towerUI.UpdateHealth(currentHealth / towerData.levels[currentLevel].towerHealth);
+            towerUI.UpdateCooldown(attackCooldown / (currentLevelData.attackRate + towerData.animationDelay));
+            towerUI.UpdateHealth(currentHealth / currentLevelData.towerHealth);
 
             if (currentHealth < 0)
             {
-                currentHealth = 0;
-            if (!towerDownSfx)
-                {
-                    towerDownSfx = true;
-                    PlaySfx(towerData.towerDown);
-                }
+                TowerDestroyed();
             }
-            
+
             else
             {
-                if (biscuitManager.Biscuit - Mathf.RoundToInt(towerData.levels[currentLevel].attackCost) < 1)
+                if (biscuitManager.Biscuit - Mathf.RoundToInt(currentLevelData.attackCost) < 1)
                 {
                     return;
                 }
 
-                if (attackCooldown >= towerData.levels[currentLevel].attackRate && currentTarget != null && !isAttacking)
+                if (attackCooldown >= currentLevelData.attackRate && currentTarget != null && !isAttacking)
                 {
-                    biscuitManager.Biscuit -= Mathf.RoundToInt(towerData.levels[currentLevel].attackCost);
-                    attackCooldown = towerData.levels[currentLevel].attackRate;
+                    biscuitManager.Biscuit -= Mathf.RoundToInt(currentLevelData.attackCost);
+                    attackCooldown = currentLevelData.attackRate;
                     towerAnimator.Play("Attack");
 
                     // towerData.towerAttack
@@ -133,9 +135,9 @@ public class TowerManager : MonoBehaviour
                     }
                     isAttacking = true;
                 }
-                if (attackCooldown >= towerData.levels[currentLevel].attackRate + towerData.animationDelay)
+                if (attackCooldown >= currentLevelData.attackRate + towerData.animationDelay)
                 {
-                    attackCooldown = towerData.levels[currentLevel].attackRate;
+                    attackCooldown = currentLevelData.attackRate;
                     if (currentTarget != null)
                     {
                         attackCooldown = 0;
@@ -157,8 +159,24 @@ public class TowerManager : MonoBehaviour
         }
     }
 
+    private void TowerDestroyed()
+    {
+        currentHealth = 0;
+
+        if (!wasATowerDestroyedOrRepairedBefore)
+        {
+            wasATowerDestroyedOrRepairedBefore = true;
+            dialogueController.PlayTextChain(PlayerDialogueChainType.RepairTimeTutorial);
+        }
+        if (!towerDownSfx)
+        {
+            towerDownSfx = true;
+            PlaySfx(towerData.towerDown);
+        }
+    }
+
     public void SpawnTower()
-    {     
+    {
         spawned = true;
 
         Vector3 spawnPos = new Vector3(transform.position.x, towerData.towerPrefab.transform.position.y, transform.position.z);
@@ -168,7 +186,7 @@ public class TowerManager : MonoBehaviour
         towerAnimator = towerInstance.GetComponentInChildren<Animator>();
         towerParticles = towerInstance.GetComponentInChildren<ParticleSystem>();
 
-        maxHealth = towerData.levels[currentLevel].towerHealth;
+        maxHealth = currentLevelData.towerHealth;
         currentHealth = maxHealth;
         if (towerParticles)
         {
@@ -204,7 +222,7 @@ public class TowerManager : MonoBehaviour
         if (!spawned)
             return;
 
-        if (other.CompareTag("Dog"))
+        if (IsDog(other.transform))
         {
             dogsInRange.Add(other.transform);
 
@@ -245,13 +263,15 @@ public class TowerManager : MonoBehaviour
     void FireProjectile(Transform target)
     {
         if (towerData.projectilePrefab == null) return;
-        if (target == null || !target.CompareTag("Dog") || !dogsInRange.Contains(target)) return;
+        if (target == null || !IsDog(target) || !dogsInRange.Contains(target)) return;
 
         //towerAnimator.SetTrigger("Attack");
 
         GameObject proj = Instantiate(towerData.projectilePrefab, firePoint.position, Quaternion.identity, projectileContainer.transform);
-        proj.GetComponent<ProjectileManager>().towerData = towerData;
-        proj.GetComponent<ProjectileManager>().currentLevel = currentLevel;
+        ProjectileManager projectileManager = proj.GetComponent<ProjectileManager>();
+        projectileManager.towerData = towerData;
+        projectileManager.currentLevel = currentLevel;
+
         Rigidbody projRb = proj.GetComponent<Rigidbody>();
 
         Vector3 startPos = firePoint.position;
@@ -259,7 +279,7 @@ public class TowerManager : MonoBehaviour
         Vector3 targetVel = currentTarget.GetComponentInParent<DogManager>().currentVelocity;
 
         Vector3 deltaInitial = targetPos - startPos;
-        float height = towerData.levels[currentLevel].attackHeight;
+        float height = currentLevelData.attackHeight;
         float gravity = -Physics.gravity.y;
         float minHeight = Mathf.Max(height, deltaInitial.y + 0.5f);
         float Vy = Mathf.Sqrt(2f * gravity * minHeight);
@@ -292,14 +312,14 @@ public class TowerManager : MonoBehaviour
 
         foreach (Transform dog in dogsInRange)
         {
-            if (towerData.levels[currentLevel].enemySpeed == 0)
+            if (currentLevelData.enemySpeed == 0)
             {
                 if (dog != null)
                     dog.GetComponentInParent<DogManager>().LookAtTarget(builderVisual.transform.position);
             }
         }
 
-        while (elapsed < towerData.levels[currentLevel].damageDuration)
+        while (elapsed < currentLevelData.damageDuration)
         {
             abilityActive = true;
             // play daisy sfx here
@@ -307,8 +327,9 @@ public class TowerManager : MonoBehaviour
             {
                 if (dog != null)
                 {
-                    dog.GetComponentInParent<DogManager>().ModifySpeed(towerData.levels[currentLevel].enemySpeed);
-                    dog.GetComponentInParent<DogManager>().TakeDamage(towerData.levels[currentLevel].damageAmount);
+                    DogManager dogManager = dog.GetComponentInParent<DogManager>();
+                    dogManager.ModifySpeed(currentLevelData.enemySpeed);
+                    dogManager.TakeDamage(currentLevelData.damageAmount);
                 }
             }
 
@@ -347,7 +368,7 @@ public class TowerManager : MonoBehaviour
         foreach (Transform dog in dogsInRange)
         {
             if (dog == null) continue;
-            if (!dog.CompareTag("Dog")) continue;
+            if (!IsDog(dog)) continue;
             float dist = Vector3.Distance(transform.position, dog.position);
             if (dist < minDist)
             {
@@ -360,7 +381,7 @@ public class TowerManager : MonoBehaviour
 
     public void RemoveDog(Transform dog)
     {
-        dogsInRange.RemoveAll(d => d == null || d == dog || !d.CompareTag("Dog"));
+        dogsInRange.RemoveAll(d => d == null || d == dog || !IsDog(d));
         if (dog == currentTarget)
             currentTarget = GetClosestDog();
     }
@@ -385,9 +406,14 @@ public class TowerManager : MonoBehaviour
             RuntimeManager.PlayOneShot(sfx);
     }
 
+    private bool IsDog(Transform target)
+    {
+        return target.CompareTag("Dog");
+    }
+
     // private void StopSfx(EventReference sfx)
     //{
-      //  if (!sfx.IsNull)
-        //    RuntimeManager.PlayOneShot(sfx);
+    //  if (!sfx.IsNull)
+    //    RuntimeManager.PlayOneShot(sfx);
     //}
 }
