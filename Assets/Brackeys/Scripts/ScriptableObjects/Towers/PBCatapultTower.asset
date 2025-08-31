@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1440879f9bd4f418510193d76dd8c3, type: 3}
   m_Name: PBCatapultTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
-  towerName: Peanut Butter Launcher
+  towerName: Peanut Butter Lobber
   towerDescription: Launch a glob of peanut butter onto the ground that slows dogs
     that walk over it. Deals low distraction over time to multiple dogs, medium cooldown,
     falls apart at a medium rate. Upgrade to decrease cooldown, increase range, uptime,
@@ -88,4 +88,4 @@ MonoBehaviour:
     enemySpeed: 0.5
     towerHealth: 240
     repairCost: 3
-  icon: {fileID: 2800000, guid: 2df115a1226996b4a95cb1b546abf775, type: 3}
+  icon: {fileID: 2800000, guid: 1f90949acf81ce84bbc956f282785b55, type: 3}
