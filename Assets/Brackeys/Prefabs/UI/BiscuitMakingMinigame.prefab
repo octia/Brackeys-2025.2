@@ -281,20 +281,69 @@ MonoBehaviour:
   multiplierLimit: 3
   newNoteTime: 1
   speed: 40
+  minigameMusic:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   trackPerformPoint: {fileID: 7885665769259638694}
   failPoint: {fileID: 4638117294471012999}
   performPerfectPoint: {fileID: 413055330009331381}
   failPerfectPoint: {fileID: 4665662031587453988}
+  missedNoteSfx:
+    Guid:
+      Data1: 1782764217
+      Data2: 1204229195
+      Data3: 1886617216
+      Data4: 310148267
+    Path: event:/SFX/Minigame/sfx_MeowMissedNote
   main: {fileID: 2835580950498543194}
   perfectText: {fileID: 4463818122355401777}
   produceText: {fileID: 3917461339011772833}
+  minigameStartSfx:
+    Guid:
+      Data1: 1954931939
+      Data2: 1337085744
+      Data3: 94860944
+      Data4: -1811875860
+    Path: event:/SFX/Minigame/sfx_ServiceBell
+  minigameExitSfx:
+    Guid:
+      Data1: -1534327305
+      Data2: 1136165659
+      Data3: 2098434466
+      Data4: -1434741251
+    Path: event:/SFX/UI/sfx_MeowSelectClick
   progressBar: {fileID: 8416212952732612402}
   progressBarProgress: {fileID: 420734704370522259}
   multiplierText: {fileID: 4942584713662967488}
+  multiplierSfx:
+    Guid:
+      Data1: 770423405
+      Data2: 1232913438
+      Data3: -378772329
+      Data4: 1020247668
+    Path: event:/SFX/Minigame/sfx_ServiceBellMultiplier2Hits
   leftTrack: {fileID: 7099703066437119153}
   rightTrack: {fileID: 2517392973814704519}
   leftNote: {fileID: 1458959192883770321, guid: efb896588f9cc8a4bb6052b223148f9f, type: 3}
   rightNote: {fileID: 1458959192883770321, guid: 80b801959d4a7e741bfcef780339d24f, type: 3}
+  leftNoteSfx:
+    Guid:
+      Data1: -1095028719
+      Data2: 1200052398
+      Data3: -754183018
+      Data4: -1969660278
+    Path: event:/SFX/Minigame/sfx_DoughSquish_L
+  rightNoteSfx:
+    Guid:
+      Data1: -1416918337
+      Data2: 1207308764
+      Data3: 1240795802
+      Data4: 811725638
+    Path: event:/SFX/Minigame/sfx_DoughSquish_R
   bakeryController: {fileID: 0}
   biscuitManager: {fileID: 0}
   baseMultiplier: 0
@@ -1399,6 +1448,7 @@ GameObject:
   - component: {fileID: 8598449025606242417}
   - component: {fileID: 3528689936988030502}
   - component: {fileID: 2418003765917492741}
+  - component: {fileID: 418974665354481758}
   m_Layer: 5
   m_Name: CatIcon
   m_TagString: Untagged
@@ -1463,6 +1513,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &418974665354481758
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551062701516850914}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 44bbb9b912866a346b4094b981dcef37, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7665236633349716838
 GameObject:
   m_ObjectHideFlags: 0

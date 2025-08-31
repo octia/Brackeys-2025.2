@@ -16,7 +16,7 @@ MonoBehaviour:
   <ShouldBeSkippable>k__BackingField: 1
   <ChainType>k__BackingField: 2
   <Dialogues>k__BackingField:
-  - <Message>k__BackingField: Perfect! Now you can select a tower to build. Each
+  - <Message>k__BackingField: Purrfect! Now you can select a tower to build. Each
       tower has a different specialty and costs a different amount of biscuits.
     <IconOverride>k__BackingField: {fileID: 21300000, guid: 5b5b94519563f524aa7cb9f0658a1a7d, type: 3}
   - <Message>k__BackingField: "Towers will attempt to distract the dogs on a cooldown,
@@ -24,8 +24,8 @@ MonoBehaviour:
       it\u2019ll run back to where it came from!"
     <IconOverride>k__BackingField: {fileID: 21300000, guid: 5b5b94519563f524aa7cb9f0658a1a7d, type: 3}
   - <Message>k__BackingField: "There\u2019s also a timer on the right that shows
-      how long it\u2019ll be until you need to repair it. Once that timer runs out,
-      the tower will stop working until you can repair it."
+      a tower\u2019s uptime. When that timer runs out, you\u2019ll need to go to
+      the tower and spend a couple biscuits to repair it."
     <IconOverride>k__BackingField: {fileID: 21300000, guid: 5b5b94519563f524aa7cb9f0658a1a7d, type: 3}
   - <Message>k__BackingField: When a tower is built, you can walk up to it and hit
       space to repair it. When you do, you can also upgrade the tower to improve

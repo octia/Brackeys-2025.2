@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
   towerName: Biscuit Bomber Tower
   towerDescription: The most powerful tower, but also the riskiest! Spend biscuits
-    to launch devastating biscuit bombs - instantly distracting all of the dogs hit.
-    High damage, long cooldown, high time to next necessary repair. Upgrade to decrease
-    cooldown and biscuit cost per shot, increase range and time to next repair.
+    to launch devastating biscuit bombs, instantly distracting all of the dogs hit.
+    High damage, long cooldown, falls apart very slowly. Upgrade to decrease cooldown
+    and biscuit cost per shot, increase range and uptime.
   isAttackAOE: 0
   isDamageOverTime: 0
   shouldLookAtTarget: 1

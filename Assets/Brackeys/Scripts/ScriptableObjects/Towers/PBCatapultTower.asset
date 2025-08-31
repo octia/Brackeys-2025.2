@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: PBCatapultTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
   towerName: Peanut Butter Launcher
-  towerDescription: Launch a glob of peanut butter onto the ground that slows all
-    dogs that walk into it. Deals low distraction over time to every target who passes
-    through, medium cooldown, medium time to next necessary repair. Upgrade to increase
-    fire rate, range, distraction amount, and duration of slow.
+  towerDescription: Launch a glob of peanut butter onto the ground that slows dogs
+    that walk over it. Deals low distraction over time to multiple dogs, medium cooldown,
+    falls apart at a medium rate. Upgrade to decrease cooldown, increase range, uptime,
+    distraction amount, and duration of slow.
   isAttackAOE: 0
   isDamageOverTime: 0
   shouldLookAtTarget: 1
