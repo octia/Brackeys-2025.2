@@ -6,12 +6,15 @@ public class BiscuitManager : MonoBehaviour
 {
     public BiscuitController biscuitController;
 
+
     [Inject, HideInInspector]
     public BiscuitManagerConfig config;
 
     public int maxBiscuits;
 
     private int biscuit;
+
+
     public int Biscuit
     {
         set
@@ -27,4 +30,6 @@ public class BiscuitManager : MonoBehaviour
         }
         get { return biscuit; }
     }
+
+
 }

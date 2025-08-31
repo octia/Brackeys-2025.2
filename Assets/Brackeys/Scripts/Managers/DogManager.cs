@@ -1,9 +1,10 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
-using FMODUnity;
 
 public class DogManager : MonoBehaviour
 {
@@ -43,6 +44,8 @@ public class DogManager : MonoBehaviour
 
     private float attentionBarWidth;
 
+    public CinemachineBasicMultiChannelPerlin shaker { get; private set; }
+
     void Start()
     {
         currentHealth = dogData.dogMaxHealth;
@@ -68,6 +71,7 @@ public class DogManager : MonoBehaviour
         exit = GameObject.FindGameObjectWithTag("Exit").transform;
 
         attentionBarWidth = dogInstance.GetComponentsInChildren<RawImage>(true)[1].rectTransform.sizeDelta.x;
+        GetRef();
     }
 
     void Update()
@@ -106,6 +110,8 @@ public class DogManager : MonoBehaviour
                     //reach to end and do stuff about that
                     // TODO: Change the amount of damage to be based on bakery upgrade
                     biscuitManager.Biscuit -= Mathf.FloorToInt(dogData.dogDamage);
+                    // biscuitManager.Shake();
+                    Shake();
 
                     if (rhythmController.main.activeSelf)
                     {
@@ -267,6 +273,26 @@ public class DogManager : MonoBehaviour
     {
         if (!sfx.IsNull)
             RuntimeManager.PlayOneShot(sfx);
+    }
+
+    public void GetRef()
+    {
+        if (shaker != null) return;
+        GameObject activeCamObj = GameObject.FindGameObjectWithTag("CinemachineCamera");
+
+        shaker = activeCamObj.GetComponent<CinemachineBasicMultiChannelPerlin>();
+    }
+
+    public void Shake()
+    {
+
+        shaker.enabled = true;
+        StartCoroutine(StopShake());
+    }
+    IEnumerator StopShake()
+    {
+        yield return new WaitForSeconds(0.3f);
+        shaker.enabled = false;
     }
 
 }
