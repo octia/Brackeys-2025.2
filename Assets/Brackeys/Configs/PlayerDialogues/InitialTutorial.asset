@@ -16,12 +16,14 @@ MonoBehaviour:
   <ShouldBeSkippable>k__BackingField: 1
   <ChainType>k__BackingField: 1
   <Dialogues>k__BackingField:
-  - <Message>k__BackingField: "Your biscuits are at risk because hungry dogs are
-      coming to eat them! You\u2019ve got to build some towers to defend your bakery."
+  - <Message>k__BackingField: "You gotta look out! Your homemade biscuits are at
+      risk because hungry dogs are coming to eat them! You\u2019ve got to build some
+      towers to defend your bakery."
     <IconOverride>k__BackingField: {fileID: 0}
   - <Message>k__BackingField: "You can spend biscuits on a variety of things, including
       buying new towers. But be careful! Biscuits are also your health - when you
-      run out of biscuits, it\u2019s game over!"
+      run out of biscuits, it\u2019s game over! You can see your current biscuit
+      count in the top left."
     <IconOverride>k__BackingField: {fileID: 0}
   - <Message>k__BackingField: Head over to one of the YELLOW BLOCKS (CHANGE) and
       press space to open up the tower options. The GRAY BLOCKS (CHANGE) are locations

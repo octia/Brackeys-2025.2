@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: CrazyDaisyTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
   towerName: Crazy Daisy Tower
-  towerDescription: 'This is
-
-    a really
-
-
-    really good tower'
+  towerDescription: Spray a bunch of water into the air, stopping all the dogs in
+    its range. Deals medium distraction over time to every target within range, long
+    cooldown, low repair frequency. Upgrade to decrease cooldown, increase range,
+    time to next repair, duration, and distraction amount.
   isAttackAOE: 1
   isDamageOverTime: 1
   shouldLookAtTarget: 0
@@ -45,7 +43,7 @@ MonoBehaviour:
     attackRate: 10
     attackHeight: 0
     attackCost: 0
-    damageAmount: 0.2
+    damageAmount: 0.5
     damageDuration: 2.5
     enemySpeed: 0
     towerHealth: 110
@@ -55,7 +53,7 @@ MonoBehaviour:
     attackRate: 9
     attackHeight: 0
     attackCost: 0
-    damageAmount: 0.3
+    damageAmount: 1
     damageDuration: 3
     enemySpeed: 0
     towerHealth: 130
@@ -65,8 +63,8 @@ MonoBehaviour:
     attackRate: 8
     attackHeight: 0
     attackCost: 0
-    damageAmount: 0.5
-    damageDuration: 3.5
+    damageAmount: 1.5
+    damageDuration: 1.5
     enemySpeed: 0
     towerHealth: 160
     repairCost: 5
@@ -75,7 +73,7 @@ MonoBehaviour:
     attackRate: 7
     attackHeight: 0
     attackCost: 0
-    damageAmount: 0.75
+    damageAmount: 2
     damageDuration: 4
     enemySpeed: 0
     towerHealth: 200
@@ -85,7 +83,7 @@ MonoBehaviour:
     attackRate: 6
     attackHeight: 0
     attackCost: 0
-    damageAmount: 5
+    damageAmount: 3
     damageDuration: 3.5
     enemySpeed: 0
     towerHealth: 250

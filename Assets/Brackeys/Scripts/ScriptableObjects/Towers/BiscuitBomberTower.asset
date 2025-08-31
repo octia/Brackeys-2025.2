@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: BiscuitBomberTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
   towerName: Biscuit Bomber Tower
-  towerDescription: 'This is
-
-    a really
-
-
-    really good tower'
+  towerDescription: The most powerful tower, but also the riskiest! Spend biscuits
+    to launch devastating biscuit bombs - instantly distracting all of the dogs hit.
+    High damage, long cooldown, high time to next necessary repair. Upgrade to decrease
+    cooldown and biscuit cost per shot, increase range and time to next repair.
   isAttackAOE: 0
   isDamageOverTime: 0
   shouldLookAtTarget: 1
@@ -44,7 +42,7 @@ MonoBehaviour:
     attackRadius: 10
     attackRate: 10
     attackHeight: 1.5
-    attackCost: 0
+    attackCost: 4
     damageAmount: 100
     damageDuration: 0
     enemySpeed: 0
@@ -54,7 +52,7 @@ MonoBehaviour:
     attackRadius: 11
     attackRate: 9
     attackHeight: 1.5
-    attackCost: 0
+    attackCost: 3
     damageAmount: 100
     damageDuration: 0
     enemySpeed: 0
@@ -64,7 +62,7 @@ MonoBehaviour:
     attackRadius: 12
     attackRate: 8
     attackHeight: 1.5
-    attackCost: 0
+    attackCost: 2
     damageAmount: 100
     damageDuration: 0
     enemySpeed: 0
@@ -74,7 +72,7 @@ MonoBehaviour:
     attackRadius: 13
     attackRate: 6
     attackHeight: 1.5
-    attackCost: 0
+    attackCost: 1
     damageAmount: 100
     damageDuration: 0
     enemySpeed: 0
@@ -84,7 +82,7 @@ MonoBehaviour:
     attackRadius: 14
     attackRate: 4
     attackHeight: 1.5
-    attackCost: 0
+    attackCost: 1
     damageAmount: 100
     damageDuration: 0
     enemySpeed: 0
