@@ -131,11 +131,11 @@ public class DogManager : MonoBehaviour
     {
         if (currentHealth <= 0) return;
 
+        RectTransform rectTransform = dogInstance.GetComponentsInChildren<RawImage>(true)[1].rectTransform;
+
         currentHealth -= amount;
         if (currentHealth != dogData.dogMaxHealth)
         {
-            RectTransform rectTransform = dogInstance.GetComponentsInChildren<RawImage>(true)[1].rectTransform;
-
             dogInstance.GetComponentInChildren<Canvas>(true).gameObject.SetActive(true);
             rectTransform.sizeDelta = new Vector2(attentionBarWidth - attentionBarWidth / dogData.dogMaxHealth * currentHealth, rectTransform.sizeDelta.y);
         }
@@ -146,6 +146,7 @@ public class DogManager : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            rectTransform.sizeDelta = new Vector2(attentionBarWidth, rectTransform.sizeDelta.y);
             RunAway();
         }
     }

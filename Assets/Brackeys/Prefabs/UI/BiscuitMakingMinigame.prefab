@@ -246,8 +246,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: 0}
-  m_SizeDelta: {x: 120, y: 500}
+  m_AnchoredPosition: {x: 60, y: -22.2591}
+  m_SizeDelta: {x: 120, y: 351.6058}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2736037653853703775
 CanvasRenderer:
@@ -438,6 +438,7 @@ MonoBehaviour:
       Data4: 310148267
     Path: event:/SFX/Minigame/sfx_MeowMissedNote
   main: {fileID: 2835580950498543194}
+  produceButton: {fileID: 2867019381502266023}
   perfectText: {fileID: 4463818122355401777}
   produceText: {fileID: 3917461339011772833}
   minigameStartSfx:
@@ -1252,6 +1253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PopupAnimator
   animationTime: 0.25
+  enabled: 0
 --- !u!1 &3684610804680847188
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,8 +1515,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -13.8237}
+  m_SizeDelta: {x: 0, y: -27.6474}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7371632487969419194
 CanvasRenderer:
@@ -1837,8 +1839,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -60, y: 0}
-  m_SizeDelta: {x: 120, y: 500}
+  m_AnchoredPosition: {x: -60, y: -22.2591}
+  m_SizeDelta: {x: 120, y: 351.6058}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &700187547663076419
 CanvasRenderer:

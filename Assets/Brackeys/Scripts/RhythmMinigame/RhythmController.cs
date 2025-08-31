@@ -27,6 +27,7 @@ public class RhythmController : MonoBehaviour
 
     [Space]
     public GameObject main;
+    [SerializeField] private GameObject produceButton;
     [SerializeField] private TMP_Text perfectText;
     [SerializeField] private TMP_Text produceText;
     [SerializeField] private EventReference minigameStartSfx;
@@ -85,6 +86,11 @@ public class RhythmController : MonoBehaviour
 
     private static bool wasOpenedBefore = false;
 
+    private float secondsPerBeat = 0.723f;
+    private float currentSecondsPerBeat = 0;
+
+    private int doubleBeat = 1;
+
     private void Start()
     {
         leftPerformInput = InputSystem.actions.FindAction("ANote");
@@ -92,12 +98,20 @@ public class RhythmController : MonoBehaviour
         interactInput = InputSystem.actions.FindAction("Interact");
 
         sceneAudio = FindObjectOfType<SceneAudio>();
+        currentSecondsPerBeat = secondsPerBeat;
     }
 
     private void Update()
     {
+        currentSecondsPerBeat -= Time.deltaTime;
+
         if (!isActive || timerManager.IsPaused)
         {
+            if (currentSecondsPerBeat <= 0)
+            {
+                currentSecondsPerBeat = secondsPerBeat;
+            }
+
             return;
         }
 
@@ -155,16 +169,37 @@ public class RhythmController : MonoBehaviour
 
         currentNewNoteTime -= Time.deltaTime;
 
-        if (currentNewNoteTime < 0)
+        if (currentSecondsPerBeat <= 0)
         {
-            GameObject newNote;
+            if (currentNewNoteTime < 0)
+            {
+                GameObject newNote;
 
-            newNote = Instantiate(onLeft ? leftNote : rightNote, onLeft ? leftTrack : rightTrack);
-            newNote.GetComponent<NoteController>().rhythmController = this;
+                if (doubleBeat < 0)
+                {
+                    newNote = Instantiate(onLeft ? leftNote : rightNote, onLeft ? leftTrack : rightTrack);
+                    newNote.GetComponent<NoteController>().rhythmController = this;
+                }
+                else
+                {
+                    newNote = Instantiate(onLeft ? leftNote : rightNote, onLeft ? leftTrack : rightTrack);
+                    newNote.GetComponent<NoteController>().rhythmController = this;
 
-            currentNewNoteTime = newNoteTime;
+                    onLeft = !onLeft;
+                }
 
-            onLeft = !onLeft;
+                doubleBeat -= 1;
+
+                if (doubleBeat < -2)
+                {
+                    onLeft = !onLeft;
+                    doubleBeat = 1;
+                }
+
+                currentNewNoteTime = newNoteTime;
+            }
+
+            currentSecondsPerBeat = secondsPerBeat;
         }
     }
 
@@ -178,6 +213,7 @@ public class RhythmController : MonoBehaviour
         
         SetMainActive(!isActive);
 
+        produceButton.SetActive(!isActive);
         bakeryController.infoButton.SetActive(!isActive);
         playerController.movement.canMove = !isActive;
         playerController.visual.gameObject.SetActive(!isActive);
@@ -215,9 +251,6 @@ public class RhythmController : MonoBehaviour
                 // Fade minigame music out
                 // AudioManager.Instance.FadeMusic(0f, 1.5f, stopAfterFade: true);
             }
-
-
-
         }
     }
 
