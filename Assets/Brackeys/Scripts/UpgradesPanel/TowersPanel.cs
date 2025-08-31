@@ -227,7 +227,7 @@ public class TowersPanel : MonoBehaviour
 
         if (currentTowerManager.currentLevel + 1 < currentTowerManager.towerData.levels.Count)
         {
-            if (biscuitManager.Biscuit - currentTowerManager.towerData.levels[currentTowerManager.currentLevel + 1].towerCost < 1)
+            if (biscuitManager.Biscuit - currentTowerManager.towerData.levels[currentTowerManager.currentLevel].towerCost < 1)
             {
                 return;
             }
