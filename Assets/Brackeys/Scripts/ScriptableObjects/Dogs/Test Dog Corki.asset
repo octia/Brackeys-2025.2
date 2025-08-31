@@ -17,3 +17,24 @@ MonoBehaviour:
   dogSpeed: 1.2
   dogDamage: 10
   dogPrefab: {fileID: 4590087052704925908, guid: 5972c7758215b7c45bfe8dfb829518e1, type: 3}
+  distracted:
+    Guid:
+      Data1: -1741179992
+      Data2: 1332328589
+      Data3: 483362476
+      Data4: -453771319
+    Path: event:/SFX/Enemy/sfx_DogBarkMedium
+  runAway:
+    Guid:
+      Data1: -1704681995
+      Data2: 1163746970
+      Data3: 39732157
+      Data4: 152265068
+    Path: event:/SFX/Enemy/sfx_DogWhine
+  chomp:
+    Guid:
+      Data1: -1417043939
+      Data2: 1242899072
+      Data3: -846122604
+      Data4: -267095365
+    Path: event:/SFX/Enemy/sfx_DogChomp

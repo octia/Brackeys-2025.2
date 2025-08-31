@@ -3149,6 +3149,13 @@ MonoBehaviour:
       Data3: -1766968169
       Data4: 116066873
     Path: event:/SFX/Tower/sfx_TowerUpkeep
+  buttonClickSfx:
+    Guid:
+      Data1: -1534327305
+      Data2: 1136165659
+      Data3: 2098434466
+      Data4: -1434741251
+    Path: event:/SFX/UI/sfx_MeowSelectClick
   infoIcon: {fileID: 2840801724365620528}
   infoNameText: {fileID: 4354855543139432310}
   infoDescriptionText: {fileID: 4566374393097951411}

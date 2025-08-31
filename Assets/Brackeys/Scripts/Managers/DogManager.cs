@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using FMODUnity;
+
 public class DogManager : MonoBehaviour
 {
     public DogScriptableBehaviour dogData;
@@ -100,6 +102,7 @@ public class DogManager : MonoBehaviour
                 if (waypointIndex >= splinePoints.Length || waypointIndex < 0)
                 {
                     RunAway();
+                    PlaySfx(dogData.chomp);
                     //reach to end and do stuff about that
                     // TODO: Change the amount of damage to be based on bakery upgrade
                     biscuitManager.Biscuit -= Mathf.FloorToInt(dogData.dogDamage);
@@ -134,6 +137,8 @@ public class DogManager : MonoBehaviour
         RectTransform rectTransform = dogInstance.GetComponentsInChildren<RawImage>(true)[1].rectTransform;
 
         currentHealth -= amount;
+        PlaySfx(dogData.distracted);
+
         if (currentHealth != dogData.dogMaxHealth)
         {
             dogInstance.GetComponentInChildren<Canvas>(true).gameObject.SetActive(true);
@@ -148,6 +153,7 @@ public class DogManager : MonoBehaviour
         {
             rectTransform.sizeDelta = new Vector2(attentionBarWidth, rectTransform.sizeDelta.y);
             RunAway();
+            PlaySfx(dogData.runAway);
         }
     }
     public void ModifySpeed(float amount)
@@ -256,6 +262,13 @@ public class DogManager : MonoBehaviour
         for (int i = 0; i < splinePoints.Length - 1; i++)
             Gizmos.DrawLine(splinePoints[i], splinePoints[i + 1]);
     }
+
+    private void PlaySfx(EventReference sfx)
+    {
+        if (!sfx.IsNull)
+            RuntimeManager.PlayOneShot(sfx);
+    }
+
 }
 
 
