@@ -12457,14 +12457,6 @@ MonoBehaviour:
       Data4: -1547284039
     Path: event:/Music/mus_CatPurr_loop
   ambientFadeTime: 0.5
-  minigameEvent:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  minigameFadeTime: 1
 --- !u!4 &1813789920
 Transform:
   m_ObjectHideFlags: 0
@@ -13591,9 +13583,9 @@ MonoBehaviour:
   waves:
   - {fileID: 11400000, guid: 8a7f16d8772548744b6ed5eaee6db3fc, type: 2}
   - {fileID: 11400000, guid: e27120b25c5f63a40b6b1c7e712d97b3, type: 2}
-  - {fileID: 11400000, guid: a785068ced353df41a5f5bdefa11ffe9, type: 2}
-  - {fileID: 11400000, guid: 70b6d7d9ce0c4634b94a9deaccd0ba22, type: 2}
-  - {fileID: 11400000, guid: 7ffbd6305c627444e88ece4ab185dea8, type: 2}
+  - {fileID: 11400000, guid: 4086e9cdef599464ab41e8bb1b5c048b, type: 2}
+  - {fileID: 11400000, guid: e8d49d7f4e9ada648a70c254115ab755, type: 2}
+  - {fileID: 11400000, guid: 7addf6945774ca8428a6e55d4f03cd83, type: 2}
   - {fileID: 11400000, guid: 54bd87480dd01a344bd069aa714d4519, type: 2}
   - {fileID: 11400000, guid: 053e2faf9ee270c468a3a78ab6159a3e, type: 2}
   - {fileID: 11400000, guid: 6c611c0c61f3a20449cbbe0c3eda85e0, type: 2}
@@ -15006,15 +14998,15 @@ PrefabInstance:
       objectReference: {fileID: 300102179}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -640
+      value: -640.00006
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -326.30682
+      value: -326.64346
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.256902
+      value: -8.208729
       objectReference: {fileID: 0}
     - target: {fileID: 8815717012800316479, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_AnchorMax.y

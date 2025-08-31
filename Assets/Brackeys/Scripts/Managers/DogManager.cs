@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 public class DogManager : MonoBehaviour
 {
     public DogScriptableBehaviour dogData;
@@ -38,6 +39,8 @@ public class DogManager : MonoBehaviour
     private Transform exit;
     private bool isRunningAway = false;
 
+    private float attentionBarWidth;
+
     void Start()
     {
         currentHealth = dogData.dogMaxHealth;
@@ -61,6 +64,8 @@ public class DogManager : MonoBehaviour
 
         anim = GetComponentInChildren<Animator>();
         exit = GameObject.FindGameObjectWithTag("Exit").transform;
+
+        attentionBarWidth = dogInstance.GetComponentsInChildren<RawImage>(true)[1].rectTransform.sizeDelta.x;
     }
 
     void Update()
@@ -122,6 +127,18 @@ public class DogManager : MonoBehaviour
         if (currentHealth <= 0) return;
 
         currentHealth -= amount;
+        if (currentHealth != dogData.dogMaxHealth)
+        {
+            RectTransform rectTransform = dogInstance.GetComponentsInChildren<RawImage>(true)[1].rectTransform;
+
+            dogInstance.GetComponentInChildren<Canvas>(true).gameObject.SetActive(true);
+            rectTransform.sizeDelta = new Vector2(attentionBarWidth - attentionBarWidth / dogData.dogMaxHealth * currentHealth, rectTransform.sizeDelta.y);
+        }
+        else
+        {
+            dogInstance.GetComponentInChildren<Canvas>(true).gameObject.SetActive(false);
+        }
+
         if (currentHealth <= 0)
         {
             RunAway();
