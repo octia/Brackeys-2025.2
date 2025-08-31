@@ -2329,23 +2329,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3925fc72a7a5f41b64ecbdc430e049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneMusic
-  musicEvent:
+  levelMusic:
     Guid:
-      Data1: 1383858649
-      Data2: 1089294770
-      Data3: -1542035802
-      Data4: -489003508
-    Path: event:/Music/mus_MainMenu_loop
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   musicFadeTime: 0.5
-  ambientEvent:
+  ambient:
     Guid:
-      Data1: 657289089
-      Data2: 1299317509
-      Data3: -12527474
-      Data4: -1547284039
-    Path: event:/Music/mus_CatPurr_loop
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   ambientFadeTime: 0.5
-  minigameEvent:
+  minigame:
     Guid:
       Data1: 0
       Data2: 0
@@ -3665,7 +3665,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 152.45
+  m_fontSize: 146.65
   m_fontSizeBase: 96
   m_fontWeight: 400
   m_enableAutoSizing: 1

@@ -7,15 +7,10 @@ public class SceneAudio : MonoBehaviour
     [Header("Music Settings")]
     [SerializeField] private EventReference musicEvent;
     [SerializeField] private float musicFadeTime = 1f;
-    [SerializeField] private float delayBeforeStart = 1f;
 
     [Header("Ambient Settings")]
     [SerializeField] private EventReference ambientEvent;
     [SerializeField] private float ambientFadeTime = 1f;
-
-    [Header("Minigame Settings")]
-    [SerializeField] private EventReference minigameEvent;
-    [SerializeField] private float minigameFadeTime = 1f;
 
     private void Start()
     {
@@ -25,32 +20,39 @@ public class SceneAudio : MonoBehaviour
 
         if (scene == "MainMenu")
         {
-            // Music + Ambient full volume instantly
             AudioManager.Instance.PlayMusicInstant(musicEvent);
             AudioManager.Instance.StartAmbient(ambientEvent);
             AudioManager.Instance.FadeAmbient(AudioManager.Instance.DefaultAmbientVolume, 0f);
         }
-        else // Gameplay or other scenes
+        else
         {
-            // Music crossfade in
-            AudioManager.Instance.PlayMusic(musicEvent, musicFadeTime, delayBeforeStart);
+            // Fade old scene audio out & start new scene music
+            AudioManager.Instance.CrossfadeSceneAudio(musicEvent, musicFadeTime);
 
-            // Ambient + Minigame start muted
+            // AudioManager.Instance.PlayMusicInstant(musicEvent);
             AudioManager.Instance.StartAmbient(ambientEvent);
-            AudioManager.Instance.StartMinigame(minigameEvent);
+            AudioManager.Instance.FadeAmbient(AudioManager.Instance.DefaultAmbientVolume, ambientFadeTime);
+
+            // Minigame parameter starts at 0 automatically
         }
     }
 
-    // --- Minigame Controls ---
     public void OnMinigameStart()
     {
         AudioManager.Instance.FadeAmbient(AudioManager.Instance.DefaultAmbientVolume, ambientFadeTime);
-        AudioManager.Instance.FadeMinigame(AudioManager.Instance.DefaultMinigameVolume, minigameFadeTime);
+        AudioManager.Instance.FadeMinigame(1f, 1f);
     }
 
     public void OnMinigameEnd()
     {
         AudioManager.Instance.FadeAmbient(0f, ambientFadeTime);
-        AudioManager.Instance.FadeMinigame(0f, minigameFadeTime);
+        AudioManager.Instance.FadeMinigame(0f, 1f);
+    }
+
+    private void OnDisable()
+    {
+        AudioManager.Instance.FadeAmbient(0f, ambientFadeTime);
+        // AudioManager.Instance.FadeMinigame(0f, minigameFadeTime);
+        AudioManager.Instance.FadeMusic(0f, musicFadeTime);
     }
 }
