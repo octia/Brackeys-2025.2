@@ -62,6 +62,9 @@ public class RhythmController : MonoBehaviour
     [Inject]
     private PlayerDialogueController dialogueController;
 
+    [Inject, HideInInspector]
+    public TimerManager timerManager;
+
     private float currentNewNoteTime;
 
     private bool onLeft;
@@ -88,7 +91,7 @@ public class RhythmController : MonoBehaviour
 
     private void Update()
     {
-        if (!main.activeSelf)
+        if (!main.activeSelf || timerManager.IsPaused)
         {
             return;
         }

@@ -1,3 +1,4 @@
+using Reflex.Attributes;
 using UnityEngine;
 
 public class NoteController : MonoBehaviour
@@ -6,6 +7,11 @@ public class NoteController : MonoBehaviour
 
     private void Update()
     {
+        if (rhythmController.timerManager.IsPaused)
+        {
+            return;
+        }
+
         // Note movement
         transform.position += new Vector3(0, -1) * Time.deltaTime * rhythmController.speed;
 
