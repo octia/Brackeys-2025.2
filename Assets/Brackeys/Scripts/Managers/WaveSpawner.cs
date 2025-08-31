@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.UI;
+
 public class WaveSpawner : MonoBehaviour
 {
     public List<WaveScriptableObject> waves;
@@ -14,6 +17,7 @@ public class WaveSpawner : MonoBehaviour
     public float countdown = 2f;
 
     public int waveIndex = 0;
+
 
     [SerializeField] RhythmController rhythmController;
 
@@ -30,6 +34,8 @@ public class WaveSpawner : MonoBehaviour
     private bool inWave;
 
     private List<DogScriptableBehaviour> spawnPool = new List<DogScriptableBehaviour>();
+    public TMP_Text wavesText;
+    public Image waveBar;
 
     void Start()
     {
@@ -75,8 +81,12 @@ public class WaveSpawner : MonoBehaviour
 
             currentTimeBetweenWaves = timeBetweenWaves;
             waveIndex++;
+            wavesText.text = waveIndex + " / " + waves.Count;
+            float fillAmount = (float)waveIndex / waves.Count;
+            waveBar.fillAmount = fillAmount;
 
-            if (waveIndex >= waves.Count)
+
+            if (waveIndex > waves.Count)
             {
                 inGame = false;
 
@@ -89,6 +99,9 @@ public class WaveSpawner : MonoBehaviour
     {
         inGame = true;
         currentTimeBetweenWaves = timeBeforeFirstWave;
+        wavesText.text = waveIndex + " / " + waves.Count;
+        float fillAmount = (float)waveIndex / waves.Count;
+        waveBar.fillAmount = fillAmount;
     }
 
     private void RunWave()
