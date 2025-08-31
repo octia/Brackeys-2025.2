@@ -1,9 +1,9 @@
+using FMODUnity;
 using Reflex.Attributes;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using FMODUnity;
 
 public class TowersPanel : MonoBehaviour
 {
@@ -220,13 +220,17 @@ public class TowersPanel : MonoBehaviour
 
     public void UpgradeTower()
     {
-        if (biscuitManager.Biscuit - currentTowerManager.towerData.levels[currentTowerManager.currentLevel].towerCost < 1)
-        {
-            return;
-        }
+        //if (biscuitManager.Biscuit - currentTowerManager.towerData.levels[currentTowerManager.currentLevel].towerCost < 1)
+        //{
+        //    return;
+        //}
 
         if (currentTowerManager.currentLevel + 1 < currentTowerManager.towerData.levels.Count)
         {
+            if (biscuitManager.Biscuit - currentTowerManager.towerData.levels[currentTowerManager.currentLevel + 1].towerCost < 1)
+            {
+                return;
+            }
             biscuitManager.Biscuit -= Mathf.RoundToInt(currentTowerManager.towerData.levels[currentTowerManager.currentLevel + 1].towerCost);
             currentTowerManager.UpgradeLevel();
 
