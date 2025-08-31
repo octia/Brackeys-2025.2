@@ -103,6 +103,13 @@ MonoBehaviour:
     multiplier: 3
   produceButton: {fileID: 0}
   infoButton: {fileID: 0}
+  buttonClickSfx:
+    Guid:
+      Data1: -1534327305
+      Data2: 1136165659
+      Data3: 2098434466
+      Data4: -1434741251
+    Path: event:/SFX/UI/sfx_MeowSelectClick
   rhythmController: {fileID: 0}
   currentMaxBiscuitLevel: 0
   currentBiscuitMultiplierLevel: 0

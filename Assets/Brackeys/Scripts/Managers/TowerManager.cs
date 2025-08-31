@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using FMODUnity;
+using FMOD.Studio;
 using Reflex.Attributes;
 using UnityEngine;
 
@@ -50,6 +51,7 @@ public class TowerManager : MonoBehaviour
     private PlayerDialogueController dialogueController;
 
     private bool towerDownSfx = false;
+    private EventInstance currentSfx;
 
     private TowerLevel currentLevelData => towerData.levels[currentLevel];
 
@@ -129,7 +131,7 @@ public class TowerManager : MonoBehaviour
                     attackCooldown = currentLevelData.attackRate;
                     towerAnimator.Play("Attack");
 
-                    // towerData.towerAttack
+                    
 
                     if (towerParticles)
                     {
@@ -146,7 +148,6 @@ public class TowerManager : MonoBehaviour
                         if (towerData.isAttackAOE)
                         {
                             StartCoroutine(AOEAbilityCoroutine());
-                            //play daisy sfx here
                         }
                         else
                         {
@@ -327,6 +328,7 @@ public class TowerManager : MonoBehaviour
         {
             abilityActive = true;
             // play daisy sfx here
+            PlaySfx(towerData.towerAttack);
             foreach (Transform dog in dogsInRange)
             {
                 if (dog != null)
@@ -346,6 +348,7 @@ public class TowerManager : MonoBehaviour
         attackCooldown = 0;
         abilityActive = false;
         // end daisy sfx here
+        StopSfx();
         towerAnimator.Play("Idle");
         if (towerParticles)
         {
@@ -405,10 +408,14 @@ public class TowerManager : MonoBehaviour
         towerDownSfx = false;
     }
 
-    private void PlaySfx(EventReference sfx)
+    public void PlaySfx(EventReference sfx)
     {
         if (!sfx.IsNull)
-            RuntimeManager.PlayOneShot(sfx);
+        {
+            currentSfx = RuntimeManager.CreateInstance(sfx);
+            currentSfx.start();
+            currentSfx.release();
+        }
     }
 
     private bool IsDog(Transform target)
@@ -416,9 +423,12 @@ public class TowerManager : MonoBehaviour
         return target.CompareTag("Dog");
     }
 
-    // private void StopSfx(EventReference sfx)
-    //{
-    //  if (!sfx.IsNull)
-    //    RuntimeManager.PlayOneShot(sfx);
-    //}
+    public void StopSfx()
+    {
+        if (currentSfx.isValid())
+        {
+            currentSfx.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            currentSfx.release();
+        }
+    }
 }

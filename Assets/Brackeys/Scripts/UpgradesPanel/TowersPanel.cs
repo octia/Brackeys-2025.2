@@ -23,6 +23,7 @@ public class TowersPanel : MonoBehaviour
     [SerializeField] private EventReference towerBuildSfx;
     [SerializeField] private EventReference towerUpgradeSfx;
     [SerializeField] private EventReference towerUpkeepSfx;
+    [SerializeField] private EventReference buttonClickSfx;
 
     [Space]
     [SerializeField] RawImage infoIcon;
@@ -208,7 +209,7 @@ public class TowersPanel : MonoBehaviour
     {
         anim.SetTrigger("Hide");
 
-        // PlayButtonSfx();
+        PlayButtonSfx(buttonClickSfx);
         hidden = true;
     }
 
