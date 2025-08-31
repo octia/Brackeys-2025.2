@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: PBCatapultTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
   towerName: Peanut Butter Launcher
-  towerDescription: ...
+  towerDescription: 'This is
+
+    a really
+
+
+    really good tower'
   isAttackAOE: 0
   isDamageOverTime: 0
   shouldLookAtTarget: 1

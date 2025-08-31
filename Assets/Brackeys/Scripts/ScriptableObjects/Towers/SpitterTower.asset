@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: SpitterTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
   towerName: Spitter Tower
-  towerDescription: ...
+  towerDescription: 'This is
+
+    a really
+
+
+    really good tower'
   isAttackAOE: 0
   isDamageOverTime: 0
   shouldLookAtTarget: 1

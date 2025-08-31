@@ -21,6 +21,7 @@ public class TowerLevel
 public class TowerScriptableObject : ScriptableObject
 {
     public string towerName;
+    [Multiline(5)]
     public string towerDescription = "...";
     public bool isAttackAOE;
     public bool isDamageOverTime;

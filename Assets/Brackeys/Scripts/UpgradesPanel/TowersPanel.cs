@@ -19,7 +19,7 @@ public class TowersPanel : MonoBehaviour
     [SerializeField] GameObject towerInfoUI;
     [SerializeField] GameObject bakeryInfoUI;
     [SerializeField] GameObject buyableTowersUI;
-    [SerializeField] GameObject buyableTowerButtonInstance;
+    [SerializeField] TowerPurchaseUI buyableTowerButtonInstance;
     [SerializeField] private EventReference towerBuildSfx;
     [SerializeField] private EventReference towerUpgradeSfx;
     [SerializeField] private EventReference towerUpkeepSfx;
@@ -37,6 +37,9 @@ public class TowersPanel : MonoBehaviour
     [SerializeField] TMP_Text bakeryMultiplierText;
     [SerializeField] TMP_Text bakeryMaxBiscuitCostText;
     [SerializeField] TMP_Text bakeryMultiplierCostText;
+
+    [SerializeField]
+    private TooltipController tooltip;
 
     [Inject]
     private BiscuitManager biscuitManager;
@@ -59,11 +62,15 @@ public class TowersPanel : MonoBehaviour
 
         foreach (TowerScriptableObject towerData in buyableTowersData)
         {
-            GameObject newBuyableTowerButton = Instantiate(buyableTowerButtonInstance, buyableTowersUI.transform);
+            TowerPurchaseUI newBuyableTowerButton = Instantiate(buyableTowerButtonInstance, buyableTowersUI.transform);
 
-            newBuyableTowerButton.GetComponent<Button>().onClick.AddListener(() => BuyTower(towerData));
-            newBuyableTowerButton.GetComponentsInChildren<TMP_Text>()[0].text = towerData.towerName;
-            newBuyableTowerButton.GetComponentsInChildren<TMP_Text>()[1].text = towerData.levels[0].towerCost + " Biscuits";
+            newBuyableTowerButton.Initialize(towerData);
+
+            newBuyableTowerButton.AddClickListener(() => BuyTower(towerData));
+
+            newBuyableTowerButton.AddHoverEnterEvent(() => tooltip.Initialize(towerData));
+            newBuyableTowerButton.AddHoverExitEvent(() => tooltip.Disappear());
+
             newBuyableTowerButton.GetComponentInChildren<RawImage>().texture = towerData.icon;
         }
 

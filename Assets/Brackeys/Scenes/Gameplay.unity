@@ -326,6 +326,10 @@ PrefabInstance:
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
+    - target: {fileID: 7965816101022602681, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -620,6 +624,10 @@ PrefabInstance:
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
+    - target: {fileID: 7965816101022602681, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1014,6 +1022,10 @@ PrefabInstance:
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
+    - target: {fileID: 7965816101022602681, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3475,6 +3487,10 @@ PrefabInstance:
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
+    - target: {fileID: 7965816101022602681, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3730,6 +3746,10 @@ PrefabInstance:
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
+    - target: {fileID: 7965816101022602681, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4170,6 +4190,10 @@ PrefabInstance:
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
+    - target: {fileID: 7965816101022602681, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5282,6 +5306,10 @@ PrefabInstance:
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
+    - target: {fileID: 7965816101022602681, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5354,6 +5382,10 @@ PrefabInstance:
       objectReference: {fileID: 1489409091}
     - target: {fileID: 6676604287276071938, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: spawnOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965816101022602681, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7000,6 +7032,10 @@ PrefabInstance:
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
+    - target: {fileID: 7965816101022602681, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8855,6 +8891,10 @@ PrefabInstance:
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
+    - target: {fileID: 7965816101022602681, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8929,6 +8969,10 @@ PrefabInstance:
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
+    - target: {fileID: 7965816101022602681, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10581,6 +10625,10 @@ PrefabInstance:
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
+    - target: {fileID: 7965816101022602681, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10778,6 +10826,10 @@ PrefabInstance:
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
+    - target: {fileID: 7965816101022602681, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11320,6 +11372,10 @@ PrefabInstance:
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
+    - target: {fileID: 7965816101022602681, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11390,6 +11446,10 @@ PrefabInstance:
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
+    - target: {fileID: 7965816101022602681, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12677,6 +12737,10 @@ PrefabInstance:
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
+    - target: {fileID: 7965816101022602681, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13356,6 +13420,10 @@ PrefabInstance:
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
+    - target: {fileID: 7965816101022602681, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13769,6 +13837,10 @@ PrefabInstance:
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
+    - target: {fileID: 7965816101022602681, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14749,6 +14821,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 983194221}
     m_Modifications:
+    - target: {fileID: 825321809154706848, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1739192093825137315, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047515467618151246, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3225968558061049386, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -14765,57 +14849,41 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3273442916033721313, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3273442916033721313, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3273442916033721313, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: m_AnchorMin.x
+    - target: {fileID: 4354855543139432310, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3273442916033721313, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3273442916033721313, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3273442916033721313, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3273442916033721313, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3273442916033721313, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: m_AnchoredPosition.y
+    - target: {fileID: 4386582462746154268, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4473383202407386901, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4566374393097951411, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4682289975619547713, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4682289975619547713, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4682289975619547713, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 150
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4682289975619547713, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -65
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4962058951662159763, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5159193709795126110, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_Name
@@ -14823,61 +14891,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5253573602514896514, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5253573602514896514, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5253573602514896514, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 5253573602514896514, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7061207680593748005, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: m_Pivot.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7061207680593748005, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: m_Pivot.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7061207680593748005, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 7061207680593748005, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 522.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7061207680593748005, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+    - target: {fileID: 5253573602514896514, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -650
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7061207680593748005, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+    - target: {fileID: 5253573602514896514, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7340267728546464698, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: m_fontSize
-      value: 24
+    - target: {fileID: 5825484847503260181, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7340267728546464698, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 4c2a792f20ac3954e9778e695fae0506, type: 2}
-    - target: {fileID: 7340267728546464698, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 24
+    - target: {fileID: 6649710602070122685, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_Name
+      value: TowerName
       objectReference: {fileID: 0}
-    - target: {fileID: 7340267728546464698, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 8570082003902111082, guid: 4c2a792f20ac3954e9778e695fae0506, type: 2}
-    - target: {fileID: 7340267728546464698, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+    - target: {fileID: 6825788450504870251, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
@@ -14961,70 +14997,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7880873869653174355, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: bakeryController
       value: 
       objectReference: {fileID: 300102179}
-    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: towerBuildSfx.Path
-      value: event:/SFX/Tower/sfx_TowerBuild
-      objectReference: {fileID: 0}
-    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: towerUpkeepSfx.Path
-      value: event:/SFX/Tower/sfx_TowerUpkeep
-      objectReference: {fileID: 0}
-    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: towerUpgradeSfx.Path
-      value: event:/SFX/Tower/sfx_TowerUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: towerBuildSfx.Guid.Data1
-      value: -1949408462
-      objectReference: {fileID: 0}
-    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: towerBuildSfx.Guid.Data2
-      value: 1205515360
-      objectReference: {fileID: 0}
-    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: towerBuildSfx.Guid.Data3
-      value: -683342932
-      objectReference: {fileID: 0}
-    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: towerBuildSfx.Guid.Data4
-      value: 300929390
-      objectReference: {fileID: 0}
-    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: towerUpkeepSfx.Guid.Data1
-      value: -371418712
-      objectReference: {fileID: 0}
-    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: towerUpkeepSfx.Guid.Data2
-      value: 1235992817
-      objectReference: {fileID: 0}
-    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: towerUpkeepSfx.Guid.Data3
-      value: -1766968169
-      objectReference: {fileID: 0}
-    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: towerUpkeepSfx.Guid.Data4
-      value: 116066873
-      objectReference: {fileID: 0}
-    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: towerUpgradeSfx.Guid.Data1
-      value: -2042548889
-      objectReference: {fileID: 0}
-    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: towerUpgradeSfx.Guid.Data2
-      value: 1103474543
-      objectReference: {fileID: 0}
-    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: towerUpgradeSfx.Guid.Data3
-      value: -166891120
-      objectReference: {fileID: 0}
-    - target: {fileID: 8504217727470458019, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
-      propertyPath: towerUpgradeSfx.Guid.Data4
-      value: -80223543
-      objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.x
       value: -640

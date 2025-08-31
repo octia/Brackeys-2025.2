@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: CrazyDaisyTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerScriptableObject
   towerName: Crazy Daisy Tower
-  towerDescription: ...
+  towerDescription: 'This is
+
+    a really
+
+
+    really good tower'
   isAttackAOE: 1
   isDamageOverTime: 1
   shouldLookAtTarget: 0
