@@ -2255,7 +2255,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Perfect hit!
+  m_text: 'Purrfect hit!
 
     (0x)'
   m_isRightToLeft: 0
