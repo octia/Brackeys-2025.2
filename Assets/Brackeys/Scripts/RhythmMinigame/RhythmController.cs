@@ -273,7 +273,7 @@ public class RhythmController : MonoBehaviour
     {
         perfectNotes++;
 
-        perfectText.text = "Perfect hit!\n(" + perfectNotes + "x)";
+        perfectText.text = "Purrfect hit!\n(" + perfectNotes + "x)";
         perfectText.gameObject.SetActive(true);
     }
 
