@@ -609,6 +609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerManager
   currentLevel: 0
   spawnOnStart: 0
+  damagedParticle: {fileID: 8141133573748309515}
   builderVisual: {fileID: 2084342267839228821}
   towerData: {fileID: 0}
   dogsInRange: []
