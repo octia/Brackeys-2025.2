@@ -17,8 +17,8 @@ MonoBehaviour:
   <ChainType>k__BackingField: 4
   <Dialogues>k__BackingField:
   - <Message>k__BackingField: 'Uh oh! One of your towers needs to be repaired! Go
-      to the tower without a red bar to the right of it, hit space and click repair. '
+      to the tower that''s spewing red X''s, hit space and click repair. '
     <IconOverride>k__BackingField: {fileID: 21300000, guid: 6b1cb82faed95ba4b87da762c903a1e8, type: 3}
-  - <Message>k__BackingField: 'Luckily the repair costs are pretty low - it''ll never
-      cost more than '
+  - <Message>k__BackingField: Luckily the repair costs are pretty low - it'll never
+      cost more than 5 biscuits!
     <IconOverride>k__BackingField: {fileID: 21300000, guid: b691d168a133df34685b6481b536ce4e, type: 3}

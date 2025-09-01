@@ -29,6 +29,6 @@ MonoBehaviour:
     <IconOverride>k__BackingField: {fileID: 21300000, guid: 1229d9a81f257254d9cb2e43ecd8b7b8, type: 3}
   - <Message>k__BackingField: "To start, there\u2019s a limit to how many biscuits
       you can hold on to at a given time. If you click on the upgrade button below
-      the bakery, you can pay to increase your limit, as well as increase your starting
+      the bakery, you can pay to increase your limit as well as increase your starting
       multiplier."
     <IconOverride>k__BackingField: {fileID: 21300000, guid: b691d168a133df34685b6481b536ce4e, type: 3}

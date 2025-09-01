@@ -14322,15 +14322,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4086e9cdef599464ab41e8bb1b5c048b, type: 2}
   - {fileID: 11400000, guid: e8d49d7f4e9ada648a70c254115ab755, type: 2}
   - {fileID: 11400000, guid: 7addf6945774ca8428a6e55d4f03cd83, type: 2}
-  - {fileID: 11400000, guid: 54bd87480dd01a344bd069aa714d4519, type: 2}
-  - {fileID: 11400000, guid: 053e2faf9ee270c468a3a78ab6159a3e, type: 2}
-  - {fileID: 11400000, guid: 6c611c0c61f3a20449cbbe0c3eda85e0, type: 2}
+  - {fileID: 11400000, guid: a785068ced353df41a5f5bdefa11ffe9, type: 2}
+  - {fileID: 11400000, guid: 70b6d7d9ce0c4634b94a9deaccd0ba22, type: 2}
+  - {fileID: 11400000, guid: 7ffbd6305c627444e88ece4ab185dea8, type: 2}
   - {fileID: 11400000, guid: 69501220d10313b4bbf6c662c9faffc0, type: 2}
   - {fileID: 11400000, guid: 02618f60a3f7b84c7a5cbd18fc919a07, type: 2}
   - {fileID: 11400000, guid: 1da4044a3a47cfaa6a651876715c194a, type: 2}
   spawnPoint: {fileID: 2029437327}
   dogPrefab: {fileID: 7189018912072491315, guid: dcde086cfd6460043ae0a94fa6312076, type: 3}
-  timeBetweenWaves: 20
+  timeBetweenWaves: 17
   timeBeforeFirstWave: 10
   countdown: 2
   waveIndex: 0
@@ -15710,15 +15710,15 @@ PrefabInstance:
       objectReference: {fileID: 300102179}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -640
+      value: -639.99994
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -349.19867
+      value: -348.14682
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.9226665
+      value: -8.677421
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalRotation.w

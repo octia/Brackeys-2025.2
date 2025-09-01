@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Test Dog Corki
   m_EditorClassIdentifier: Assembly-CSharp::DogScriptableBehaviour
   dogName: Corki
-  dogMaxHealth: 3
+  dogMaxHealth: 4
   dogSpeed: 1.2
   dogDamage: 10
   dogPrefab: {fileID: 4590087052704925908, guid: 5972c7758215b7c45bfe8dfb829518e1, type: 3}
