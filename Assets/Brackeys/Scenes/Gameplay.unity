@@ -14317,7 +14317,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   waves:
-  - {fileID: 11400000, guid: 8a7f16d8772548744b6ed5eaee6db3fc, type: 2}
   - {fileID: 11400000, guid: e27120b25c5f63a40b6b1c7e712d97b3, type: 2}
   - {fileID: 11400000, guid: 4086e9cdef599464ab41e8bb1b5c048b, type: 2}
   - {fileID: 11400000, guid: e8d49d7f4e9ada648a70c254115ab755, type: 2}
@@ -15710,15 +15709,15 @@ PrefabInstance:
       objectReference: {fileID: 300102179}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -639.99994
+      value: -640.00006
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -348.14682
+      value: -351.20914
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.677421
+      value: -6.4729877
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalRotation.w

@@ -40,27 +40,27 @@ MonoBehaviour:
   levels:
   - towerCost: 10
     attackRadius: 10
-    attackRate: 6.9
+    attackRate: 10
     attackHeight: 1
     attackCost: 0
-    damageAmount: 0.75
-    damageDuration: 1
+    damageAmount: 0.5
+    damageDuration: 1.5
     enemySpeed: 0.5
     towerHealth: 100
     repairCost: 3
   - towerCost: 20
     attackRadius: 10.5
-    attackRate: 6.65
+    attackRate: 9.5
     attackHeight: 1
     attackCost: 0
-    damageAmount: 0.5
+    damageAmount: 0.375
     damageDuration: 2
     enemySpeed: 0.5
     towerHealth: 120
     repairCost: 3
   - towerCost: 30
     attackRadius: 11
-    attackRate: 6.4
+    attackRate: 9
     attackHeight: 1
     attackCost: 0
     damageAmount: 0.5
@@ -70,20 +70,20 @@ MonoBehaviour:
     repairCost: 3
   - towerCost: 40
     attackRadius: 11.5
-    attackRate: 5.9
+    attackRate: 8
     attackHeight: 1
     attackCost: 0
-    damageAmount: 0.33
+    damageAmount: 0.42
     damageDuration: 3
     enemySpeed: 0.5
     towerHealth: 180
     repairCost: 3
   - towerCost: 50
     attackRadius: 12
-    attackRate: 4.9
+    attackRate: 7
     attackHeight: 1
     attackCost: 0
-    damageAmount: 0.33
+    damageAmount: 0.75
     damageDuration: 3.5
     enemySpeed: 0.5
     towerHealth: 240
