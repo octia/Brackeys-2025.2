@@ -65,6 +65,15 @@ public class WaveSpawner : MonoBehaviour
                 if (spawnPool.Count <= 0)
                 {
                     inWave = false;
+                    waveIndex++;
+
+                    if (waveIndex >= waves.Count)
+                    {
+                        inGame = false;
+                        SceneManager.LoadScene("EndScene");
+                        return;
+                    }
+
                 }
             }
 
@@ -77,21 +86,14 @@ public class WaveSpawner : MonoBehaviour
 
         if (currentTimeBetweenWaves < 0)
         {
+
+
             RunWave();
 
             currentTimeBetweenWaves = timeBetweenWaves;
-            waveIndex++;
-            wavesText.text = waveIndex + " / " + waves.Count;
-            float fillAmount = (float)waveIndex / waves.Count;
+            wavesText.text = (waveIndex + 1) + " / " + waves.Count;
+            float fillAmount = (float)(waveIndex + 1) / waves.Count;
             waveBar.fillAmount = fillAmount;
-
-
-            if (waveIndex > waves.Count)
-            {
-                inGame = false;
-
-                SceneManager.LoadScene("EndScene");
-            }
         }
     }
 
@@ -106,16 +108,19 @@ public class WaveSpawner : MonoBehaviour
 
     private void RunWave()
     {
-        inWave = true;
 
         WaveScriptableObject wave = waves[waveIndex];
-        Debug.Log($"Starting wave: {wave.waveName}");
-
-        foreach (DogSpawnEntry entry in wave.dogs)
+        if (wave)
         {
-            for (int i = 0; i < entry.count; i++)
+            inWave = true;
+            Debug.Log($"Starting wave: {wave.waveName}");
+
+            foreach (DogSpawnEntry entry in wave.dogs)
             {
-                spawnPool.Add(entry.dogType);
+                for (int i = 0; i < entry.count; i++)
+                {
+                    spawnPool.Add(entry.dogType);
+                }
             }
         }
     }

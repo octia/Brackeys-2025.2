@@ -131,8 +131,6 @@ public class TowerManager : MonoBehaviour
                     attackCooldown = currentLevelData.attackRate;
                     towerAnimator.Play("Attack");
 
-                    
-
                     if (towerParticles)
                     {
                         towerParticles.Play();
@@ -141,7 +139,7 @@ public class TowerManager : MonoBehaviour
                 }
                 if (attackCooldown >= currentLevelData.attackRate + towerData.animationDelay)
                 {
-                    attackCooldown = currentLevelData.attackRate;
+                    attackCooldown = currentLevelData.attackRate + towerData.animationDelay;
                     if (currentTarget != null)
                     {
                         attackCooldown = 0;
