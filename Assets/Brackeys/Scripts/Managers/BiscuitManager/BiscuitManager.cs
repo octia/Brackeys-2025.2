@@ -20,8 +20,11 @@ public class BiscuitManager : MonoBehaviour
         set
         {
             biscuit = Mathf.Clamp(value, int.MinValue, maxBiscuits);
-            biscuitController.biscuitText.text = biscuit + "/" + maxBiscuits + " Biscuits";
+            biscuitController.biscuitText.text = biscuit + "/" + maxBiscuits;
 
+            biscuitController.biscuitText.text = biscuit + " / " + maxBiscuits;
+            float fillAmount = (float)biscuit / maxBiscuits;
+            biscuitController.biscuitBar.fillAmount = fillAmount;
             if (value <= 0)
             {
                 // TODO: Create a death scene

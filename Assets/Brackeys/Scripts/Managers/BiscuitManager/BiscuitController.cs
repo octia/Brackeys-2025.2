@@ -1,6 +1,7 @@
 using Reflex.Attributes;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BiscuitController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class BiscuitController : MonoBehaviour
 
     [Space]
     public TMP_Text biscuitText;
+    public Image biscuitBar;
 
     [Inject] private BiscuitManager biscuitManager;
 
