@@ -91,8 +91,8 @@ public class WaveSpawner : MonoBehaviour
             RunWave();
 
             currentTimeBetweenWaves = timeBetweenWaves;
-            wavesText.text = (waveIndex + 1) + " / " + waves.Count;
-            float fillAmount = (float)(waveIndex + 1) / waves.Count;
+            wavesText.text = (waveIndex + 1) + " / " + (waves.Count - 1);
+            float fillAmount = (float)(waveIndex + 1) / (waves.Count - 1);
             waveBar.fillAmount = fillAmount;
         }
     }
@@ -101,8 +101,8 @@ public class WaveSpawner : MonoBehaviour
     {
         inGame = true;
         currentTimeBetweenWaves = timeBeforeFirstWave;
-        wavesText.text = waveIndex + " / " + waves.Count;
-        float fillAmount = (float)waveIndex / waves.Count;
+        wavesText.text = waveIndex + " / " + (waves.Count - 1);
+        float fillAmount = (float)waveIndex / (waves.Count - 1);
         waveBar.fillAmount = fillAmount;
     }
 

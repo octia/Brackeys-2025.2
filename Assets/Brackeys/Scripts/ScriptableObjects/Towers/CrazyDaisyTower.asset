@@ -38,54 +38,34 @@ MonoBehaviour:
       Data4: -470407725
     Path: event:/SFX/Tower/sfx_TowerDown
   levels:
-  - towerCost: 15
-    attackRadius: 9
+  - towerCost: 13
+    attackRadius: 9.5
     attackRate: 12
     attackHeight: 0
     attackCost: 0
-    damageAmount: 0.33
-    damageDuration: 3
+    damageAmount: 0.5
+    damageDuration: 2.5
     enemySpeed: 0
-    towerHealth: 110
+    towerHealth: 105
     repairCost: 4
-  - towerCost: 30
-    attackRadius: 9.5
-    attackRate: 11.5
+  - towerCost: 36
+    attackRadius: 10.5
+    attackRate: 11
     attackHeight: 0
     attackCost: 0
-    damageAmount: 0.41
-    damageDuration: 3.5
+    damageAmount: 0.4167
+    damageDuration: 3
     enemySpeed: 0
-    towerHealth: 130
+    towerHealth: 125
     repairCost: 4
-  - towerCost: 45
-    attackRadius: 10
-    attackRate: 11
+  - towerCost: 66
+    attackRadius: 11.5
+    attackRate: 10
     attackHeight: 0
     attackCost: 0
     damageAmount: 0.375
     damageDuration: 4
     enemySpeed: 0
-    towerHealth: 160
-    repairCost: 4
-  - towerCost: 60
-    attackRadius: 10.5
-    attackRate: 10
-    attackHeight: 0
-    attackCost: 0
-    damageAmount: 0.375
-    damageDuration: 4.5
-    enemySpeed: 0
-    towerHealth: 200
-    repairCost: 4
-  - towerCost: 75
-    attackRadius: 11.5
-    attackRate: 9
-    attackHeight: 0
-    attackCost: 0
-    damageAmount: 0.35
-    damageDuration: 5
-    enemySpeed: 0
-    towerHealth: 250
+    towerHealth: 145
     repairCost: 4
   icon: {fileID: 2800000, guid: 87b188f9bb3185d49992882127a5b768, type: 3}

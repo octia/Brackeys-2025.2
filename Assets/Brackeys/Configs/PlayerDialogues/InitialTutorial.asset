@@ -18,7 +18,7 @@ MonoBehaviour:
   <Dialogues>k__BackingField:
   - <Message>k__BackingField: "You gotta look out! Your homemade biscuits are at
       risk because hungry dogs are coming to eat them! You\u2019ve got to build some
-      towers to defend your bakery."
+      towers to defend your bakery for 10 waves!"
     <IconOverride>k__BackingField: {fileID: 0}
   - <Message>k__BackingField: "You can spend biscuits on a variety of things, including
       buying new towers. But be careful! Biscuits are also your health - when you

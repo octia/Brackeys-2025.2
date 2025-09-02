@@ -4114,6 +4114,10 @@ PrefabInstance:
       value: TowerBuilder (12)
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
@@ -7546,6 +7550,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
@@ -9762,7 +9770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: buildCost
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
@@ -11860,6 +11868,10 @@ PrefabInstance:
     - target: {fileID: 2908320631050149689, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
@@ -14855,6 +14867,10 @@ PrefabInstance:
       value: TowerBuilder (7)
       objectReference: {fileID: 0}
     - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
+      propertyPath: buildCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637050450565595221, guid: 3a0c5b8be05974e4f9055c358dcc1105, type: 3}
       propertyPath: towersPanel
       value: 
       objectReference: {fileID: 1489409091}
@@ -15038,10 +15054,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 69501220d10313b4bbf6c662c9faffc0, type: 2}
   - {fileID: 11400000, guid: 02618f60a3f7b84c7a5cbd18fc919a07, type: 2}
   - {fileID: 11400000, guid: 1da4044a3a47cfaa6a651876715c194a, type: 2}
+  - {fileID: 11400000, guid: 93bf29ee42229074fb56aad1e33f5daa, type: 2}
   spawnPoint: {fileID: 2029437327}
   dogPrefab: {fileID: 7189018912072491315, guid: dcde086cfd6460043ae0a94fa6312076, type: 3}
-  timeBetweenWaves: 17
-  timeBeforeFirstWave: 10
+  timeBetweenWaves: 17.5
+  timeBeforeFirstWave: 14
   countdown: 2
   waveIndex: 0
   rhythmController: {fileID: 1154584755}
@@ -16424,11 +16441,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -349.19867
+      value: -352.32916
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.9226665
+      value: -5.604834
       objectReference: {fileID: 0}
     - target: {fileID: 8780922024974377574, guid: 0934d6ed523239445a08a95d351d8909, type: 3}
       propertyPath: m_LocalRotation.w
