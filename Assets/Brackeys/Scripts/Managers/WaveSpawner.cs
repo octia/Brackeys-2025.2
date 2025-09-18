@@ -57,23 +57,21 @@ public class WaveSpawner : MonoBehaviour
 
             if (currentDogWaitTime < 0)
             {
-                SpawnDog(spawnPool);
+                if (spawnPool.Count <= 0)
+                {
+                    EndWave();
+                    return;
+                }
 
                 float waitTime = Random.Range(waves[waveIndex].spawnRateRange.x, waves[waveIndex].spawnRateRange.y);
                 currentDogWaitTime = waitTime;
 
+                SpawnDog(spawnPool);
+
                 if (spawnPool.Count <= 0)
                 {
-                    inWave = false;
-                    waveIndex++;
-
-                    if (waveIndex >= waves.Count)
-                    {
-                        inGame = false;
-                        SceneManager.LoadScene("EndScene");
-                        return;
-                    }
-
+                    EndWave();
+                    return;
                 }
             }
 
@@ -86,8 +84,6 @@ public class WaveSpawner : MonoBehaviour
 
         if (currentTimeBetweenWaves < 0)
         {
-
-
             RunWave();
 
             currentTimeBetweenWaves = timeBetweenWaves;
@@ -108,11 +104,11 @@ public class WaveSpawner : MonoBehaviour
 
     private void RunWave()
     {
-
+        inWave = true;
         WaveScriptableObject wave = waves[waveIndex];
+
         if (wave)
         {
-            inWave = true;
             Debug.Log($"Starting wave: {wave.waveName}");
 
             foreach (DogSpawnEntry entry in wave.dogs)
@@ -122,6 +118,18 @@ public class WaveSpawner : MonoBehaviour
                     spawnPool.Add(entry.dogType);
                 }
             }
+        }
+    }
+
+    private void EndWave()
+    {
+        inWave = false;
+        waveIndex++;
+
+        if (waveIndex >= waves.Count)
+        {
+            inGame = false;
+            SceneManager.LoadScene("EndScene");
         }
     }
 
