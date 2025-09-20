@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Brackeys/Scenes/BootstrapScene.unity
+    guid: bfac313a1de69084fb527f12b94ac9f9
+  - enabled: 1
     path: Assets/Brackeys/Scenes/MainMenu.unity
     guid: fd5c3f3b767c5bb5e87d6f1d460eaa1d
   - enabled: 1
