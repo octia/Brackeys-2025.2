@@ -451,7 +451,7 @@
                     "name": "Submit",
                     "type": "Button",
                     "id": "7607c7b6-cd76-4816-beef-bd0341cfe950",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -460,7 +460,7 @@
                     "name": "Cancel",
                     "type": "Button",
                     "id": "15cef263-9014-4fd5-94d9-4e4a6234a6ef",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -993,6 +993,54 @@
                     "processors": "",
                     "groups": "",
                     "action": "DNote",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "EscapeTab",
+            "id": "5816b608-21aa-4905-8363-6128d4c415dc",
+            "actions": [
+                {
+                    "name": "ESC",
+                    "type": "Button",
+                    "id": "be32cfc8-a0ea-4775-9313-efe7994eb476",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TAB",
+                    "type": "Button",
+                    "id": "dbb5f03c-71e4-4adb-9ae2-b3e4c4c8562f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "39a0a996-2dd8-440d-b604-27246edca830",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "ESC",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "75534ba1-a133-49fa-9f65-f092cfd582d3",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TAB",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

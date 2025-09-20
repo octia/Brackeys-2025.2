@@ -34,4 +34,11 @@ public class FMODMultiVolume : MonoBehaviour
             });
         }
     }
+    private void OnDestroy()
+    {
+        foreach (var v in vcas)
+        {
+            v.slider.onValueChanged.RemoveAllListeners();
+        }
+    }
 }
