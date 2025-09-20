@@ -236,6 +236,13 @@ public class TowersPanel : MonoBehaviour
 
             infoLevelText.text = "Level " + (currentTowerManager.currentLevel + 1);
             infoUpgradeCostText.text = currentTowerManager.towerData.levels[currentTowerManager.currentLevel].towerCost + "b";
+
+            if (currentTowerManager.currentLevel + 1 == currentTowerManager.towerData.levels.Count)
+            {
+                infoLevelText.text = "Max Level";
+                infoUpgradeCostText.text = "";
+                //infolevelUpgradeButton HIDE
+            }
         }
 
         PlayButtonSfx(towerUpgradeSfx);
