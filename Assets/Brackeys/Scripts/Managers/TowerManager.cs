@@ -109,9 +109,8 @@ public class TowerManager : MonoBehaviour
             }
 
             attackCooldown += Time.deltaTime;
-            currentHealth -= Time.deltaTime;
             towerUI.UpdateCooldown(attackCooldown / (currentLevelData.attackRate + towerData.animationDelay));
-            towerUI.UpdateHealth(currentHealth / currentLevelData.towerHealth);
+
 
             if (currentHealth < 0)
             {
@@ -152,6 +151,8 @@ public class TowerManager : MonoBehaviour
                             FireProjectile(currentTarget);
                             PlaySfx(towerData.towerAttack);
                         }
+                        currentHealth -= 1;
+                        towerUI.UpdateHealth(currentHealth / currentLevelData.towerHealth);
                         isAttacking = false;
 
                     }
